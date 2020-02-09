@@ -62,10 +62,55 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Layout\DanhSachNguoiMuon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layout\DanhSachNguoiMuon.Designer.cs">
+      <DependentUpon>DanhSachNguoiMuon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layout\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layout\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layout\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layout\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layout\Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layout\Register.Designer.cs">
+      <DependentUpon>Register.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layout\TaiKhoanMuonSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layout\TaiKhoanMuonSach.Designer.cs">
+      <DependentUpon>TaiKhoanMuonSach.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layout\DanhSachNguoiMuon.resx">
+      <DependentUpon>DanhSachNguoiMuon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layout\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layout\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layout\Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layout\TaiKhoanMuonSach.resx">
+      <DependentUpon>TaiKhoanMuonSach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -90,9 +135,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Layout\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj">
       <Project>{95a56464-8ab1-4624-b56c-60790c65b23f}</Project>
