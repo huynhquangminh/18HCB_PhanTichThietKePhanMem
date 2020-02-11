@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="87ddff359a224de6b351ee2f8c300bdd" Name="Diagram1">
+        <EntityTypeShape EntityType="QuanLyThuVien_PTTKPMModel.LoaiSach" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThuVien_PTTKPMModel.LoaiTaiKhoan" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThuVien_PTTKPMModel.MuonSach" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThuVien_PTTKPMModel.Sach" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThuVien_PTTKPMModel.sysdiagram" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThuVien_PTTKPMModel.TaiKhoan" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="QuanLyThuVien_PTTKPMModel.FK_Sach_LoaiSach" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyThuVien_PTTKPMModel.FK_TaiKhoan_LoaiTaiKhoan" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyThuVien_PTTKPMModel.FK_MuonSach_Sach" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyThuVien_PTTKPMModel.FK_MuonSach_TaiKhoan" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
