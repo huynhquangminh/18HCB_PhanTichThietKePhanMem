@@ -12,6 +12,8 @@ namespace EntityData
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class QuanLyThuVien_PTTKPMEntities : DbContext
     {
@@ -31,5 +33,56 @@ namespace EntityData
         public virtual DbSet<Sach> Saches { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TaiKhoan> TaiKhoans { get; set; }
+    
+        public virtual int DangKy_TaiKhoan(string matk, string tendangnhap, string matkhau, string tentaikhoan, string ngaysinh, string diachi, Nullable<int> loaitaikhoan)
+        {
+            var matkParameter = matk != null ?
+                new ObjectParameter("matk", matk) :
+                new ObjectParameter("matk", typeof(string));
+    
+            var tendangnhapParameter = tendangnhap != null ?
+                new ObjectParameter("tendangnhap", tendangnhap) :
+                new ObjectParameter("tendangnhap", typeof(string));
+    
+            var matkhauParameter = matkhau != null ?
+                new ObjectParameter("matkhau", matkhau) :
+                new ObjectParameter("matkhau", typeof(string));
+    
+            var tentaikhoanParameter = tentaikhoan != null ?
+                new ObjectParameter("tentaikhoan", tentaikhoan) :
+                new ObjectParameter("tentaikhoan", typeof(string));
+    
+            var ngaysinhParameter = ngaysinh != null ?
+                new ObjectParameter("ngaysinh", ngaysinh) :
+                new ObjectParameter("ngaysinh", typeof(string));
+    
+            var diachiParameter = diachi != null ?
+                new ObjectParameter("diachi", diachi) :
+                new ObjectParameter("diachi", typeof(string));
+    
+            var loaitaikhoanParameter = loaitaikhoan.HasValue ?
+                new ObjectParameter("loaitaikhoan", loaitaikhoan) :
+                new ObjectParameter("loaitaikhoan", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DangKy_TaiKhoan", matkParameter, tendangnhapParameter, matkhauParameter, tentaikhoanParameter, ngaysinhParameter, diachiParameter, loaitaikhoanParameter);
+        }
+    
+        public virtual ObjectResult<DangNhap_TaiKhoan_Result> DangNhap_TaiKhoan(string tendangnhap, string matkhau)
+        {
+            var tendangnhapParameter = tendangnhap != null ?
+                new ObjectParameter("tendangnhap", tendangnhap) :
+                new ObjectParameter("tendangnhap", typeof(string));
+    
+            var matkhauParameter = matkhau != null ?
+                new ObjectParameter("matkhau", matkhau) :
+                new ObjectParameter("matkhau", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<DangNhap_TaiKhoan_Result>("DangNhap_TaiKhoan", tendangnhapParameter, matkhauParameter);
+        }
+    
+        public virtual ObjectResult<GetAll_Sach_Result> GetAll_Sach()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetAll_Sach_Result>("GetAll_Sach");
+        }
     }
 }

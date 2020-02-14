@@ -56,12 +56,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Layout\DanhSachNguoiMuon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,9 +88,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Layout\DanhSachNguoiMuon.resx">
       <DependentUpon>DanhSachNguoiMuon.cs</DependentUpon>
     </EmbeddedResource>
@@ -140,6 +131,10 @@
     <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj">
       <Project>{95a56464-8ab1-4624-b56c-60790c65b23f}</Project>
       <Name>BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{E5E1BB77-CBAC-4764-81EE-A05E33A46811}</Project>
+      <Name>DataAccess</Name>
     </ProjectReference>
     <ProjectReference Include="..\EntityData\EntityData.csproj">
       <Project>{9907b8dd-43ee-4cab-aac1-f3bb5ab4e2c7}</Project>

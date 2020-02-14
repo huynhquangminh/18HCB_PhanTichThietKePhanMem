@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="QuanLyThuVien_PTTKPMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="QuanLyThuVien_PTTKPMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="LoaiSach">
           <Key>
             <PropertyRef Name="id" />
@@ -120,6 +120,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="DangKy_TaiKhoan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="matk" Type="nvarchar" Mode="In" />
+          <Parameter Name="tendangnhap" Type="varchar" Mode="In" />
+          <Parameter Name="matkhau" Type="varchar" Mode="In" />
+          <Parameter Name="tentaikhoan" Type="nvarchar" Mode="In" />
+          <Parameter Name="ngaysinh" Type="varchar" Mode="In" />
+          <Parameter Name="diachi" Type="varchar" Mode="In" />
+          <Parameter Name="loaitaikhoan" Type="int" Mode="In" />
+        </Function>
+        <Function Name="DangNhap_TaiKhoan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tendangnhap" Type="nvarchar" Mode="In" />
+          <Parameter Name="matkhau" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="GetAll_Sach" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="QuanLyThuVien_PTTKPMModelStoreContainer">
           <EntitySet Name="LoaiSach" EntityType="Self.LoaiSach" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LoaiTaiKhoan" EntityType="Self.LoaiTaiKhoan" Schema="dbo" store:Type="Tables" />
@@ -144,8 +158,7 @@
             <End Role="TaiKhoan" EntitySet="TaiKhoan" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="QuanLyThuVien_PTTKPMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -295,7 +308,39 @@
             <End Role="TaiKhoan" EntitySet="TaiKhoans" />
             <End Role="MuonSach" EntitySet="MuonSaches" />
           </AssociationSet>
+          <FunctionImport Name="DangKy_TaiKhoan">
+            <Parameter Name="matk" Mode="In" Type="String" />
+            <Parameter Name="tendangnhap" Mode="In" Type="String" />
+            <Parameter Name="matkhau" Mode="In" Type="String" />
+            <Parameter Name="tentaikhoan" Mode="In" Type="String" />
+            <Parameter Name="ngaysinh" Mode="In" Type="String" />
+            <Parameter Name="diachi" Mode="In" Type="String" />
+            <Parameter Name="loaitaikhoan" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="DangNhap_TaiKhoan" ReturnType="Collection(QuanLyThuVien_PTTKPMModel.DangNhap_TaiKhoan_Result)">
+            <Parameter Name="tendangnhap" Mode="In" Type="String" />
+            <Parameter Name="matkhau" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetAll_Sach" ReturnType="Collection(QuanLyThuVien_PTTKPMModel.GetAll_Sach_Result)" />
         </EntityContainer>
+        <ComplexType Name="DangNhap_TaiKhoan_Result">
+          <Property Type="String" Name="matk" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="tendangnhap" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="matkhau" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="tentaikhoan" Nullable="false" MaxLength="200" />
+          <Property Type="DateTime" Name="ngaysinh" Nullable="false" />
+          <Property Type="String" Name="diachi" Nullable="false" />
+          <Property Type="Int32" Name="loaitaikhoan" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="GetAll_Sach_Result">
+          <Property Type="String" Name="masach" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="tieude" Nullable="false" MaxLength="500" />
+          <Property Type="String" Name="tacgia" Nullable="false" MaxLength="200" />
+          <Property Type="Int32" Name="idloaisach" Nullable="true" />
+          <Property Type="Int32" Name="soluong" Nullable="false" />
+          <Property Type="Boolean" Name="trangthai" Nullable="false" />
+          <Property Type="String" Name="tenloaisach" Nullable="false" MaxLength="200" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -367,6 +412,33 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="DangKy_TaiKhoan" FunctionName="QuanLyThuVien_PTTKPMModel.Store.DangKy_TaiKhoan" />
+          <FunctionImportMapping FunctionImportName="DangNhap_TaiKhoan" FunctionName="QuanLyThuVien_PTTKPMModel.Store.DangNhap_TaiKhoan">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QuanLyThuVien_PTTKPMModel.DangNhap_TaiKhoan_Result">
+                <ScalarProperty Name="matk" ColumnName="matk" />
+                <ScalarProperty Name="tendangnhap" ColumnName="tendangnhap" />
+                <ScalarProperty Name="matkhau" ColumnName="matkhau" />
+                <ScalarProperty Name="tentaikhoan" ColumnName="tentaikhoan" />
+                <ScalarProperty Name="ngaysinh" ColumnName="ngaysinh" />
+                <ScalarProperty Name="diachi" ColumnName="diachi" />
+                <ScalarProperty Name="loaitaikhoan" ColumnName="loaitaikhoan" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetAll_Sach" FunctionName="QuanLyThuVien_PTTKPMModel.Store.GetAll_Sach">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QuanLyThuVien_PTTKPMModel.GetAll_Sach_Result">
+                <ScalarProperty Name="masach" ColumnName="masach" />
+                <ScalarProperty Name="tieude" ColumnName="tieude" />
+                <ScalarProperty Name="tacgia" ColumnName="tacgia" />
+                <ScalarProperty Name="idloaisach" ColumnName="idloaisach" />
+                <ScalarProperty Name="soluong" ColumnName="soluong" />
+                <ScalarProperty Name="trangthai" ColumnName="trangthai" />
+                <ScalarProperty Name="tenloaisach" ColumnName="tenloaisach" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
