@@ -80,9 +80,117 @@ namespace EntityData
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<DangNhap_TaiKhoan_Result>("DangNhap_TaiKhoan", tendangnhapParameter, matkhauParameter);
         }
     
+        public virtual ObjectResult<GetAll_LoaiSach_Result> GetAll_LoaiSach()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetAll_LoaiSach_Result>("GetAll_LoaiSach");
+        }
+    
         public virtual ObjectResult<GetAll_Sach_Result> GetAll_Sach()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetAll_Sach_Result>("GetAll_Sach");
+        }
+    
+        public virtual ObjectResult<sp_Sach_TimKiem_LoaiSach_Result> sp_Sach_TimKiem_LoaiSach(Nullable<int> loaiSach)
+        {
+            var loaiSachParameter = loaiSach.HasValue ?
+                new ObjectParameter("LoaiSach", loaiSach) :
+                new ObjectParameter("LoaiSach", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_Sach_TimKiem_LoaiSach_Result>("sp_Sach_TimKiem_LoaiSach", loaiSachParameter);
+        }
+    
+        public virtual ObjectResult<sp_Sach_TimKiem_MaSach_Result> sp_Sach_TimKiem_MaSach(string maSach)
+        {
+            var maSachParameter = maSach != null ?
+                new ObjectParameter("MaSach", maSach) :
+                new ObjectParameter("MaSach", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_Sach_TimKiem_MaSach_Result>("sp_Sach_TimKiem_MaSach", maSachParameter);
+        }
+    
+        public virtual ObjectResult<sp_Sach_TimKiem_TacGia_Result> sp_Sach_TimKiem_TacGia(string tacGia)
+        {
+            var tacGiaParameter = tacGia != null ?
+                new ObjectParameter("TacGia", tacGia) :
+                new ObjectParameter("TacGia", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_Sach_TimKiem_TacGia_Result>("sp_Sach_TimKiem_TacGia", tacGiaParameter);
+        }
+    
+        public virtual ObjectResult<sp_Sach_TimKiem_TieuDe_Result> sp_Sach_TimKiem_TieuDe(string tieuDe)
+        {
+            var tieuDeParameter = tieuDe != null ?
+                new ObjectParameter("TieuDe", tieuDe) :
+                new ObjectParameter("TieuDe", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_Sach_TimKiem_TieuDe_Result>("sp_Sach_TimKiem_TieuDe", tieuDeParameter);
+        }
+    
+        public virtual int Delete_Sach(string masach)
+        {
+            var masachParameter = masach != null ?
+                new ObjectParameter("masach", masach) :
+                new ObjectParameter("masach", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Delete_Sach", masachParameter);
+        }
+    
+        public virtual int Them_Sach(string masach, string tieude, string tacgia, Nullable<int> idloaisach, Nullable<int> soluong, Nullable<int> trangthai)
+        {
+            var masachParameter = masach != null ?
+                new ObjectParameter("masach", masach) :
+                new ObjectParameter("masach", typeof(string));
+    
+            var tieudeParameter = tieude != null ?
+                new ObjectParameter("tieude", tieude) :
+                new ObjectParameter("tieude", typeof(string));
+    
+            var tacgiaParameter = tacgia != null ?
+                new ObjectParameter("tacgia", tacgia) :
+                new ObjectParameter("tacgia", typeof(string));
+    
+            var idloaisachParameter = idloaisach.HasValue ?
+                new ObjectParameter("idloaisach", idloaisach) :
+                new ObjectParameter("idloaisach", typeof(int));
+    
+            var soluongParameter = soluong.HasValue ?
+                new ObjectParameter("soluong", soluong) :
+                new ObjectParameter("soluong", typeof(int));
+    
+            var trangthaiParameter = trangthai.HasValue ?
+                new ObjectParameter("trangthai", trangthai) :
+                new ObjectParameter("trangthai", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Them_Sach", masachParameter, tieudeParameter, tacgiaParameter, idloaisachParameter, soluongParameter, trangthaiParameter);
+        }
+    
+        public virtual int Update_Sach(string masach, string tieude, string tacgia, Nullable<int> idloaisach, Nullable<int> soluong, Nullable<int> trangthai)
+        {
+            var masachParameter = masach != null ?
+                new ObjectParameter("masach", masach) :
+                new ObjectParameter("masach", typeof(string));
+    
+            var tieudeParameter = tieude != null ?
+                new ObjectParameter("tieude", tieude) :
+                new ObjectParameter("tieude", typeof(string));
+    
+            var tacgiaParameter = tacgia != null ?
+                new ObjectParameter("tacgia", tacgia) :
+                new ObjectParameter("tacgia", typeof(string));
+    
+            var idloaisachParameter = idloaisach.HasValue ?
+                new ObjectParameter("idloaisach", idloaisach) :
+                new ObjectParameter("idloaisach", typeof(int));
+    
+            var soluongParameter = soluong.HasValue ?
+                new ObjectParameter("soluong", soluong) :
+                new ObjectParameter("soluong", typeof(int));
+    
+            var trangthaiParameter = trangthai.HasValue ?
+                new ObjectParameter("trangthai", trangthai) :
+                new ObjectParameter("trangthai", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Update_Sach", masachParameter, tieudeParameter, tacgiaParameter, idloaisachParameter, soluongParameter, trangthaiParameter);
         }
     }
 }

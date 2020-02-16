@@ -28,36 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabManager = new System.Windows.Forms.TabControl();
             this.tabQuanlysach = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataSach_QuanLySach = new System.Windows.Forms.DataGridView();
+            this.masachDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tieudeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tacgiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soluongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.trangthaiDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.tenloaisachDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idloaisach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.getAllSachResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.button21 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.numQLS_thongtin_soluong = new System.Windows.Forms.NumericUpDown();
+            this.btnQLS_thongtinmuonsach = new System.Windows.Forms.Button();
+            this.btnQLS_xoa = new System.Windows.Forms.Button();
+            this.btnQLS_chinhsua = new System.Windows.Forms.Button();
+            this.btnQLS_themmoi = new System.Windows.Forms.Button();
+            this.cbbQLS_thongtin_loaisach = new System.Windows.Forms.ComboBox();
+            this.txtQLS_thongtin_tacgia = new System.Windows.Forms.TextBox();
+            this.txtQLS_thongtin_masach = new System.Windows.Forms.TextBox();
+            this.txtQLS_thongtin_tieude = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.btnQLS_timkiem_tacgia = new System.Windows.Forms.Button();
+            this.btnQLS_timkiem_loaisach = new System.Windows.Forms.Button();
+            this.btnQLS_timkiem_masach = new System.Windows.Forms.Button();
+            this.btnQLS_timkiem_tieude = new System.Windows.Forms.Button();
+            this.cbbQLS_timkiem_loaisach = new System.Windows.Forms.ComboBox();
+            this.txtQLS_timkiem_tacgia = new System.Windows.Forms.TextBox();
+            this.txtQLS_timkiem_masach = new System.Windows.Forms.TextBox();
+            this.txtQLS_timkiem_tieude = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -148,9 +157,10 @@
             this.tabManager.SuspendLayout();
             this.tabQuanlysach.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSach_QuanLySach)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getAllSachResultBindingSource)).BeginInit();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numQLS_thongtin_soluong)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.tabQuanlytaikhoan.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -176,7 +186,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(882, 527);
+            this.panel1.Size = new System.Drawing.Size(877, 527);
             this.panel1.TabIndex = 0;
             // 
             // tabManager
@@ -206,7 +216,7 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.dataGridView2);
+            this.panel2.Controls.Add(this.dataSach_QuanLySach);
             this.panel2.Controls.Add(this.groupBox5);
             this.panel2.Controls.Add(this.groupBox4);
             this.panel2.Controls.Add(this.groupBox3);
@@ -215,25 +225,93 @@
             this.panel2.Size = new System.Drawing.Size(830, 485);
             this.panel2.TabIndex = 0;
             // 
-            // dataGridView2
+            // dataSach_QuanLySach
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(12, 174);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(724, 295);
-            this.dataGridView2.TabIndex = 1;
+            this.dataSach_QuanLySach.AutoGenerateColumns = false;
+            this.dataSach_QuanLySach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataSach_QuanLySach.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.masachDataGridViewTextBoxColumn,
+            this.tieudeDataGridViewTextBoxColumn,
+            this.tacgiaDataGridViewTextBoxColumn,
+            this.soluongDataGridViewTextBoxColumn,
+            this.trangthaiDataGridViewCheckBoxColumn,
+            this.tenloaisachDataGridViewTextBoxColumn,
+            this.idloaisach});
+            this.dataSach_QuanLySach.DataSource = this.getAllSachResultBindingSource;
+            this.dataSach_QuanLySach.Location = new System.Drawing.Point(12, 174);
+            this.dataSach_QuanLySach.Name = "dataSach_QuanLySach";
+            this.dataSach_QuanLySach.Size = new System.Drawing.Size(724, 295);
+            this.dataSach_QuanLySach.TabIndex = 1;
+            this.dataSach_QuanLySach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataSach_QuanLySach_CellContentClick);
+            // 
+            // masachDataGridViewTextBoxColumn
+            // 
+            this.masachDataGridViewTextBoxColumn.DataPropertyName = "masach";
+            this.masachDataGridViewTextBoxColumn.HeaderText = "Mã sách";
+            this.masachDataGridViewTextBoxColumn.Name = "masachDataGridViewTextBoxColumn";
+            this.masachDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tieudeDataGridViewTextBoxColumn
+            // 
+            this.tieudeDataGridViewTextBoxColumn.DataPropertyName = "tieude";
+            this.tieudeDataGridViewTextBoxColumn.FillWeight = 150F;
+            this.tieudeDataGridViewTextBoxColumn.HeaderText = "Tiêu đề";
+            this.tieudeDataGridViewTextBoxColumn.MaxInputLength = 42767;
+            this.tieudeDataGridViewTextBoxColumn.Name = "tieudeDataGridViewTextBoxColumn";
+            this.tieudeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tieudeDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // tacgiaDataGridViewTextBoxColumn
+            // 
+            this.tacgiaDataGridViewTextBoxColumn.DataPropertyName = "tacgia";
+            this.tacgiaDataGridViewTextBoxColumn.HeaderText = "Tác giả";
+            this.tacgiaDataGridViewTextBoxColumn.Name = "tacgiaDataGridViewTextBoxColumn";
+            this.tacgiaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tacgiaDataGridViewTextBoxColumn.Width = 130;
+            // 
+            // soluongDataGridViewTextBoxColumn
+            // 
+            this.soluongDataGridViewTextBoxColumn.DataPropertyName = "soluong";
+            this.soluongDataGridViewTextBoxColumn.HeaderText = "Số lượng";
+            this.soluongDataGridViewTextBoxColumn.Name = "soluongDataGridViewTextBoxColumn";
+            this.soluongDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // trangthaiDataGridViewCheckBoxColumn
+            // 
+            this.trangthaiDataGridViewCheckBoxColumn.DataPropertyName = "trangthai";
+            this.trangthaiDataGridViewCheckBoxColumn.HeaderText = "Trạng thái ";
+            this.trangthaiDataGridViewCheckBoxColumn.Name = "trangthaiDataGridViewCheckBoxColumn";
+            this.trangthaiDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // tenloaisachDataGridViewTextBoxColumn
+            // 
+            this.tenloaisachDataGridViewTextBoxColumn.DataPropertyName = "tenloaisach";
+            this.tenloaisachDataGridViewTextBoxColumn.HeaderText = "Loại sách";
+            this.tenloaisachDataGridViewTextBoxColumn.Name = "tenloaisachDataGridViewTextBoxColumn";
+            this.tenloaisachDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idloaisach
+            // 
+            this.idloaisach.DataPropertyName = "idloaisach";
+            this.idloaisach.HeaderText = "idloaisach";
+            this.idloaisach.Name = "idloaisach";
+            this.idloaisach.Visible = false;
+            // 
+            // getAllSachResultBindingSource
+            // 
+            this.getAllSachResultBindingSource.DataSource = typeof(EntityData.GetAll_Sach_Result);
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.numericUpDown3);
-            this.groupBox5.Controls.Add(this.button21);
-            this.groupBox5.Controls.Add(this.button13);
-            this.groupBox5.Controls.Add(this.button15);
-            this.groupBox5.Controls.Add(this.button16);
-            this.groupBox5.Controls.Add(this.comboBox2);
-            this.groupBox5.Controls.Add(this.textBox10);
-            this.groupBox5.Controls.Add(this.textBox11);
-            this.groupBox5.Controls.Add(this.textBox12);
+            this.groupBox5.Controls.Add(this.numQLS_thongtin_soluong);
+            this.groupBox5.Controls.Add(this.btnQLS_thongtinmuonsach);
+            this.groupBox5.Controls.Add(this.btnQLS_xoa);
+            this.groupBox5.Controls.Add(this.btnQLS_chinhsua);
+            this.groupBox5.Controls.Add(this.btnQLS_themmoi);
+            this.groupBox5.Controls.Add(this.cbbQLS_thongtin_loaisach);
+            this.groupBox5.Controls.Add(this.txtQLS_thongtin_tacgia);
+            this.groupBox5.Controls.Add(this.txtQLS_thongtin_masach);
+            this.groupBox5.Controls.Add(this.txtQLS_thongtin_tieude);
             this.groupBox5.Controls.Add(this.label19);
             this.groupBox5.Controls.Add(this.label15);
             this.groupBox5.Controls.Add(this.label16);
@@ -246,77 +324,82 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Thông tin sách";
             // 
-            // numericUpDown3
+            // numQLS_thongtin_soluong
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(75, 122);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(178, 20);
-            this.numericUpDown3.TabIndex = 4;
+            this.numQLS_thongtin_soluong.Location = new System.Drawing.Point(75, 122);
+            this.numQLS_thongtin_soluong.Name = "numQLS_thongtin_soluong";
+            this.numQLS_thongtin_soluong.Size = new System.Drawing.Size(178, 20);
+            this.numQLS_thongtin_soluong.TabIndex = 4;
             // 
-            // button21
+            // btnQLS_thongtinmuonsach
             // 
-            this.button21.Location = new System.Drawing.Point(268, 109);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(75, 38);
-            this.button21.TabIndex = 3;
-            this.button21.Text = "Thông tin người mượn";
-            this.button21.UseVisualStyleBackColor = true;
+            this.btnQLS_thongtinmuonsach.Location = new System.Drawing.Point(268, 109);
+            this.btnQLS_thongtinmuonsach.Name = "btnQLS_thongtinmuonsach";
+            this.btnQLS_thongtinmuonsach.Size = new System.Drawing.Size(75, 38);
+            this.btnQLS_thongtinmuonsach.TabIndex = 3;
+            this.btnQLS_thongtinmuonsach.Text = "Thông tin người mượn";
+            this.btnQLS_thongtinmuonsach.UseVisualStyleBackColor = true;
+            this.btnQLS_thongtinmuonsach.Click += new System.EventHandler(this.btnQLS_thongtinmuonsach_Click);
             // 
-            // button13
+            // btnQLS_xoa
             // 
-            this.button13.Location = new System.Drawing.Point(268, 77);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(75, 23);
-            this.button13.TabIndex = 3;
-            this.button13.Text = "Xóa";
-            this.button13.UseVisualStyleBackColor = true;
+            this.btnQLS_xoa.Location = new System.Drawing.Point(268, 77);
+            this.btnQLS_xoa.Name = "btnQLS_xoa";
+            this.btnQLS_xoa.Size = new System.Drawing.Size(75, 23);
+            this.btnQLS_xoa.TabIndex = 3;
+            this.btnQLS_xoa.Text = "Xóa";
+            this.btnQLS_xoa.UseVisualStyleBackColor = true;
+            this.btnQLS_xoa.Click += new System.EventHandler(this.btnQLS_xoa_Click);
             // 
-            // button15
+            // btnQLS_chinhsua
             // 
-            this.button15.Location = new System.Drawing.Point(268, 48);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(75, 23);
-            this.button15.TabIndex = 3;
-            this.button15.Text = "Chỉnh sửa";
-            this.button15.UseVisualStyleBackColor = true;
+            this.btnQLS_chinhsua.Location = new System.Drawing.Point(268, 48);
+            this.btnQLS_chinhsua.Name = "btnQLS_chinhsua";
+            this.btnQLS_chinhsua.Size = new System.Drawing.Size(75, 23);
+            this.btnQLS_chinhsua.TabIndex = 3;
+            this.btnQLS_chinhsua.Text = "Chỉnh sửa";
+            this.btnQLS_chinhsua.UseVisualStyleBackColor = true;
+            this.btnQLS_chinhsua.Click += new System.EventHandler(this.btnQLS_chinhsua_Click);
             // 
-            // button16
+            // btnQLS_themmoi
             // 
-            this.button16.Location = new System.Drawing.Point(268, 17);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(75, 23);
-            this.button16.TabIndex = 3;
-            this.button16.Text = "Thêm mới";
-            this.button16.UseVisualStyleBackColor = true;
+            this.btnQLS_themmoi.Location = new System.Drawing.Point(268, 17);
+            this.btnQLS_themmoi.Name = "btnQLS_themmoi";
+            this.btnQLS_themmoi.Size = new System.Drawing.Size(75, 23);
+            this.btnQLS_themmoi.TabIndex = 3;
+            this.btnQLS_themmoi.Text = "Thêm mới";
+            this.btnQLS_themmoi.UseVisualStyleBackColor = true;
+            this.btnQLS_themmoi.Click += new System.EventHandler(this.btnQLS_themmoi_Click);
             // 
-            // comboBox2
+            // cbbQLS_thongtin_loaisach
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(76, 97);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(177, 21);
-            this.comboBox2.TabIndex = 2;
+            this.cbbQLS_thongtin_loaisach.FormattingEnabled = true;
+            this.cbbQLS_thongtin_loaisach.Location = new System.Drawing.Point(76, 97);
+            this.cbbQLS_thongtin_loaisach.Name = "cbbQLS_thongtin_loaisach";
+            this.cbbQLS_thongtin_loaisach.Size = new System.Drawing.Size(177, 21);
+            this.cbbQLS_thongtin_loaisach.TabIndex = 2;
             // 
-            // textBox10
+            // txtQLS_thongtin_tacgia
             // 
-            this.textBox10.Location = new System.Drawing.Point(75, 71);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(175, 20);
-            this.textBox10.TabIndex = 1;
+            this.txtQLS_thongtin_tacgia.Location = new System.Drawing.Point(75, 71);
+            this.txtQLS_thongtin_tacgia.Name = "txtQLS_thongtin_tacgia";
+            this.txtQLS_thongtin_tacgia.Size = new System.Drawing.Size(175, 20);
+            this.txtQLS_thongtin_tacgia.TabIndex = 1;
             // 
-            // textBox11
+            // txtQLS_thongtin_masach
             // 
-            this.textBox11.Location = new System.Drawing.Point(75, 45);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(175, 20);
-            this.textBox11.TabIndex = 1;
+            this.txtQLS_thongtin_masach.Location = new System.Drawing.Point(75, 45);
+            this.txtQLS_thongtin_masach.Name = "txtQLS_thongtin_masach";
+            this.txtQLS_thongtin_masach.ReadOnly = true;
+            this.txtQLS_thongtin_masach.Size = new System.Drawing.Size(175, 20);
+            this.txtQLS_thongtin_masach.TabIndex = 1;
             // 
-            // textBox12
+            // txtQLS_thongtin_tieude
             // 
-            this.textBox12.Location = new System.Drawing.Point(75, 19);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(175, 20);
-            this.textBox12.TabIndex = 1;
+            this.txtQLS_thongtin_tieude.Location = new System.Drawing.Point(75, 19);
+            this.txtQLS_thongtin_tieude.Name = "txtQLS_thongtin_tieude";
+            this.txtQLS_thongtin_tieude.Size = new System.Drawing.Size(175, 20);
+            this.txtQLS_thongtin_tieude.TabIndex = 1;
             // 
             // label19
             // 
@@ -365,14 +448,14 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.button12);
-            this.groupBox4.Controls.Add(this.button11);
-            this.groupBox4.Controls.Add(this.button2);
-            this.groupBox4.Controls.Add(this.button1);
-            this.groupBox4.Controls.Add(this.comboBox1);
-            this.groupBox4.Controls.Add(this.textBox9);
-            this.groupBox4.Controls.Add(this.textBox8);
-            this.groupBox4.Controls.Add(this.textBox7);
+            this.groupBox4.Controls.Add(this.btnQLS_timkiem_tacgia);
+            this.groupBox4.Controls.Add(this.btnQLS_timkiem_loaisach);
+            this.groupBox4.Controls.Add(this.btnQLS_timkiem_masach);
+            this.groupBox4.Controls.Add(this.btnQLS_timkiem_tieude);
+            this.groupBox4.Controls.Add(this.cbbQLS_timkiem_loaisach);
+            this.groupBox4.Controls.Add(this.txtQLS_timkiem_tacgia);
+            this.groupBox4.Controls.Add(this.txtQLS_timkiem_masach);
+            this.groupBox4.Controls.Add(this.txtQLS_timkiem_tieude);
             this.groupBox4.Controls.Add(this.label14);
             this.groupBox4.Controls.Add(this.label13);
             this.groupBox4.Controls.Add(this.label12);
@@ -384,70 +467,74 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Thông tin tìm kiếm";
             // 
-            // button12
+            // btnQLS_timkiem_tacgia
             // 
-            this.button12.Location = new System.Drawing.Point(259, 85);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(75, 23);
-            this.button12.TabIndex = 3;
-            this.button12.Text = "Tìm kiếm";
-            this.button12.UseVisualStyleBackColor = true;
+            this.btnQLS_timkiem_tacgia.Location = new System.Drawing.Point(259, 85);
+            this.btnQLS_timkiem_tacgia.Name = "btnQLS_timkiem_tacgia";
+            this.btnQLS_timkiem_tacgia.Size = new System.Drawing.Size(75, 23);
+            this.btnQLS_timkiem_tacgia.TabIndex = 3;
+            this.btnQLS_timkiem_tacgia.Text = "Tìm kiếm";
+            this.btnQLS_timkiem_tacgia.UseVisualStyleBackColor = true;
+            this.btnQLS_timkiem_tacgia.Click += new System.EventHandler(this.btnQLS_timkiem_tacgia_Click);
             // 
-            // button11
+            // btnQLS_timkiem_loaisach
             // 
-            this.button11.Location = new System.Drawing.Point(259, 112);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(75, 23);
-            this.button11.TabIndex = 3;
-            this.button11.Text = "Tìm kiếm";
-            this.button11.UseVisualStyleBackColor = true;
+            this.btnQLS_timkiem_loaisach.Location = new System.Drawing.Point(259, 112);
+            this.btnQLS_timkiem_loaisach.Name = "btnQLS_timkiem_loaisach";
+            this.btnQLS_timkiem_loaisach.Size = new System.Drawing.Size(75, 23);
+            this.btnQLS_timkiem_loaisach.TabIndex = 3;
+            this.btnQLS_timkiem_loaisach.Text = "Tìm kiếm";
+            this.btnQLS_timkiem_loaisach.UseVisualStyleBackColor = true;
+            this.btnQLS_timkiem_loaisach.Click += new System.EventHandler(this.btnQLS_timkiem_loaisach_Click);
             // 
-            // button2
+            // btnQLS_timkiem_masach
             // 
-            this.button2.Location = new System.Drawing.Point(259, 57);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Tìm kiếm";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnQLS_timkiem_masach.Location = new System.Drawing.Point(259, 57);
+            this.btnQLS_timkiem_masach.Name = "btnQLS_timkiem_masach";
+            this.btnQLS_timkiem_masach.Size = new System.Drawing.Size(75, 23);
+            this.btnQLS_timkiem_masach.TabIndex = 3;
+            this.btnQLS_timkiem_masach.Text = "Tìm kiếm";
+            this.btnQLS_timkiem_masach.UseVisualStyleBackColor = true;
+            this.btnQLS_timkiem_masach.Click += new System.EventHandler(this.btnQLS_timkiem_masach_Click);
             // 
-            // button1
+            // btnQLS_timkiem_tieude
             // 
-            this.button1.Location = new System.Drawing.Point(257, 28);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Tìm kiếm";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnQLS_timkiem_tieude.Location = new System.Drawing.Point(257, 28);
+            this.btnQLS_timkiem_tieude.Name = "btnQLS_timkiem_tieude";
+            this.btnQLS_timkiem_tieude.Size = new System.Drawing.Size(75, 23);
+            this.btnQLS_timkiem_tieude.TabIndex = 3;
+            this.btnQLS_timkiem_tieude.Text = "Tìm kiếm";
+            this.btnQLS_timkiem_tieude.UseVisualStyleBackColor = true;
+            this.btnQLS_timkiem_tieude.Click += new System.EventHandler(this.btnQLS_timkiem_tieude_Click);
             // 
-            // comboBox1
+            // cbbQLS_timkiem_loaisach
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(75, 111);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(177, 21);
-            this.comboBox1.TabIndex = 2;
+            this.cbbQLS_timkiem_loaisach.FormattingEnabled = true;
+            this.cbbQLS_timkiem_loaisach.Location = new System.Drawing.Point(75, 111);
+            this.cbbQLS_timkiem_loaisach.Name = "cbbQLS_timkiem_loaisach";
+            this.cbbQLS_timkiem_loaisach.Size = new System.Drawing.Size(177, 21);
+            this.cbbQLS_timkiem_loaisach.TabIndex = 2;
             // 
-            // textBox9
+            // txtQLS_timkiem_tacgia
             // 
-            this.textBox9.Location = new System.Drawing.Point(75, 85);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(175, 20);
-            this.textBox9.TabIndex = 1;
+            this.txtQLS_timkiem_tacgia.Location = new System.Drawing.Point(75, 85);
+            this.txtQLS_timkiem_tacgia.Name = "txtQLS_timkiem_tacgia";
+            this.txtQLS_timkiem_tacgia.Size = new System.Drawing.Size(175, 20);
+            this.txtQLS_timkiem_tacgia.TabIndex = 1;
             // 
-            // textBox8
+            // txtQLS_timkiem_masach
             // 
-            this.textBox8.Location = new System.Drawing.Point(75, 57);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(175, 20);
-            this.textBox8.TabIndex = 1;
+            this.txtQLS_timkiem_masach.Location = new System.Drawing.Point(75, 57);
+            this.txtQLS_timkiem_masach.Name = "txtQLS_timkiem_masach";
+            this.txtQLS_timkiem_masach.Size = new System.Drawing.Size(175, 20);
+            this.txtQLS_timkiem_masach.TabIndex = 1;
             // 
-            // textBox7
+            // txtQLS_timkiem_tieude
             // 
-            this.textBox7.Location = new System.Drawing.Point(75, 32);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(175, 20);
-            this.textBox7.TabIndex = 1;
+            this.txtQLS_timkiem_tieude.Location = new System.Drawing.Point(75, 32);
+            this.txtQLS_timkiem_tieude.Name = "txtQLS_timkiem_tieude";
+            this.txtQLS_timkiem_tieude.Size = new System.Drawing.Size(175, 20);
+            this.txtQLS_timkiem_tieude.TabIndex = 1;
             // 
             // label14
             // 
@@ -1265,7 +1352,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(882, 527);
+            this.ClientSize = new System.Drawing.Size(877, 527);
             this.Controls.Add(this.panel1);
             this.Name = "MainForm";
             this.Text = "Main ";
@@ -1274,10 +1361,11 @@
             this.tabManager.ResumeLayout(false);
             this.tabQuanlysach.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSach_QuanLySach)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getAllSachResultBindingSource)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numQLS_thongtin_soluong)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.tabQuanlytaikhoan.ResumeLayout(false);
@@ -1346,36 +1434,36 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dataSach_QuanLySach;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.NumericUpDown numQLS_thongtin_soluong;
+        private System.Windows.Forms.Button btnQLS_xoa;
+        private System.Windows.Forms.Button btnQLS_chinhsua;
+        private System.Windows.Forms.Button btnQLS_themmoi;
+        private System.Windows.Forms.ComboBox cbbQLS_thongtin_loaisach;
+        private System.Windows.Forms.TextBox txtQLS_thongtin_tacgia;
+        private System.Windows.Forms.TextBox txtQLS_thongtin_masach;
+        private System.Windows.Forms.TextBox txtQLS_thongtin_tieude;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Button btnQLS_timkiem_tacgia;
+        private System.Windows.Forms.Button btnQLS_timkiem_loaisach;
+        private System.Windows.Forms.Button btnQLS_timkiem_masach;
+        private System.Windows.Forms.Button btnQLS_timkiem_tieude;
+        private System.Windows.Forms.ComboBox cbbQLS_timkiem_loaisach;
+        private System.Windows.Forms.TextBox txtQLS_timkiem_tacgia;
+        private System.Windows.Forms.TextBox txtQLS_timkiem_masach;
+        private System.Windows.Forms.TextBox txtQLS_timkiem_tieude;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button21;
+        private System.Windows.Forms.Button btnQLS_thongtinmuonsach;
         private System.Windows.Forms.Button button20;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView dataGridView3;
@@ -1424,5 +1512,13 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.BindingSource getAllSachResultBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn masachDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tieudeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tacgiaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn soluongDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn trangthaiDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenloaisachDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idloaisach;
     }
 }

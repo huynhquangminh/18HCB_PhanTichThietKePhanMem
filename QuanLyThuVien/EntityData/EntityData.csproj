@@ -56,6 +56,9 @@
     <Compile Include="DangNhap_TaiKhoan_Result.cs">
       <DependentUpon>ModelData.tt</DependentUpon>
     </Compile>
+    <Compile Include="GetAll_LoaiSach_Result.cs">
+      <DependentUpon>ModelData.tt</DependentUpon>
+    </Compile>
     <Compile Include="GetAll_Sach_Result.cs">
       <DependentUpon>ModelData.tt</DependentUpon>
     </Compile>
@@ -85,6 +88,18 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sach.cs">
+      <DependentUpon>ModelData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_Sach_TimKiem_LoaiSach_Result.cs">
+      <DependentUpon>ModelData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_Sach_TimKiem_MaSach_Result.cs">
+      <DependentUpon>ModelData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_Sach_TimKiem_TacGia_Result.cs">
+      <DependentUpon>ModelData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_Sach_TimKiem_TieuDe_Result.cs">
       <DependentUpon>ModelData.tt</DependentUpon>
     </Compile>
     <Compile Include="sysdiagram.cs">
