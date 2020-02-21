@@ -90,6 +90,84 @@ namespace EntityData
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetAll_Sach_Result>("GetAll_Sach");
         }
     
+        public virtual ObjectResult<MuonSach_DanhSachMuonSachAll_Result> MuonSach_DanhSachMuonSachAll()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<MuonSach_DanhSachMuonSachAll_Result>("MuonSach_DanhSachMuonSachAll");
+        }
+    
+        public virtual ObjectResult<MuonSach_DsTaiKhoanMuonSach_Result> MuonSach_DsTaiKhoanMuonSach(string masach)
+        {
+            var masachParameter = masach != null ?
+                new ObjectParameter("masach", masach) :
+                new ObjectParameter("masach", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<MuonSach_DsTaiKhoanMuonSach_Result>("MuonSach_DsTaiKhoanMuonSach", masachParameter);
+        }
+    
+        public virtual ObjectResult<MuonSach_TimKiemTaiKhoanMuonSach_Result> MuonSach_TimKiemTaiKhoanMuonSach(string masach, string matk)
+        {
+            var masachParameter = masach != null ?
+                new ObjectParameter("masach", masach) :
+                new ObjectParameter("masach", typeof(string));
+    
+            var matkParameter = matk != null ?
+                new ObjectParameter("matk", matk) :
+                new ObjectParameter("matk", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<MuonSach_TimKiemTaiKhoanMuonSach_Result>("MuonSach_TimKiemTaiKhoanMuonSach", masachParameter, matkParameter);
+        }
+    
+        public virtual int sp_MuonSach_Them(string matk, string masach, string ngaymuon, string ngaytra, Nullable<int> phuthu, Nullable<bool> trangthai)
+        {
+            var matkParameter = matk != null ?
+                new ObjectParameter("matk", matk) :
+                new ObjectParameter("matk", typeof(string));
+    
+            var masachParameter = masach != null ?
+                new ObjectParameter("masach", masach) :
+                new ObjectParameter("masach", typeof(string));
+    
+            var ngaymuonParameter = ngaymuon != null ?
+                new ObjectParameter("ngaymuon", ngaymuon) :
+                new ObjectParameter("ngaymuon", typeof(string));
+    
+            var ngaytraParameter = ngaytra != null ?
+                new ObjectParameter("ngaytra", ngaytra) :
+                new ObjectParameter("ngaytra", typeof(string));
+    
+            var phuthuParameter = phuthu.HasValue ?
+                new ObjectParameter("phuthu", phuthu) :
+                new ObjectParameter("phuthu", typeof(int));
+    
+            var trangthaiParameter = trangthai.HasValue ?
+                new ObjectParameter("trangthai", trangthai) :
+                new ObjectParameter("trangthai", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_MuonSach_Them", matkParameter, masachParameter, ngaymuonParameter, ngaytraParameter, phuthuParameter, trangthaiParameter);
+        }
+    
+        public virtual ObjectResult<sp_MuonSach_TimKiemTaiKhoanMuonSach_Result> sp_MuonSach_TimKiemTaiKhoanMuonSach(string matk, string masach)
+        {
+            var matkParameter = matk != null ?
+                new ObjectParameter("matk", matk) :
+                new ObjectParameter("matk", typeof(string));
+    
+            var masachParameter = masach != null ?
+                new ObjectParameter("masach", masach) :
+                new ObjectParameter("masach", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_MuonSach_TimKiemTaiKhoanMuonSach_Result>("sp_MuonSach_TimKiemTaiKhoanMuonSach", matkParameter, masachParameter);
+        }
+    
+        public virtual ObjectResult<sp_MuonSach_XemTatCaSachMuon_TaiKhoan_Result> sp_MuonSach_XemTatCaSachMuon_TaiKhoan(string matk)
+        {
+            var matkParameter = matk != null ?
+                new ObjectParameter("matk", matk) :
+                new ObjectParameter("matk", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_MuonSach_XemTatCaSachMuon_TaiKhoan_Result>("sp_MuonSach_XemTatCaSachMuon_TaiKhoan", matkParameter);
+        }
+    
         public virtual ObjectResult<sp_Sach_TimKiem_LoaiSach_Result> sp_Sach_TimKiem_LoaiSach(Nullable<int> loaiSach)
         {
             var loaiSachParameter = loaiSach.HasValue ?
@@ -124,15 +202,6 @@ namespace EntityData
                 new ObjectParameter("TieuDe", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_Sach_TimKiem_TieuDe_Result>("sp_Sach_TimKiem_TieuDe", tieuDeParameter);
-        }
-    
-        public virtual int Delete_Sach(string masach)
-        {
-            var masachParameter = masach != null ?
-                new ObjectParameter("masach", masach) :
-                new ObjectParameter("masach", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Delete_Sach", masachParameter);
         }
     
         public virtual int Them_Sach(string masach, string tieude, string tacgia, Nullable<int> idloaisach, Nullable<int> soluong, Nullable<int> trangthai)
@@ -191,6 +260,32 @@ namespace EntityData
                 new ObjectParameter("trangthai", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Update_Sach", masachParameter, tieudeParameter, tacgiaParameter, idloaisachParameter, soluongParameter, trangthaiParameter);
+        }
+    
+        public virtual int Delete_Sach(string masach)
+        {
+            var masachParameter = masach != null ?
+                new ObjectParameter("masach", masach) :
+                new ObjectParameter("masach", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Delete_Sach", masachParameter);
+        }
+    
+        public virtual int sp_MuonSach_TraSach(Nullable<int> id, string ngaytra, Nullable<bool> trangthai)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
+    
+            var ngaytraParameter = ngaytra != null ?
+                new ObjectParameter("ngaytra", ngaytra) :
+                new ObjectParameter("ngaytra", typeof(string));
+    
+            var trangthaiParameter = trangthai.HasValue ?
+                new ObjectParameter("trangthai", trangthai) :
+                new ObjectParameter("trangthai", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_MuonSach_TraSach", idParameter, ngaytraParameter, trangthaiParameter);
         }
     }
 }

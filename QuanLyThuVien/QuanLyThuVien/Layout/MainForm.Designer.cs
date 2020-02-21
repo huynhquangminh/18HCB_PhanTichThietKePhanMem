@@ -35,14 +35,7 @@
             this.tabQuanlysach = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataSach_QuanLySach = new System.Windows.Forms.DataGridView();
-            this.masachDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tieudeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tacgiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.soluongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.trangthaiDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.tenloaisachDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idloaisach = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.getAllSachResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.numQLS_thongtin_soluong = new System.Windows.Forms.NumericUpDown();
             this.btnQLS_thongtinmuonsach = new System.Windows.Forms.Button();
@@ -141,24 +134,37 @@
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.dataMuonSach = new System.Windows.Forms.DataGridView();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.button25 = new System.Windows.Forms.Button();
-            this.button24 = new System.Windows.Forms.Button();
-            this.textBox19 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.btnMuonSach_trasach = new System.Windows.Forms.Button();
+            this.btnMuonSach_muonsach = new System.Windows.Forms.Button();
+            this.txtMuonSach_matk = new System.Windows.Forms.TextBox();
+            this.txtMuonSach_masach = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.masachDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tieudeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tacgiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soluongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.trangthaiDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.tenloaisachDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.getAllSachResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.muonSachDanhSachMuonSachAllResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.matkDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tentaikhoanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.masachDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tieudeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngaymuonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngaytraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phuthuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.trangthaiDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel1.SuspendLayout();
             this.tabManager.SuspendLayout();
             this.tabQuanlysach.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSach_QuanLySach)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.getAllSachResultBindingSource)).BeginInit();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numQLS_thongtin_soluong)).BeginInit();
             this.groupBox4.SuspendLayout();
@@ -176,8 +182,10 @@
             this.panel4.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataMuonSach)).BeginInit();
             this.groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.getAllSachResultBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.muonSachDanhSachMuonSachAllResultBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -244,62 +252,12 @@
             this.dataSach_QuanLySach.TabIndex = 1;
             this.dataSach_QuanLySach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataSach_QuanLySach_CellContentClick);
             // 
-            // masachDataGridViewTextBoxColumn
-            // 
-            this.masachDataGridViewTextBoxColumn.DataPropertyName = "masach";
-            this.masachDataGridViewTextBoxColumn.HeaderText = "Mã sách";
-            this.masachDataGridViewTextBoxColumn.Name = "masachDataGridViewTextBoxColumn";
-            this.masachDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tieudeDataGridViewTextBoxColumn
-            // 
-            this.tieudeDataGridViewTextBoxColumn.DataPropertyName = "tieude";
-            this.tieudeDataGridViewTextBoxColumn.FillWeight = 150F;
-            this.tieudeDataGridViewTextBoxColumn.HeaderText = "Tiêu đề";
-            this.tieudeDataGridViewTextBoxColumn.MaxInputLength = 42767;
-            this.tieudeDataGridViewTextBoxColumn.Name = "tieudeDataGridViewTextBoxColumn";
-            this.tieudeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tieudeDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // tacgiaDataGridViewTextBoxColumn
-            // 
-            this.tacgiaDataGridViewTextBoxColumn.DataPropertyName = "tacgia";
-            this.tacgiaDataGridViewTextBoxColumn.HeaderText = "Tác giả";
-            this.tacgiaDataGridViewTextBoxColumn.Name = "tacgiaDataGridViewTextBoxColumn";
-            this.tacgiaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tacgiaDataGridViewTextBoxColumn.Width = 130;
-            // 
-            // soluongDataGridViewTextBoxColumn
-            // 
-            this.soluongDataGridViewTextBoxColumn.DataPropertyName = "soluong";
-            this.soluongDataGridViewTextBoxColumn.HeaderText = "Số lượng";
-            this.soluongDataGridViewTextBoxColumn.Name = "soluongDataGridViewTextBoxColumn";
-            this.soluongDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // trangthaiDataGridViewCheckBoxColumn
-            // 
-            this.trangthaiDataGridViewCheckBoxColumn.DataPropertyName = "trangthai";
-            this.trangthaiDataGridViewCheckBoxColumn.HeaderText = "Trạng thái ";
-            this.trangthaiDataGridViewCheckBoxColumn.Name = "trangthaiDataGridViewCheckBoxColumn";
-            this.trangthaiDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // tenloaisachDataGridViewTextBoxColumn
-            // 
-            this.tenloaisachDataGridViewTextBoxColumn.DataPropertyName = "tenloaisach";
-            this.tenloaisachDataGridViewTextBoxColumn.HeaderText = "Loại sách";
-            this.tenloaisachDataGridViewTextBoxColumn.Name = "tenloaisachDataGridViewTextBoxColumn";
-            this.tenloaisachDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // idloaisach
             // 
             this.idloaisach.DataPropertyName = "idloaisach";
             this.idloaisach.HeaderText = "idloaisach";
             this.idloaisach.Name = "idloaisach";
             this.idloaisach.Visible = false;
-            // 
-            // getAllSachResultBindingSource
-            // 
-            this.getAllSachResultBindingSource.DataSource = typeof(EntityData.GetAll_Sach_Result);
             // 
             // groupBox5
             // 
@@ -1100,6 +1058,7 @@
             this.panel4.Controls.Add(this.groupBox8);
             this.panel4.Controls.Add(this.groupBox9);
             this.panel4.Controls.Add(this.groupBox7);
+            this.panel4.Cursor = System.Windows.Forms.Cursors.Default;
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(3, 3);
             this.panel4.Name = "panel4";
@@ -1231,7 +1190,7 @@
             // 
             // groupBox9
             // 
-            this.groupBox9.Controls.Add(this.dataGridView4);
+            this.groupBox9.Controls.Add(this.dataMuonSach);
             this.groupBox9.Location = new System.Drawing.Point(3, 157);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(822, 325);
@@ -1239,26 +1198,36 @@
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Danh sách mượn";
             // 
-            // dataGridView4
+            // dataMuonSach
             // 
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(0, 19);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(816, 300);
-            this.dataGridView4.TabIndex = 0;
+            this.dataMuonSach.AutoGenerateColumns = false;
+            this.dataMuonSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataMuonSach.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.matkDataGridViewTextBoxColumn,
+            this.tentaikhoanDataGridViewTextBoxColumn,
+            this.masachDataGridViewTextBoxColumn1,
+            this.tieudeDataGridViewTextBoxColumn1,
+            this.ngaymuonDataGridViewTextBoxColumn,
+            this.ngaytraDataGridViewTextBoxColumn,
+            this.phuthuDataGridViewTextBoxColumn,
+            this.trangthaiDataGridViewCheckBoxColumn1});
+            this.dataMuonSach.DataSource = this.muonSachDanhSachMuonSachAllResultBindingSource;
+            this.dataMuonSach.Location = new System.Drawing.Point(0, 19);
+            this.dataMuonSach.Name = "dataMuonSach";
+            this.dataMuonSach.Size = new System.Drawing.Size(816, 300);
+            this.dataMuonSach.TabIndex = 0;
+            this.dataMuonSach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataMuonSach_CellContentClick);
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.button25);
-            this.groupBox7.Controls.Add(this.button24);
-            this.groupBox7.Controls.Add(this.textBox19);
-            this.groupBox7.Controls.Add(this.textBox16);
-            this.groupBox7.Controls.Add(this.textBox17);
-            this.groupBox7.Controls.Add(this.textBox18);
+            this.groupBox7.Controls.Add(this.btnMuonSach_trasach);
+            this.groupBox7.Controls.Add(this.button1);
+            this.groupBox7.Controls.Add(this.btnMuonSach_muonsach);
+            this.groupBox7.Controls.Add(this.txtMuonSach_matk);
+            this.groupBox7.Controls.Add(this.txtMuonSach_masach);
             this.groupBox7.Controls.Add(this.label25);
-            this.groupBox7.Controls.Add(this.label26);
             this.groupBox7.Controls.Add(this.label27);
-            this.groupBox7.Controls.Add(this.label28);
             this.groupBox7.Location = new System.Drawing.Point(3, 3);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(367, 148);
@@ -1266,87 +1235,184 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Thông tin mượn && trả sách";
             // 
-            // button25
+            // btnMuonSach_trasach
             // 
-            this.button25.Location = new System.Drawing.Point(272, 86);
-            this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(75, 45);
-            this.button25.TabIndex = 2;
-            this.button25.Text = "Trả sách";
-            this.button25.UseVisualStyleBackColor = true;
+            this.btnMuonSach_trasach.Location = new System.Drawing.Point(139, 97);
+            this.btnMuonSach_trasach.Name = "btnMuonSach_trasach";
+            this.btnMuonSach_trasach.Size = new System.Drawing.Size(75, 45);
+            this.btnMuonSach_trasach.TabIndex = 2;
+            this.btnMuonSach_trasach.Text = "Trả sách";
+            this.btnMuonSach_trasach.UseVisualStyleBackColor = true;
+            this.btnMuonSach_trasach.Click += new System.EventHandler(this.btnMuonSach_trasach_Click);
             // 
-            // button24
+            // btnMuonSach_muonsach
             // 
-            this.button24.Location = new System.Drawing.Point(272, 32);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(75, 45);
-            this.button24.TabIndex = 2;
-            this.button24.Text = "Mượn sách";
-            this.button24.UseVisualStyleBackColor = true;
+            this.btnMuonSach_muonsach.Location = new System.Drawing.Point(38, 95);
+            this.btnMuonSach_muonsach.Name = "btnMuonSach_muonsach";
+            this.btnMuonSach_muonsach.Size = new System.Drawing.Size(75, 45);
+            this.btnMuonSach_muonsach.TabIndex = 2;
+            this.btnMuonSach_muonsach.Text = "Mượn sách";
+            this.btnMuonSach_muonsach.UseVisualStyleBackColor = true;
+            this.btnMuonSach_muonsach.Click += new System.EventHandler(this.btnMuonSach_muonsach_Click);
             // 
-            // textBox19
+            // txtMuonSach_matk
             // 
-            this.textBox19.Location = new System.Drawing.Point(75, 111);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(175, 20);
-            this.textBox19.TabIndex = 1;
+            this.txtMuonSach_matk.Location = new System.Drawing.Point(75, 60);
+            this.txtMuonSach_matk.Name = "txtMuonSach_matk";
+            this.txtMuonSach_matk.Size = new System.Drawing.Size(175, 20);
+            this.txtMuonSach_matk.TabIndex = 1;
             // 
-            // textBox16
+            // txtMuonSach_masach
             // 
-            this.textBox16.Location = new System.Drawing.Point(75, 84);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(175, 20);
-            this.textBox16.TabIndex = 1;
-            // 
-            // textBox17
-            // 
-            this.textBox17.Location = new System.Drawing.Point(75, 57);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(175, 20);
-            this.textBox17.TabIndex = 1;
-            // 
-            // textBox18
-            // 
-            this.textBox18.Location = new System.Drawing.Point(75, 32);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(175, 20);
-            this.textBox18.TabIndex = 1;
+            this.txtMuonSach_masach.Location = new System.Drawing.Point(75, 31);
+            this.txtMuonSach_masach.Name = "txtMuonSach_masach";
+            this.txtMuonSach_masach.Size = new System.Drawing.Size(175, 20);
+            this.txtMuonSach_masach.TabIndex = 1;
             // 
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(7, 111);
+            this.label25.Location = new System.Drawing.Point(7, 57);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(38, 13);
+            this.label25.Size = new System.Drawing.Size(41, 13);
             this.label25.TabIndex = 0;
-            this.label25.Text = "Mssv :";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(6, 84);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(49, 13);
-            this.label26.TabIndex = 0;
-            this.label26.Text = "Tên sv : ";
+            this.label25.Text = "Mã Tk:";
             // 
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(6, 57);
+            this.label27.Location = new System.Drawing.Point(7, 28);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(54, 13);
             this.label27.TabIndex = 0;
             this.label27.Text = "Mã sách :";
             // 
-            // label28
+            // button1
             // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(7, 32);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(50, 13);
-            this.label28.TabIndex = 0;
-            this.label28.Text = "Tiêu đề :";
+            this.button1.Location = new System.Drawing.Point(242, 97);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 45);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Hủy mượn";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btnMuonSach_muonsach_Click);
+            // 
+            // masachDataGridViewTextBoxColumn
+            // 
+            this.masachDataGridViewTextBoxColumn.DataPropertyName = "masach";
+            this.masachDataGridViewTextBoxColumn.HeaderText = "Mã sách";
+            this.masachDataGridViewTextBoxColumn.Name = "masachDataGridViewTextBoxColumn";
+            this.masachDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tieudeDataGridViewTextBoxColumn
+            // 
+            this.tieudeDataGridViewTextBoxColumn.DataPropertyName = "tieude";
+            this.tieudeDataGridViewTextBoxColumn.FillWeight = 150F;
+            this.tieudeDataGridViewTextBoxColumn.HeaderText = "Tiêu đề";
+            this.tieudeDataGridViewTextBoxColumn.MaxInputLength = 42767;
+            this.tieudeDataGridViewTextBoxColumn.Name = "tieudeDataGridViewTextBoxColumn";
+            this.tieudeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tieudeDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // tacgiaDataGridViewTextBoxColumn
+            // 
+            this.tacgiaDataGridViewTextBoxColumn.DataPropertyName = "tacgia";
+            this.tacgiaDataGridViewTextBoxColumn.HeaderText = "Tác giả";
+            this.tacgiaDataGridViewTextBoxColumn.Name = "tacgiaDataGridViewTextBoxColumn";
+            this.tacgiaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tacgiaDataGridViewTextBoxColumn.Width = 130;
+            // 
+            // soluongDataGridViewTextBoxColumn
+            // 
+            this.soluongDataGridViewTextBoxColumn.DataPropertyName = "soluong";
+            this.soluongDataGridViewTextBoxColumn.HeaderText = "Số lượng";
+            this.soluongDataGridViewTextBoxColumn.Name = "soluongDataGridViewTextBoxColumn";
+            this.soluongDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // trangthaiDataGridViewCheckBoxColumn
+            // 
+            this.trangthaiDataGridViewCheckBoxColumn.DataPropertyName = "trangthai";
+            this.trangthaiDataGridViewCheckBoxColumn.HeaderText = "Trạng thái ";
+            this.trangthaiDataGridViewCheckBoxColumn.Name = "trangthaiDataGridViewCheckBoxColumn";
+            this.trangthaiDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // tenloaisachDataGridViewTextBoxColumn
+            // 
+            this.tenloaisachDataGridViewTextBoxColumn.DataPropertyName = "tenloaisach";
+            this.tenloaisachDataGridViewTextBoxColumn.HeaderText = "Loại sách";
+            this.tenloaisachDataGridViewTextBoxColumn.Name = "tenloaisachDataGridViewTextBoxColumn";
+            this.tenloaisachDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // getAllSachResultBindingSource
+            // 
+            this.getAllSachResultBindingSource.DataSource = typeof(EntityData.GetAll_Sach_Result);
+            // 
+            // muonSachDanhSachMuonSachAllResultBindingSource
+            // 
+            this.muonSachDanhSachMuonSachAllResultBindingSource.DataSource = typeof(EntityData.MuonSach_DanhSachMuonSachAll_Result);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // matkDataGridViewTextBoxColumn
+            // 
+            this.matkDataGridViewTextBoxColumn.DataPropertyName = "matk";
+            this.matkDataGridViewTextBoxColumn.HeaderText = "Mã TK";
+            this.matkDataGridViewTextBoxColumn.Name = "matkDataGridViewTextBoxColumn";
+            this.matkDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tentaikhoanDataGridViewTextBoxColumn
+            // 
+            this.tentaikhoanDataGridViewTextBoxColumn.DataPropertyName = "tentaikhoan";
+            this.tentaikhoanDataGridViewTextBoxColumn.HeaderText = "Tên tài khoản";
+            this.tentaikhoanDataGridViewTextBoxColumn.Name = "tentaikhoanDataGridViewTextBoxColumn";
+            this.tentaikhoanDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // masachDataGridViewTextBoxColumn1
+            // 
+            this.masachDataGridViewTextBoxColumn1.DataPropertyName = "masach";
+            this.masachDataGridViewTextBoxColumn1.HeaderText = "Ma sách";
+            this.masachDataGridViewTextBoxColumn1.Name = "masachDataGridViewTextBoxColumn1";
+            this.masachDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // tieudeDataGridViewTextBoxColumn1
+            // 
+            this.tieudeDataGridViewTextBoxColumn1.DataPropertyName = "tieude";
+            this.tieudeDataGridViewTextBoxColumn1.HeaderText = "Tiêu đề";
+            this.tieudeDataGridViewTextBoxColumn1.Name = "tieudeDataGridViewTextBoxColumn1";
+            this.tieudeDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // ngaymuonDataGridViewTextBoxColumn
+            // 
+            this.ngaymuonDataGridViewTextBoxColumn.DataPropertyName = "ngaymuon";
+            this.ngaymuonDataGridViewTextBoxColumn.HeaderText = "Ngày mượn";
+            this.ngaymuonDataGridViewTextBoxColumn.Name = "ngaymuonDataGridViewTextBoxColumn";
+            this.ngaymuonDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // ngaytraDataGridViewTextBoxColumn
+            // 
+            this.ngaytraDataGridViewTextBoxColumn.DataPropertyName = "ngaytra";
+            this.ngaytraDataGridViewTextBoxColumn.HeaderText = "Ngày trả";
+            this.ngaytraDataGridViewTextBoxColumn.Name = "ngaytraDataGridViewTextBoxColumn";
+            this.ngaytraDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // phuthuDataGridViewTextBoxColumn
+            // 
+            this.phuthuDataGridViewTextBoxColumn.DataPropertyName = "phuthu";
+            this.phuthuDataGridViewTextBoxColumn.HeaderText = "Phụ thu";
+            this.phuthuDataGridViewTextBoxColumn.Name = "phuthuDataGridViewTextBoxColumn";
+            this.phuthuDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // trangthaiDataGridViewCheckBoxColumn1
+            // 
+            this.trangthaiDataGridViewCheckBoxColumn1.DataPropertyName = "trangthai";
+            this.trangthaiDataGridViewCheckBoxColumn1.HeaderText = "Trang thái ";
+            this.trangthaiDataGridViewCheckBoxColumn1.Name = "trangthaiDataGridViewCheckBoxColumn1";
+            this.trangthaiDataGridViewCheckBoxColumn1.ReadOnly = true;
             // 
             // MainForm
             // 
@@ -1362,7 +1428,6 @@
             this.tabQuanlysach.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataSach_QuanLySach)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.getAllSachResultBindingSource)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numQLS_thongtin_soluong)).EndInit();
@@ -1387,9 +1452,11 @@
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             this.groupBox9.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataMuonSach)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.getAllSachResultBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.muonSachDanhSachMuonSachAllResultBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1487,19 +1554,15 @@
         
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox18;
+        private System.Windows.Forms.TextBox txtMuonSach_masach;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label28;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.DateTimePicker dateTimePicker4;
-        private System.Windows.Forms.DataGridView dataGridView4;
-        private System.Windows.Forms.Button button25;
-        private System.Windows.Forms.Button button24;
-        private System.Windows.Forms.TextBox textBox19;
-        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.DataGridView dataMuonSach;
+        private System.Windows.Forms.Button btnMuonSach_trasach;
+        private System.Windows.Forms.Button btnMuonSach_muonsach;
+        private System.Windows.Forms.TextBox txtMuonSach_matk;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.Button button26;
         private System.Windows.Forms.Button button27;
@@ -1520,5 +1583,16 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn trangthaiDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenloaisachDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idloaisach;
+        private System.Windows.Forms.BindingSource muonSachDanhSachMuonSachAllResultBindingSource;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn matkDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tentaikhoanDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn masachDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tieudeDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ngaymuonDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ngaytraDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phuthuDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn trangthaiDataGridViewCheckBoxColumn1;
     }
 }

@@ -15,7 +15,9 @@ namespace QuanLyThuVien.Layout
     public partial class MainForm : Form
     {
         private readonly SachBusinessLogic sachBus = new SachBusinessLogic();
+        private readonly MuonSachBusinessLogic muonSachBus = new MuonSachBusinessLogic();
         public static SachParameter thongTinSachDetail = new SachParameter();
+        private int idMuonSach = 0;
         public MainForm()
         {
             InitializeComponent();
@@ -73,6 +75,7 @@ namespace QuanLyThuVien.Layout
             if (Login.thongtintaikhoan.loaitaikhoan == 3 || Login.thongtintaikhoan.loaitaikhoan == 4)
             {
                 dataSach_QuanLySach.DataSource = sachBus.GetAllSach();
+                GetDSMuonSachAll();
                 cbbQLS_timkiem_loaisach.ValueMember = "id";
                 cbbQLS_timkiem_loaisach.DisplayMember = "tenloaisach";
                 cbbQLS_timkiem_loaisach.DataSource = sachBus.GetAll_LoaiSach();
@@ -155,7 +158,7 @@ namespace QuanLyThuVien.Layout
                     message = "Thêm sách thành công!";
                 }
                 MessageBox.Show(message);
-               
+
             }
             else
             {
@@ -163,19 +166,9 @@ namespace QuanLyThuVien.Layout
             }
         }
 
-        private bool validateSach()
-        {
-            if (txtQLS_thongtin_tieude.Text == "" || txtQLS_thongtin_tacgia.Text == "" || numQLS_thongtin_soluong.Value <= 0)
-            {
-                return false;
-            }
-
-            return true;
-        }
-
         private void btnQLS_chinhsua_Click(object sender, EventArgs e)
         {
-            if(validateSach())
+            if (validateSach())
             {
                 var param = new SachParameter()
                 {
@@ -199,13 +192,13 @@ namespace QuanLyThuVien.Layout
 
         private void btnQLS_xoa_Click(object sender, EventArgs e)
         {
-            if(txtQLS_thongtin_masach.Text != "")
+            if (txtQLS_thongtin_masach.Text != "")
             {
                 var param = new SachParameter()
                 {
                     masach = txtQLS_thongtin_masach.Text
                 };
-               var dialogResult =  MessageBox.Show("Bạn có muốn xóa sách này không!", "Thông báo", MessageBoxButtons.YesNo);
+                var dialogResult = MessageBox.Show("Bạn có muốn xóa sách này không!", "Thông báo", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     var result = sachBus.Delete_Sach(param);
@@ -228,7 +221,83 @@ namespace QuanLyThuVien.Layout
                 DanhSachNguoiMuon dsNguoiMuon = new DanhSachNguoiMuon();
                 dsNguoiMuon.Show();
             }
-           
+
+        }
+
+        private void GetDSMuonSachAll()
+        {
+            var result = muonSachBus.GetDanhSachMuonSachAll();
+            dataMuonSach.DataSource = result;
+        }
+
+        private bool validateSach()
+        {
+            if (txtQLS_thongtin_tieude.Text == "" || txtQLS_thongtin_tacgia.Text == "" || numQLS_thongtin_soluong.Value <= 0)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        private void btnMuonSach_muonsach_Click(object sender, EventArgs e)
+        {
+            if (txtMuonSach_masach.Text != "" && txtMuonSach_matk.Text != "")
+            {
+                var param = new MuonSachParameter()
+                {
+                    matk = txtMuonSach_matk.Text,
+                    masach = txtMuonSach_masach.Text,
+                    ngaymuon = DateTime.Now.ToString("yyyy/MM/dd"),
+                    ngaytra = null,
+                    phuthu = 0,
+                    trangthai = false
+                };
+                var result = muonSachBus.MuonSach(param);
+                var textMessage = "Mượn sách thất bại!";
+                if (result)
+                {
+                    GetDSMuonSachAll();
+                    textMessage = "Mượn sách thành công!";
+                    txtMuonSach_masach.Text = "";
+                    txtMuonSach_matk.Text = "";
+                }
+                MessageBox.Show(textMessage);
+            }
+
+        }
+
+        private void btnMuonSach_trasach_Click(object sender, EventArgs e)
+        {
+            if(idMuonSach != 0 && txtMuonSach_masach.Text != "" && txtMuonSach_matk.Text != "")
+            {
+                 var param = new MuonSachParameter()
+                {
+                    id = idMuonSach,
+                    ngaytra = DateTime.Now.ToString("yyyy/MM/dd"),
+                    trangthai = true
+                };
+                var result = muonSachBus.TraMuonSach(param);
+                if (result)
+                {
+                    GetDSMuonSachAll();
+                    MessageBox.Show( "Trả sách thành công .Vui lòng thanh toán nếu có phụ thu!");
+                    txtMuonSach_masach.Text = "";
+                    txtMuonSach_matk.Text = "";
+                }
+            } else
+            {
+                MessageBox.Show("Thông tin trả sách thiếu!");
+            }
+        }
+
+        private void dataMuonSach_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int i;
+            i = dataMuonSach.CurrentRow.Index;
+            idMuonSach =Convert.ToInt32(dataMuonSach.Rows[i].Cells[0].Value);
+            txtMuonSach_masach.Text = dataMuonSach.Rows[i].Cells[3].Value.ToString();
+            txtMuonSach_matk.Text = dataMuonSach.Rows[i].Cells[1].Value.ToString();
         }
     }
 }

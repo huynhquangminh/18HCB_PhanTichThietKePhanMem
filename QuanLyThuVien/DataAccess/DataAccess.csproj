@@ -51,9 +51,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MuonSach.cs" />
+    <Compile Include="MuonSachDataAccess.cs" />
     <Compile Include="parameter\DangKyTaiKhoanParameter.cs" />
     <Compile Include="parameter\DangNhapParameter.cs" />
+    <Compile Include="parameter\MuonSachParameter.cs" />
     <Compile Include="parameter\SachParameter.cs" />
     <Compile Include="parameter\TimkiemSachParameter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

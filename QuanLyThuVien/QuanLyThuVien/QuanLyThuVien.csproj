@@ -114,6 +114,8 @@
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\EntityData.GetAll_Sach_Result.datasource" />
+    <None Include="Properties\DataSources\EntityData.MuonSach_DanhSachMuonSachAll_Result.datasource" />
+    <None Include="Properties\DataSources\EntityData.MuonSach_DsTaiKhoanMuonSach_Result.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
