@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="QuanLyThuVien_PTTKPMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="QuanLyThuVien_PTTKPMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="LoaiSach">
           <Key>
             <PropertyRef Name="id" />
@@ -17,7 +17,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="LoaiTaiKhoan" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="TenLoaiTaiKhoan" Type="varchar" MaxLength="100" Nullable="false" />
         </EntityType>
         <EntityType Name="MuonSach">
           <Key>
@@ -142,6 +142,9 @@
         <Function Name="MuonSach_DsTaiKhoanMuonSach" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="masach" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="MuonSach_HuyMuonSach" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
         <Function Name="MuonSach_TimKiemTaiKhoanMuonSach" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="masach" Type="varchar" Mode="In" />
           <Parameter Name="matk" Type="varchar" Mode="In" />
@@ -163,8 +166,9 @@
           <Parameter Name="ngaytra" Type="varchar" Mode="In" />
           <Parameter Name="trangthai" Type="bit" Mode="In" />
         </Function>
-        <Function Name="sp_MuonSach_XemTatCaSachMuon_TaiKhoan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="matk" Type="varchar" Mode="In" />
+        <Function Name="sp_Sach_CapNhatSoLuong" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="masach" Type="varchar" Mode="In" />
+          <Parameter Name="trangthai" Type="bit" Mode="In" />
         </Function>
         <Function Name="sp_Sach_TimKiem_LoaiSach" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="LoaiSach" Type="int" Mode="In" />
@@ -177,6 +181,30 @@
         </Function>
         <Function Name="sp_Sach_TimKiem_TieuDe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="TieuDe" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_TaiKhoan_TimKiemThongTin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="matk" Type="varchar" Mode="In" />
+          <Parameter Name="tentaikhoan" Type="nvarchar" Mode="In" />
+          <Parameter Name="ngaysinh" Type="varchar" Mode="In" />
+          <Parameter Name="diachi" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_TaiKhoan_XemTatCaSachMuon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="matk" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_TaiKhoan_XemThongTinTaiKhoan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="matk" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="TaiKhoan_TimSachMuon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="keyword" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="TaiKhoan_UpdateThongTinCaNhan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="matk" Type="varchar" Mode="In" />
+          <Parameter Name="tendangnhap" Type="varchar" Mode="In" />
+          <Parameter Name="tentaikhoan" Type="nvarchar" Mode="In" />
+          <Parameter Name="matkhau" Type="varchar" Mode="In" />
+          <Parameter Name="matkhaumoi" Type="varchar" Mode="In" />
+          <Parameter Name="ngaysinh" Type="varchar" Mode="In" />
+          <Parameter Name="diachi" Type="nvarchar(max)" Mode="In" />
         </Function>
         <Function Name="Them_Sach" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="masach" Type="varchar" Mode="In" />
@@ -218,7 +246,8 @@
             <End Role="TaiKhoan" EntitySet="TaiKhoan" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="QuanLyThuVien_PTTKPMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -235,7 +264,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="LoaiTaiKhoan1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TenLoaiTaiKhoan" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="TaiKhoans" Relationship="Self.FK_TaiKhoan_LoaiTaiKhoan" FromRole="LoaiTaiKhoan" ToRole="TaiKhoan" />
         </EntityType>
         <EntityType Name="MuonSach">
@@ -381,11 +410,17 @@
             <Parameter Name="tendangnhap" Mode="In" Type="String" />
             <Parameter Name="matkhau" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="Delete_Sach">
+            <Parameter Name="masach" Mode="In" Type="String" />
+          </FunctionImport>
           <FunctionImport Name="GetAll_LoaiSach" ReturnType="Collection(QuanLyThuVien_PTTKPMModel.GetAll_LoaiSach_Result)" />
           <FunctionImport Name="GetAll_Sach" ReturnType="Collection(QuanLyThuVien_PTTKPMModel.GetAll_Sach_Result)" />
           <FunctionImport Name="MuonSach_DanhSachMuonSachAll" ReturnType="Collection(QuanLyThuVien_PTTKPMModel.MuonSach_DanhSachMuonSachAll_Result)" />
           <FunctionImport Name="MuonSach_DsTaiKhoanMuonSach" ReturnType="Collection(QuanLyThuVien_PTTKPMModel.MuonSach_DsTaiKhoanMuonSach_Result)">
-          <Parameter Name="masach" Mode="In" Type="String" />
+            <Parameter Name="masach" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="MuonSach_HuyMuonSach">
+            <Parameter Name="id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="MuonSach_TimKiemTaiKhoanMuonSach" ReturnType="Collection(QuanLyThuVien_PTTKPMModel.MuonSach_TimKiemTaiKhoanMuonSach_Result)">
             <Parameter Name="masach" Mode="In" Type="String" />
@@ -403,20 +438,50 @@
             <Parameter Name="matk" Mode="In" Type="String" />
             <Parameter Name="masach" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="sp_MuonSach_XemTatCaSachMuon_TaiKhoan" ReturnType="Collection(QuanLyThuVien_PTTKPMModel.sp_MuonSach_XemTatCaSachMuon_TaiKhoan_Result)">
-          <Parameter Name="matk" Mode="In" Type="String" />
+          <FunctionImport Name="sp_MuonSach_TraSach">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="ngaytra" Mode="In" Type="String" />
+            <Parameter Name="trangthai" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Sach_CapNhatSoLuong">
+            <Parameter Name="masach" Mode="In" Type="String" />
+            <Parameter Name="trangthai" Mode="In" Type="Boolean" />
           </FunctionImport>
           <FunctionImport Name="sp_Sach_TimKiem_LoaiSach" ReturnType="Collection(QuanLyThuVien_PTTKPMModel.sp_Sach_TimKiem_LoaiSach_Result)">
-          <Parameter Name="LoaiSach" Mode="In" Type="Int32" />
+            <Parameter Name="LoaiSach" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_Sach_TimKiem_MaSach" ReturnType="Collection(QuanLyThuVien_PTTKPMModel.sp_Sach_TimKiem_MaSach_Result)">
-          <Parameter Name="MaSach" Mode="In" Type="String" />
+            <Parameter Name="MaSach" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_Sach_TimKiem_TacGia" ReturnType="Collection(QuanLyThuVien_PTTKPMModel.sp_Sach_TimKiem_TacGia_Result)">
-          <Parameter Name="TacGia" Mode="In" Type="String" />
+            <Parameter Name="TacGia" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_Sach_TimKiem_TieuDe" ReturnType="Collection(QuanLyThuVien_PTTKPMModel.sp_Sach_TimKiem_TieuDe_Result)">
-          <Parameter Name="TieuDe" Mode="In" Type="String" />
+            <Parameter Name="TieuDe" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_TaiKhoan_TimKiemThongTin" ReturnType="Collection(QuanLyThuVien_PTTKPMModel.sp_TaiKhoan_TimKiemThongTin_Result)">
+            <Parameter Name="matk" Mode="In" Type="String" />
+            <Parameter Name="tentaikhoan" Mode="In" Type="String" />
+            <Parameter Name="ngaysinh" Mode="In" Type="String" />
+            <Parameter Name="diachi" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_TaiKhoan_XemTatCaSachMuon" ReturnType="Collection(QuanLyThuVien_PTTKPMModel.sp_TaiKhoan_XemTatCaSachMuon_Result)">
+            <Parameter Name="matk" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_TaiKhoan_XemThongTinTaiKhoan" ReturnType="Collection(QuanLyThuVien_PTTKPMModel.sp_TaiKhoan_XemThongTinTaiKhoan_Result)">
+            <Parameter Name="matk" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="TaiKhoan_TimSachMuon" ReturnType="Collection(QuanLyThuVien_PTTKPMModel.TaiKhoan_TimSachMuon_Result)">
+            <Parameter Name="keyword" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="TaiKhoan_UpdateThongTinCaNhan">
+            <Parameter Name="matk" Mode="In" Type="String" />
+            <Parameter Name="tendangnhap" Mode="In" Type="String" />
+            <Parameter Name="tentaikhoan" Mode="In" Type="String" />
+            <Parameter Name="matkhau" Mode="In" Type="String" />
+            <Parameter Name="matkhaumoi" Mode="In" Type="String" />
+            <Parameter Name="ngaysinh" Mode="In" Type="String" />
+            <Parameter Name="diachi" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Them_Sach">
             <Parameter Name="masach" Mode="In" Type="String" />
@@ -433,14 +498,6 @@
             <Parameter Name="idloaisach" Mode="In" Type="Int32" />
             <Parameter Name="soluong" Mode="In" Type="Int32" />
             <Parameter Name="trangthai" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="Delete_Sach">
-          <Parameter Name="masach" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="sp_MuonSach_TraSach">
-            <Parameter Name="id" Mode="In" Type="Int32" />
-            <Parameter Name="ngaytra" Mode="In" Type="String" />
-            <Parameter Name="trangthai" Mode="In" Type="Boolean" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="DangNhap_TaiKhoan_Result">
@@ -503,16 +560,6 @@
           <Property Type="Boolean" Name="trangthai" Nullable="false" />
           <Property Type="Int32" Name="idloaisach" Nullable="true" />
         </ComplexType>
-        <ComplexType Name="sp_MuonSach_XemTatCaSachMuon_TaiKhoan_Result">
-          <Property Type="Int32" Name="id" Nullable="false" />
-          <Property Type="String" Name="matk" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="masach" Nullable="true" MaxLength="100" />
-          <Property Type="DateTime" Name="ngaymuon" Nullable="false" />
-          <Property Type="DateTime" Name="ngaytra" Nullable="true" />
-          <Property Type="Int32" Name="phuthu" Nullable="true" />
-          <Property Type="Boolean" Name="trangthai" Nullable="false" />
-          <Property Type="String" Name="tieude" Nullable="false" MaxLength="500" />
-        </ComplexType>
         <ComplexType Name="sp_Sach_TimKiem_LoaiSach_Result">
           <Property Type="String" Name="masach" Nullable="false" MaxLength="100" />
           <Property Type="String" Name="tieude" Nullable="false" MaxLength="500" />
@@ -549,6 +596,38 @@
           <Property Type="Boolean" Name="trangthai" Nullable="false" />
           <Property Type="String" Name="tenloaisach" Nullable="false" MaxLength="200" />
         </ComplexType>
+        <ComplexType Name="sp_TaiKhoan_TimKiemThongTin_Result">
+          <Property Type="String" Name="matk" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="tentaikhoan" Nullable="false" MaxLength="200" />
+          <Property Type="DateTime" Name="ngaysinh" Nullable="false" />
+          <Property Type="String" Name="diachi" Nullable="false" />
+          <Property Type="Int32" Name="id" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="sp_TaiKhoan_XemTatCaSachMuon_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="masach" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="tieude" Nullable="false" MaxLength="500" />
+          <Property Type="DateTime" Name="ngaymuon" Nullable="false" />
+          <Property Type="DateTime" Name="ngaytra" Nullable="true" />
+          <Property Type="Int32" Name="phuthu" Nullable="true" />
+          <Property Type="Boolean" Name="trangthai" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="sp_TaiKhoan_XemThongTinTaiKhoan_Result">
+          <Property Type="String" Name="matk" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="tendangnhap" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="tentaikhoan" Nullable="false" MaxLength="200" />
+          <Property Type="DateTime" Name="ngaysinh" Nullable="false" />
+          <Property Type="String" Name="diachi" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="TaiKhoan_TimSachMuon_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="masach" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="tieude" Nullable="false" MaxLength="500" />
+          <Property Type="DateTime" Name="ngaymuon" Nullable="false" />
+          <Property Type="DateTime" Name="ngaytra" Nullable="true" />
+          <Property Type="Int32" Name="phuthu" Nullable="true" />
+          <Property Type="Boolean" Name="trangthai" Nullable="false" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -567,7 +646,7 @@
             <EntityTypeMapping TypeName="QuanLyThuVien_PTTKPMModel.LoaiTaiKhoan">
               <MappingFragment StoreEntitySet="LoaiTaiKhoan">
                 <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="LoaiTaiKhoan1" ColumnName="LoaiTaiKhoan" />
+                <ScalarProperty Name="TenLoaiTaiKhoan" ColumnName="TenLoaiTaiKhoan" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -634,6 +713,7 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Delete_Sach" FunctionName="QuanLyThuVien_PTTKPMModel.Store.Delete_Sach" />
           <FunctionImportMapping FunctionImportName="GetAll_LoaiSach" FunctionName="QuanLyThuVien_PTTKPMModel.Store.GetAll_LoaiSach">
             <ResultMapping>
               <ComplexTypeMapping TypeName="QuanLyThuVien_PTTKPMModel.GetAll_LoaiSach_Result">
@@ -683,6 +763,7 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="MuonSach_HuyMuonSach" FunctionName="QuanLyThuVien_PTTKPMModel.Store.MuonSach_HuyMuonSach" />
           <FunctionImportMapping FunctionImportName="MuonSach_TimKiemTaiKhoanMuonSach" FunctionName="QuanLyThuVien_PTTKPMModel.Store.MuonSach_TimKiemTaiKhoanMuonSach">
             <ResultMapping>
               <ComplexTypeMapping TypeName="QuanLyThuVien_PTTKPMModel.MuonSach_TimKiemTaiKhoanMuonSach_Result">
@@ -710,20 +791,8 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_MuonSach_XemTatCaSachMuon_TaiKhoan" FunctionName="QuanLyThuVien_PTTKPMModel.Store.sp_MuonSach_XemTatCaSachMuon_TaiKhoan">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="QuanLyThuVien_PTTKPMModel.sp_MuonSach_XemTatCaSachMuon_TaiKhoan_Result">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="matk" ColumnName="matk" />
-                <ScalarProperty Name="masach" ColumnName="masach" />
-                <ScalarProperty Name="ngaymuon" ColumnName="ngaymuon" />
-                <ScalarProperty Name="ngaytra" ColumnName="ngaytra" />
-                <ScalarProperty Name="phuthu" ColumnName="phuthu" />
-                <ScalarProperty Name="trangthai" ColumnName="trangthai" />
-                <ScalarProperty Name="tieude" ColumnName="tieude" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_MuonSach_TraSach" FunctionName="QuanLyThuVien_PTTKPMModel.Store.sp_MuonSach_TraSach" />
+          <FunctionImportMapping FunctionImportName="sp_Sach_CapNhatSoLuong" FunctionName="QuanLyThuVien_PTTKPMModel.Store.sp_Sach_CapNhatSoLuong" />
           <FunctionImportMapping FunctionImportName="sp_Sach_TimKiem_LoaiSach" FunctionName="QuanLyThuVien_PTTKPMModel.Store.sp_Sach_TimKiem_LoaiSach">
             <ResultMapping>
               <ComplexTypeMapping TypeName="QuanLyThuVien_PTTKPMModel.sp_Sach_TimKiem_LoaiSach_Result">
@@ -776,10 +845,57 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_TaiKhoan_TimKiemThongTin" FunctionName="QuanLyThuVien_PTTKPMModel.Store.sp_TaiKhoan_TimKiemThongTin">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QuanLyThuVien_PTTKPMModel.sp_TaiKhoan_TimKiemThongTin_Result">
+                <ScalarProperty Name="matk" ColumnName="matk" />
+                <ScalarProperty Name="tentaikhoan" ColumnName="tentaikhoan" />
+                <ScalarProperty Name="ngaysinh" ColumnName="ngaysinh" />
+                <ScalarProperty Name="diachi" ColumnName="diachi" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_TaiKhoan_XemTatCaSachMuon" FunctionName="QuanLyThuVien_PTTKPMModel.Store.sp_TaiKhoan_XemTatCaSachMuon">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QuanLyThuVien_PTTKPMModel.sp_TaiKhoan_XemTatCaSachMuon_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="masach" ColumnName="masach" />
+                <ScalarProperty Name="tieude" ColumnName="tieude" />
+                <ScalarProperty Name="ngaymuon" ColumnName="ngaymuon" />
+                <ScalarProperty Name="ngaytra" ColumnName="ngaytra" />
+                <ScalarProperty Name="phuthu" ColumnName="phuthu" />
+                <ScalarProperty Name="trangthai" ColumnName="trangthai" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_TaiKhoan_XemThongTinTaiKhoan" FunctionName="QuanLyThuVien_PTTKPMModel.Store.sp_TaiKhoan_XemThongTinTaiKhoan">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QuanLyThuVien_PTTKPMModel.sp_TaiKhoan_XemThongTinTaiKhoan_Result">
+                <ScalarProperty Name="matk" ColumnName="matk" />
+                <ScalarProperty Name="tendangnhap" ColumnName="tendangnhap" />
+                <ScalarProperty Name="tentaikhoan" ColumnName="tentaikhoan" />
+                <ScalarProperty Name="ngaysinh" ColumnName="ngaysinh" />
+                <ScalarProperty Name="diachi" ColumnName="diachi" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="TaiKhoan_TimSachMuon" FunctionName="QuanLyThuVien_PTTKPMModel.Store.TaiKhoan_TimSachMuon">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QuanLyThuVien_PTTKPMModel.TaiKhoan_TimSachMuon_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="masach" ColumnName="masach" />
+                <ScalarProperty Name="tieude" ColumnName="tieude" />
+                <ScalarProperty Name="ngaymuon" ColumnName="ngaymuon" />
+                <ScalarProperty Name="ngaytra" ColumnName="ngaytra" />
+                <ScalarProperty Name="phuthu" ColumnName="phuthu" />
+                <ScalarProperty Name="trangthai" ColumnName="trangthai" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="TaiKhoan_UpdateThongTinCaNhan" FunctionName="QuanLyThuVien_PTTKPMModel.Store.TaiKhoan_UpdateThongTinCaNhan" />
           <FunctionImportMapping FunctionImportName="Them_Sach" FunctionName="QuanLyThuVien_PTTKPMModel.Store.Them_Sach" />
           <FunctionImportMapping FunctionImportName="Update_Sach" FunctionName="QuanLyThuVien_PTTKPMModel.Store.Update_Sach" />
-          <FunctionImportMapping FunctionImportName="Delete_Sach" FunctionName="QuanLyThuVien_PTTKPMModel.Store.Delete_Sach" />
-          <FunctionImportMapping FunctionImportName="sp_MuonSach_TraSach" FunctionName="QuanLyThuVien_PTTKPMModel.Store.sp_MuonSach_TraSach" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

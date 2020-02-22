@@ -23,5 +23,25 @@ namespace DataAccess
             return result > 0 ? true : false;
         }
 
+        public List<sp_TaiKhoan_XemTatCaSachMuon_Result> XemTatCaCacSachMuon(string matk)
+        {
+            return db.sp_TaiKhoan_XemTatCaSachMuon(matk).ToList();
+        }
+
+        public List<TaiKhoan_TimSachMuon_Result> TimSachMuon(string keyword)
+        {
+            return db.TaiKhoan_TimSachMuon(keyword).ToList();
+        }
+
+        public bool UpdateThongTinCaNhan(TaikhoanParameter param, string matkhaumoi)
+        {
+            var result = db.TaiKhoan_UpdateThongTinCaNhan(param.matk, param.tendangnhap, param.tentaikhoan, param.matkhau, matkhaumoi, param.ngaysinh, param.diachi);
+            return result > 0 ? true : false;
+        }
+
+        public List<sp_TaiKhoan_TimKiemThongTin_Result> GetTaiKhoanTimKiem (TaikhoanParameter param)
+        {
+            return db.sp_TaiKhoan_TimKiemThongTin(param.matk, param.tentaikhoan, param.ngaysinh, param.diachi).ToList();
+        }
     }
 }

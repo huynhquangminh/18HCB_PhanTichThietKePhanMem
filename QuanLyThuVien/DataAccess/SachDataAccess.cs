@@ -59,5 +59,11 @@ namespace DataAccess
             var result = db.Delete_Sach(param.masach);
             return result > 0 ? true : false;
         }
+
+        public bool CapNhapSoLuongSach(string masach, bool trangthai)
+        {
+            var result = db.sp_Sach_CapNhatSoLuong(masach, trangthai);
+            return result > 0 ? true : false;
+        }
     }
 }

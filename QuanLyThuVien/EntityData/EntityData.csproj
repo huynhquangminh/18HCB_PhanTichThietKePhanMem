@@ -102,9 +102,6 @@
     <Compile Include="sp_MuonSach_TimKiemTaiKhoanMuonSach_Result.cs">
       <DependentUpon>ModelData.tt</DependentUpon>
     </Compile>
-    <Compile Include="sp_MuonSach_XemTatCaSachMuon_TaiKhoan_Result.cs">
-      <DependentUpon>ModelData.tt</DependentUpon>
-    </Compile>
     <Compile Include="sp_Sach_TimKiem_LoaiSach_Result.cs">
       <DependentUpon>ModelData.tt</DependentUpon>
     </Compile>
@@ -117,10 +114,22 @@
     <Compile Include="sp_Sach_TimKiem_TieuDe_Result.cs">
       <DependentUpon>ModelData.tt</DependentUpon>
     </Compile>
+    <Compile Include="sp_TaiKhoan_TimKiemThongTin_Result.cs">
+      <DependentUpon>ModelData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_TaiKhoan_XemTatCaSachMuon_Result.cs">
+      <DependentUpon>ModelData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_TaiKhoan_XemThongTinTaiKhoan_Result.cs">
+      <DependentUpon>ModelData.tt</DependentUpon>
+    </Compile>
     <Compile Include="sysdiagram.cs">
       <DependentUpon>ModelData.tt</DependentUpon>
     </Compile>
     <Compile Include="TaiKhoan.cs">
+      <DependentUpon>ModelData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TaiKhoan_TimSachMuon_Result.cs">
       <DependentUpon>ModelData.tt</DependentUpon>
     </Compile>
   </ItemGroup>

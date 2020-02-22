@@ -86,6 +86,12 @@
     <Compile Include="Layout\TaiKhoanMuonSach.Designer.cs">
       <DependentUpon>TaiKhoanMuonSach.cs</DependentUpon>
     </Compile>
+    <Compile Include="Layout\ThongTinTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layout\ThongTinTaiKhoan.Designer.cs">
+      <DependentUpon>ThongTinTaiKhoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Layout\DanhSachNguoiMuon.resx">
@@ -103,6 +109,9 @@
     <EmbeddedResource Include="Layout\TaiKhoanMuonSach.resx">
       <DependentUpon>TaiKhoanMuonSach.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Layout\ThongTinTaiKhoan.resx">
+      <DependentUpon>ThongTinTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -116,6 +125,8 @@
     <None Include="Properties\DataSources\EntityData.GetAll_Sach_Result.datasource" />
     <None Include="Properties\DataSources\EntityData.MuonSach_DanhSachMuonSachAll_Result.datasource" />
     <None Include="Properties\DataSources\EntityData.MuonSach_DsTaiKhoanMuonSach_Result.datasource" />
+    <None Include="Properties\DataSources\EntityData.sp_TaiKhoan_TimKiemThongTin_Result.datasource" />
+    <None Include="Properties\DataSources\EntityData.sp_TaiKhoan_XemTatCaSachMuon_Result.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

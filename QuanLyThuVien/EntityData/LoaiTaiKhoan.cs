@@ -21,7 +21,7 @@ namespace EntityData
         }
     
         public int id { get; set; }
-        public string LoaiTaiKhoan1 { get; set; }
+        public string TenLoaiTaiKhoan { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TaiKhoan> TaiKhoans { get; set; }

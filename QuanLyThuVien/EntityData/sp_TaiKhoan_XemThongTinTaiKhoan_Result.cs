@@ -11,15 +11,12 @@ namespace EntityData
 {
     using System;
     
-    public partial class sp_MuonSach_XemTatCaSachMuon_TaiKhoan_Result
+    public partial class sp_TaiKhoan_XemThongTinTaiKhoan_Result
     {
-        public int id { get; set; }
         public string matk { get; set; }
-        public string masach { get; set; }
-        public System.DateTime ngaymuon { get; set; }
-        public Nullable<System.DateTime> ngaytra { get; set; }
-        public Nullable<int> phuthu { get; set; }
-        public bool trangthai { get; set; }
-        public string tieude { get; set; }
+        public string tendangnhap { get; set; }
+        public string tentaikhoan { get; set; }
+        public System.DateTime ngaysinh { get; set; }
+        public string diachi { get; set; }
     }
 }

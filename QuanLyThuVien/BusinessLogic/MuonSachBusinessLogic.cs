@@ -94,5 +94,18 @@ namespace BusinessLogic
                 return false;
             }
         }
+        public bool HuyMuonSach(int id)
+        {
+            var result = false;
+            try
+            {
+                result = muonSachDal.HuyMuonSach(id);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }

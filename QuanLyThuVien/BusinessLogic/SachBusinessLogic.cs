@@ -166,5 +166,19 @@ namespace BusinessLogic
                 return false;
             }
         }
+
+        public bool CapNhapSoLuongSach(string masach, bool trangthai)
+        {
+            var result = false;
+            try
+            {
+                result = SachDal.CapNhapSoLuongSach(masach, trangthai);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }

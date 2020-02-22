@@ -39,5 +39,11 @@ namespace DataAccess
             return result > 0 ? true : false;
         }
 
+        public bool HuyMuonSach(int id)
+        {
+            var result = db.MuonSach_HuyMuonSach(id);
+            return result > 0 ? true : false;
+        }
+
     }
 }

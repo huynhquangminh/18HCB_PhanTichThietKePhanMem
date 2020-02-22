@@ -47,7 +47,7 @@ namespace QuanLyThuVien.Layout
                     this.Hide();
                     MainForm mainForm = new MainForm();
                     mainForm.Closed += (s, args) => this.Close();
-                    mainForm.Show();
+                    mainForm.ShowDialog();
 
                 } else
                 {

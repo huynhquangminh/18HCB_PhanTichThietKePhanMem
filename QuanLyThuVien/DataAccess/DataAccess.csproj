@@ -56,6 +56,7 @@
     <Compile Include="parameter\DangNhapParameter.cs" />
     <Compile Include="parameter\MuonSachParameter.cs" />
     <Compile Include="parameter\SachParameter.cs" />
+    <Compile Include="parameter\TaikhoanParameter.cs" />
     <Compile Include="parameter\TimkiemSachParameter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SachDataAccess.cs" />
