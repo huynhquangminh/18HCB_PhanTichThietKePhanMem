@@ -35,7 +35,14 @@
             this.tabQuanlysach = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataSach_QuanLySach = new System.Windows.Forms.DataGridView();
+            this.masachDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tieudeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tacgiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soluongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.trangthaiDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.tenloaisachDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idloaisach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.getAllSachResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.numQLS_thongtin_soluong = new System.Windows.Forms.NumericUpDown();
             this.btnQLS_thongtinmuonsach = new System.Windows.Forms.Button();
@@ -75,6 +82,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnQLTK_clear = new System.Windows.Forms.Button();
             this.txtQLTK_thongtin_diachi = new System.Windows.Forms.RichTextBox();
             this.dateQLTK_ngaysinh = new System.Windows.Forms.DateTimePicker();
             this.btnQLTK_xemchitiet = new System.Windows.Forms.Button();
@@ -88,6 +96,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataQLTK = new System.Windows.Forms.DataGridView();
+            this.matkDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tentaikhoanDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngaysinhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.diachiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenLoaiTaiKhoanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gETALLTAIKHOANResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabChucnangnguoidung = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
@@ -95,7 +109,15 @@
             this.btnCNND_thongtintaikhoan = new System.Windows.Forms.Button();
             this.btnCNND_lichsumuonsach = new System.Windows.Forms.Button();
             this.dataQLND = new System.Windows.Forms.DataGridView();
+            this.masachDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tieudeDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tacgiaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idloaisachDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soluongDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.trangthaiDataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.tenloaisachDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tacvu = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.getAllSachResultBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.btnCNND_timkiemtacgia = new System.Windows.Forms.Button();
             this.btnCNND_timkiemloaisach = new System.Windows.Forms.Button();
@@ -112,6 +134,9 @@
             this.tabThuvien = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.btnTV_timkiemthongtinmuonsach = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dateTV_end = new System.Windows.Forms.DateTimePicker();
             this.dateTV_start = new System.Windows.Forms.DateTimePicker();
             this.btnTV_timkiemtheodate = new System.Windows.Forms.Button();
             this.txtTV_timkiem_matk = new System.Windows.Forms.TextBox();
@@ -123,6 +148,7 @@
             this.label32 = new System.Windows.Forms.Label();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.dataMuonSach = new System.Windows.Forms.DataGridView();
+            this.muonSachDanhSachMuonSachAllResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.btnMuonSach_huymuonsach = new System.Windows.Forms.Button();
             this.btnMuonSach_trasach = new System.Windows.Forms.Button();
@@ -131,31 +157,9 @@
             this.txtMuonSach_masach = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
-            this.btnQLTK_clear = new System.Windows.Forms.Button();
-            this.dateTV_end = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnTV_timkiemthongtinmuonsach = new System.Windows.Forms.Button();
-            this.masachDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tieudeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tacgiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.soluongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.trangthaiDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.tenloaisachDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.getAllSachResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.matkDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tentaikhoanDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ngaysinhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.diachiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenLoaiTaiKhoanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gETALLTAIKHOANResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.masachDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tieudeDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tacgiaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idloaisachDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.soluongDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.trangthaiDataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.tenloaisachDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.getAllSachResultBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.getAllSachResultBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.spTaiKhoanTimKiemThongTinResultBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.spTaiKhoanTimKiemThongTinResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.matkDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tentaikhoanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -165,15 +169,13 @@
             this.ngaytraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phuthuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.trangthaiDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.muonSachDanhSachMuonSachAllResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.getAllSachResultBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.spTaiKhoanTimKiemThongTinResultBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.spTaiKhoanTimKiemThongTinResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.inphieumuon = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
             this.tabManager.SuspendLayout();
             this.tabQuanlysach.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSach_QuanLySach)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getAllSachResultBindingSource)).BeginInit();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numQLS_thongtin_soluong)).BeginInit();
             this.groupBox4.SuspendLayout();
@@ -181,20 +183,19 @@
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataQLTK)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gETALLTAIKHOANResultBindingSource)).BeginInit();
             this.tabChucnangnguoidung.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataQLND)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getAllSachResultBindingSource1)).BeginInit();
             this.groupBox6.SuspendLayout();
             this.tabThuvien.SuspendLayout();
             this.panel4.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataMuonSach)).BeginInit();
-            this.groupBox7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.getAllSachResultBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gETALLTAIKHOANResultBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.getAllSachResultBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.muonSachDanhSachMuonSachAllResultBindingSource)).BeginInit();
+            this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.getAllSachResultBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spTaiKhoanTimKiemThongTinResultBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spTaiKhoanTimKiemThongTinResultBindingSource)).BeginInit();
@@ -264,12 +265,62 @@
             this.dataSach_QuanLySach.TabIndex = 1;
             this.dataSach_QuanLySach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataSach_QuanLySach_CellContentClick);
             // 
+            // masachDataGridViewTextBoxColumn
+            // 
+            this.masachDataGridViewTextBoxColumn.DataPropertyName = "masach";
+            this.masachDataGridViewTextBoxColumn.HeaderText = "Mã sách";
+            this.masachDataGridViewTextBoxColumn.Name = "masachDataGridViewTextBoxColumn";
+            this.masachDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tieudeDataGridViewTextBoxColumn
+            // 
+            this.tieudeDataGridViewTextBoxColumn.DataPropertyName = "tieude";
+            this.tieudeDataGridViewTextBoxColumn.FillWeight = 150F;
+            this.tieudeDataGridViewTextBoxColumn.HeaderText = "Tiêu đề";
+            this.tieudeDataGridViewTextBoxColumn.MaxInputLength = 42767;
+            this.tieudeDataGridViewTextBoxColumn.Name = "tieudeDataGridViewTextBoxColumn";
+            this.tieudeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tieudeDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // tacgiaDataGridViewTextBoxColumn
+            // 
+            this.tacgiaDataGridViewTextBoxColumn.DataPropertyName = "tacgia";
+            this.tacgiaDataGridViewTextBoxColumn.HeaderText = "Tác giả";
+            this.tacgiaDataGridViewTextBoxColumn.Name = "tacgiaDataGridViewTextBoxColumn";
+            this.tacgiaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tacgiaDataGridViewTextBoxColumn.Width = 130;
+            // 
+            // soluongDataGridViewTextBoxColumn
+            // 
+            this.soluongDataGridViewTextBoxColumn.DataPropertyName = "soluong";
+            this.soluongDataGridViewTextBoxColumn.HeaderText = "Số lượng";
+            this.soluongDataGridViewTextBoxColumn.Name = "soluongDataGridViewTextBoxColumn";
+            this.soluongDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // trangthaiDataGridViewCheckBoxColumn
+            // 
+            this.trangthaiDataGridViewCheckBoxColumn.DataPropertyName = "trangthai";
+            this.trangthaiDataGridViewCheckBoxColumn.HeaderText = "Trạng thái ";
+            this.trangthaiDataGridViewCheckBoxColumn.Name = "trangthaiDataGridViewCheckBoxColumn";
+            this.trangthaiDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // tenloaisachDataGridViewTextBoxColumn
+            // 
+            this.tenloaisachDataGridViewTextBoxColumn.DataPropertyName = "tenloaisach";
+            this.tenloaisachDataGridViewTextBoxColumn.HeaderText = "Loại sách";
+            this.tenloaisachDataGridViewTextBoxColumn.Name = "tenloaisachDataGridViewTextBoxColumn";
+            this.tenloaisachDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // idloaisach
             // 
             this.idloaisach.DataPropertyName = "idloaisach";
             this.idloaisach.HeaderText = "idloaisach";
             this.idloaisach.Name = "idloaisach";
             this.idloaisach.Visible = false;
+            // 
+            // getAllSachResultBindingSource
+            // 
+            this.getAllSachResultBindingSource.DataSource = typeof(EntityData.GetAll_Sach_Result);
             // 
             // groupBox5
             // 
@@ -661,6 +712,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin tài khoản";
             // 
+            // btnQLTK_clear
+            // 
+            this.btnQLTK_clear.Location = new System.Drawing.Point(270, 103);
+            this.btnQLTK_clear.Name = "btnQLTK_clear";
+            this.btnQLTK_clear.Size = new System.Drawing.Size(75, 23);
+            this.btnQLTK_clear.TabIndex = 4;
+            this.btnQLTK_clear.Text = "Clear";
+            this.btnQLTK_clear.UseVisualStyleBackColor = true;
+            this.btnQLTK_clear.Click += new System.EventHandler(this.btnQLTK_clear_Click);
+            // 
             // txtQLTK_thongtin_diachi
             // 
             this.txtQLTK_thongtin_diachi.Location = new System.Drawing.Point(69, 116);
@@ -787,6 +848,48 @@
             this.dataQLTK.TabIndex = 0;
             this.dataQLTK.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataQLTK_CellContentClick);
             // 
+            // matkDataGridViewTextBoxColumn1
+            // 
+            this.matkDataGridViewTextBoxColumn1.DataPropertyName = "matk";
+            this.matkDataGridViewTextBoxColumn1.HeaderText = "Mã Tk";
+            this.matkDataGridViewTextBoxColumn1.Name = "matkDataGridViewTextBoxColumn1";
+            this.matkDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // tentaikhoanDataGridViewTextBoxColumn1
+            // 
+            this.tentaikhoanDataGridViewTextBoxColumn1.DataPropertyName = "tentaikhoan";
+            this.tentaikhoanDataGridViewTextBoxColumn1.HeaderText = "Tên tài khoản";
+            this.tentaikhoanDataGridViewTextBoxColumn1.Name = "tentaikhoanDataGridViewTextBoxColumn1";
+            this.tentaikhoanDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.tentaikhoanDataGridViewTextBoxColumn1.Width = 150;
+            // 
+            // ngaysinhDataGridViewTextBoxColumn
+            // 
+            this.ngaysinhDataGridViewTextBoxColumn.DataPropertyName = "ngaysinh";
+            this.ngaysinhDataGridViewTextBoxColumn.HeaderText = "Ngày sinh";
+            this.ngaysinhDataGridViewTextBoxColumn.Name = "ngaysinhDataGridViewTextBoxColumn";
+            this.ngaysinhDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // diachiDataGridViewTextBoxColumn
+            // 
+            this.diachiDataGridViewTextBoxColumn.DataPropertyName = "diachi";
+            this.diachiDataGridViewTextBoxColumn.HeaderText = "Địa chỉ";
+            this.diachiDataGridViewTextBoxColumn.Name = "diachiDataGridViewTextBoxColumn";
+            this.diachiDataGridViewTextBoxColumn.ReadOnly = true;
+            this.diachiDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // tenLoaiTaiKhoanDataGridViewTextBoxColumn
+            // 
+            this.tenLoaiTaiKhoanDataGridViewTextBoxColumn.DataPropertyName = "TenLoaiTaiKhoan";
+            this.tenLoaiTaiKhoanDataGridViewTextBoxColumn.HeaderText = "Loại tài khoản";
+            this.tenLoaiTaiKhoanDataGridViewTextBoxColumn.Name = "tenLoaiTaiKhoanDataGridViewTextBoxColumn";
+            this.tenLoaiTaiKhoanDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tenLoaiTaiKhoanDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // gETALLTAIKHOANResultBindingSource
+            // 
+            this.gETALLTAIKHOANResultBindingSource.DataSource = typeof(EntityData.GETALLTAIKHOAN_Result);
+            // 
             // tabChucnangnguoidung
             // 
             this.tabChucnangnguoidung.Controls.Add(this.panel3);
@@ -869,6 +972,60 @@
             this.dataQLND.TabIndex = 2;
             this.dataQLND.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataQLND_CellClick);
             // 
+            // masachDataGridViewTextBoxColumn2
+            // 
+            this.masachDataGridViewTextBoxColumn2.DataPropertyName = "masach";
+            this.masachDataGridViewTextBoxColumn2.Frozen = true;
+            this.masachDataGridViewTextBoxColumn2.HeaderText = "Mã sách";
+            this.masachDataGridViewTextBoxColumn2.Name = "masachDataGridViewTextBoxColumn2";
+            this.masachDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // tieudeDataGridViewTextBoxColumn2
+            // 
+            this.tieudeDataGridViewTextBoxColumn2.DataPropertyName = "tieude";
+            this.tieudeDataGridViewTextBoxColumn2.Frozen = true;
+            this.tieudeDataGridViewTextBoxColumn2.HeaderText = "Tiêu đề";
+            this.tieudeDataGridViewTextBoxColumn2.Name = "tieudeDataGridViewTextBoxColumn2";
+            this.tieudeDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // tacgiaDataGridViewTextBoxColumn1
+            // 
+            this.tacgiaDataGridViewTextBoxColumn1.DataPropertyName = "tacgia";
+            this.tacgiaDataGridViewTextBoxColumn1.Frozen = true;
+            this.tacgiaDataGridViewTextBoxColumn1.HeaderText = "Tác giả";
+            this.tacgiaDataGridViewTextBoxColumn1.Name = "tacgiaDataGridViewTextBoxColumn1";
+            this.tacgiaDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // idloaisachDataGridViewTextBoxColumn
+            // 
+            this.idloaisachDataGridViewTextBoxColumn.DataPropertyName = "idloaisach";
+            this.idloaisachDataGridViewTextBoxColumn.HeaderText = "idloaisach";
+            this.idloaisachDataGridViewTextBoxColumn.Name = "idloaisachDataGridViewTextBoxColumn";
+            this.idloaisachDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // soluongDataGridViewTextBoxColumn1
+            // 
+            this.soluongDataGridViewTextBoxColumn1.DataPropertyName = "soluong";
+            this.soluongDataGridViewTextBoxColumn1.Frozen = true;
+            this.soluongDataGridViewTextBoxColumn1.HeaderText = "Số lượng";
+            this.soluongDataGridViewTextBoxColumn1.Name = "soluongDataGridViewTextBoxColumn1";
+            // 
+            // trangthaiDataGridViewCheckBoxColumn2
+            // 
+            this.trangthaiDataGridViewCheckBoxColumn2.DataPropertyName = "trangthai";
+            this.trangthaiDataGridViewCheckBoxColumn2.Frozen = true;
+            this.trangthaiDataGridViewCheckBoxColumn2.HeaderText = "Trạng thái";
+            this.trangthaiDataGridViewCheckBoxColumn2.Name = "trangthaiDataGridViewCheckBoxColumn2";
+            this.trangthaiDataGridViewCheckBoxColumn2.ReadOnly = true;
+            this.trangthaiDataGridViewCheckBoxColumn2.ThreeState = true;
+            // 
+            // tenloaisachDataGridViewTextBoxColumn1
+            // 
+            this.tenloaisachDataGridViewTextBoxColumn1.DataPropertyName = "tenloaisach";
+            this.tenloaisachDataGridViewTextBoxColumn1.Frozen = true;
+            this.tenloaisachDataGridViewTextBoxColumn1.HeaderText = "Loại sách";
+            this.tenloaisachDataGridViewTextBoxColumn1.Name = "tenloaisachDataGridViewTextBoxColumn1";
+            // 
             // tacvu
             // 
             this.tacvu.FlatStyle = System.Windows.Forms.FlatStyle.System;
@@ -879,6 +1036,10 @@
             this.tacvu.ToolTipText = "Mượn sách ";
             this.tacvu.UseColumnTextForButtonValue = true;
             this.tacvu.Width = 130;
+            // 
+            // getAllSachResultBindingSource1
+            // 
+            this.getAllSachResultBindingSource1.DataSource = typeof(EntityData.GetAll_Sach_Result);
             // 
             // groupBox6
             // 
@@ -1050,6 +1211,34 @@
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Thông tin tìm kiếm";
             // 
+            // btnTV_timkiemthongtinmuonsach
+            // 
+            this.btnTV_timkiemthongtinmuonsach.Location = new System.Drawing.Point(271, 43);
+            this.btnTV_timkiemthongtinmuonsach.Name = "btnTV_timkiemthongtinmuonsach";
+            this.btnTV_timkiemthongtinmuonsach.Size = new System.Drawing.Size(75, 46);
+            this.btnTV_timkiemthongtinmuonsach.TabIndex = 6;
+            this.btnTV_timkiemthongtinmuonsach.Text = "Tìm kiếm";
+            this.btnTV_timkiemthongtinmuonsach.UseVisualStyleBackColor = true;
+            this.btnTV_timkiemthongtinmuonsach.Click += new System.EventHandler(this.btnTV_timkiemthongtinmuonsach_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(169, 113);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(16, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "to";
+            // 
+            // dateTV_end
+            // 
+            this.dateTV_end.CustomFormat = "MM/dd/yyyy";
+            this.dateTV_end.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTV_end.Location = new System.Drawing.Point(191, 111);
+            this.dateTV_end.Name = "dateTV_end";
+            this.dateTV_end.Size = new System.Drawing.Size(93, 20);
+            this.dateTV_end.TabIndex = 4;
+            // 
             // dateTV_start
             // 
             this.dateTV_start.CustomFormat = "MM/dd/yyyy";
@@ -1149,13 +1338,19 @@
             this.ngaymuonDataGridViewTextBoxColumn,
             this.ngaytraDataGridViewTextBoxColumn,
             this.phuthuDataGridViewTextBoxColumn,
-            this.trangthaiDataGridViewCheckBoxColumn1});
+            this.trangthaiDataGridViewCheckBoxColumn1,
+            this.inphieumuon});
             this.dataMuonSach.DataSource = this.muonSachDanhSachMuonSachAllResultBindingSource;
             this.dataMuonSach.Location = new System.Drawing.Point(0, 19);
             this.dataMuonSach.Name = "dataMuonSach";
             this.dataMuonSach.Size = new System.Drawing.Size(816, 300);
             this.dataMuonSach.TabIndex = 0;
+            this.dataMuonSach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataMuonSach_CellClick);
             this.dataMuonSach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataMuonSach_CellContentClick);
+            // 
+            // muonSachDanhSachMuonSachAllResultBindingSource
+            // 
+            this.muonSachDanhSachMuonSachAllResultBindingSource.DataSource = typeof(EntityData.MuonSach_DanhSachMuonSachAll_Result);
             // 
             // groupBox7
             // 
@@ -1235,193 +1430,17 @@
             this.label27.TabIndex = 0;
             this.label27.Text = "Mã sách :";
             // 
-            // btnQLTK_clear
+            // getAllSachResultBindingSource2
             // 
-            this.btnQLTK_clear.Location = new System.Drawing.Point(270, 103);
-            this.btnQLTK_clear.Name = "btnQLTK_clear";
-            this.btnQLTK_clear.Size = new System.Drawing.Size(75, 23);
-            this.btnQLTK_clear.TabIndex = 4;
-            this.btnQLTK_clear.Text = "Clear";
-            this.btnQLTK_clear.UseVisualStyleBackColor = true;
-            this.btnQLTK_clear.Click += new System.EventHandler(this.btnQLTK_clear_Click);
+            this.getAllSachResultBindingSource2.DataSource = typeof(EntityData.GetAll_Sach_Result);
             // 
-            // dateTV_end
+            // spTaiKhoanTimKiemThongTinResultBindingSource1
             // 
-            this.dateTV_end.CustomFormat = "MM/dd/yyyy";
-            this.dateTV_end.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTV_end.Location = new System.Drawing.Point(191, 111);
-            this.dateTV_end.Name = "dateTV_end";
-            this.dateTV_end.Size = new System.Drawing.Size(93, 20);
-            this.dateTV_end.TabIndex = 4;
+            this.spTaiKhoanTimKiemThongTinResultBindingSource1.DataSource = typeof(EntityData.sp_TaiKhoan_TimKiemThongTin_Result);
             // 
-            // label3
+            // spTaiKhoanTimKiemThongTinResultBindingSource
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(169, 113);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(16, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "to";
-            // 
-            // btnTV_timkiemthongtinmuonsach
-            // 
-            this.btnTV_timkiemthongtinmuonsach.Location = new System.Drawing.Point(271, 43);
-            this.btnTV_timkiemthongtinmuonsach.Name = "btnTV_timkiemthongtinmuonsach";
-            this.btnTV_timkiemthongtinmuonsach.Size = new System.Drawing.Size(75, 46);
-            this.btnTV_timkiemthongtinmuonsach.TabIndex = 6;
-            this.btnTV_timkiemthongtinmuonsach.Text = "Tìm kiếm";
-            this.btnTV_timkiemthongtinmuonsach.UseVisualStyleBackColor = true;
-            this.btnTV_timkiemthongtinmuonsach.Click += new System.EventHandler(this.btnTV_timkiemthongtinmuonsach_Click);
-            // 
-            // masachDataGridViewTextBoxColumn
-            // 
-            this.masachDataGridViewTextBoxColumn.DataPropertyName = "masach";
-            this.masachDataGridViewTextBoxColumn.HeaderText = "Mã sách";
-            this.masachDataGridViewTextBoxColumn.Name = "masachDataGridViewTextBoxColumn";
-            this.masachDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tieudeDataGridViewTextBoxColumn
-            // 
-            this.tieudeDataGridViewTextBoxColumn.DataPropertyName = "tieude";
-            this.tieudeDataGridViewTextBoxColumn.FillWeight = 150F;
-            this.tieudeDataGridViewTextBoxColumn.HeaderText = "Tiêu đề";
-            this.tieudeDataGridViewTextBoxColumn.MaxInputLength = 42767;
-            this.tieudeDataGridViewTextBoxColumn.Name = "tieudeDataGridViewTextBoxColumn";
-            this.tieudeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tieudeDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // tacgiaDataGridViewTextBoxColumn
-            // 
-            this.tacgiaDataGridViewTextBoxColumn.DataPropertyName = "tacgia";
-            this.tacgiaDataGridViewTextBoxColumn.HeaderText = "Tác giả";
-            this.tacgiaDataGridViewTextBoxColumn.Name = "tacgiaDataGridViewTextBoxColumn";
-            this.tacgiaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tacgiaDataGridViewTextBoxColumn.Width = 130;
-            // 
-            // soluongDataGridViewTextBoxColumn
-            // 
-            this.soluongDataGridViewTextBoxColumn.DataPropertyName = "soluong";
-            this.soluongDataGridViewTextBoxColumn.HeaderText = "Số lượng";
-            this.soluongDataGridViewTextBoxColumn.Name = "soluongDataGridViewTextBoxColumn";
-            this.soluongDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // trangthaiDataGridViewCheckBoxColumn
-            // 
-            this.trangthaiDataGridViewCheckBoxColumn.DataPropertyName = "trangthai";
-            this.trangthaiDataGridViewCheckBoxColumn.HeaderText = "Trạng thái ";
-            this.trangthaiDataGridViewCheckBoxColumn.Name = "trangthaiDataGridViewCheckBoxColumn";
-            this.trangthaiDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // tenloaisachDataGridViewTextBoxColumn
-            // 
-            this.tenloaisachDataGridViewTextBoxColumn.DataPropertyName = "tenloaisach";
-            this.tenloaisachDataGridViewTextBoxColumn.HeaderText = "Loại sách";
-            this.tenloaisachDataGridViewTextBoxColumn.Name = "tenloaisachDataGridViewTextBoxColumn";
-            this.tenloaisachDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // getAllSachResultBindingSource
-            // 
-            this.getAllSachResultBindingSource.DataSource = typeof(EntityData.GetAll_Sach_Result);
-            // 
-            // matkDataGridViewTextBoxColumn1
-            // 
-            this.matkDataGridViewTextBoxColumn1.DataPropertyName = "matk";
-            this.matkDataGridViewTextBoxColumn1.HeaderText = "Mã Tk";
-            this.matkDataGridViewTextBoxColumn1.Name = "matkDataGridViewTextBoxColumn1";
-            this.matkDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // tentaikhoanDataGridViewTextBoxColumn1
-            // 
-            this.tentaikhoanDataGridViewTextBoxColumn1.DataPropertyName = "tentaikhoan";
-            this.tentaikhoanDataGridViewTextBoxColumn1.HeaderText = "Tên tài khoản";
-            this.tentaikhoanDataGridViewTextBoxColumn1.Name = "tentaikhoanDataGridViewTextBoxColumn1";
-            this.tentaikhoanDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.tentaikhoanDataGridViewTextBoxColumn1.Width = 150;
-            // 
-            // ngaysinhDataGridViewTextBoxColumn
-            // 
-            this.ngaysinhDataGridViewTextBoxColumn.DataPropertyName = "ngaysinh";
-            this.ngaysinhDataGridViewTextBoxColumn.HeaderText = "Ngày sinh";
-            this.ngaysinhDataGridViewTextBoxColumn.Name = "ngaysinhDataGridViewTextBoxColumn";
-            this.ngaysinhDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // diachiDataGridViewTextBoxColumn
-            // 
-            this.diachiDataGridViewTextBoxColumn.DataPropertyName = "diachi";
-            this.diachiDataGridViewTextBoxColumn.HeaderText = "Địa chỉ";
-            this.diachiDataGridViewTextBoxColumn.Name = "diachiDataGridViewTextBoxColumn";
-            this.diachiDataGridViewTextBoxColumn.ReadOnly = true;
-            this.diachiDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // tenLoaiTaiKhoanDataGridViewTextBoxColumn
-            // 
-            this.tenLoaiTaiKhoanDataGridViewTextBoxColumn.DataPropertyName = "TenLoaiTaiKhoan";
-            this.tenLoaiTaiKhoanDataGridViewTextBoxColumn.HeaderText = "Loại tài khoản";
-            this.tenLoaiTaiKhoanDataGridViewTextBoxColumn.Name = "tenLoaiTaiKhoanDataGridViewTextBoxColumn";
-            this.tenLoaiTaiKhoanDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tenLoaiTaiKhoanDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // gETALLTAIKHOANResultBindingSource
-            // 
-            this.gETALLTAIKHOANResultBindingSource.DataSource = typeof(EntityData.GETALLTAIKHOAN_Result);
-            // 
-            // masachDataGridViewTextBoxColumn2
-            // 
-            this.masachDataGridViewTextBoxColumn2.DataPropertyName = "masach";
-            this.masachDataGridViewTextBoxColumn2.Frozen = true;
-            this.masachDataGridViewTextBoxColumn2.HeaderText = "Mã sách";
-            this.masachDataGridViewTextBoxColumn2.Name = "masachDataGridViewTextBoxColumn2";
-            this.masachDataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // tieudeDataGridViewTextBoxColumn2
-            // 
-            this.tieudeDataGridViewTextBoxColumn2.DataPropertyName = "tieude";
-            this.tieudeDataGridViewTextBoxColumn2.Frozen = true;
-            this.tieudeDataGridViewTextBoxColumn2.HeaderText = "Tiêu đề";
-            this.tieudeDataGridViewTextBoxColumn2.Name = "tieudeDataGridViewTextBoxColumn2";
-            this.tieudeDataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // tacgiaDataGridViewTextBoxColumn1
-            // 
-            this.tacgiaDataGridViewTextBoxColumn1.DataPropertyName = "tacgia";
-            this.tacgiaDataGridViewTextBoxColumn1.Frozen = true;
-            this.tacgiaDataGridViewTextBoxColumn1.HeaderText = "Tác giả";
-            this.tacgiaDataGridViewTextBoxColumn1.Name = "tacgiaDataGridViewTextBoxColumn1";
-            this.tacgiaDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // idloaisachDataGridViewTextBoxColumn
-            // 
-            this.idloaisachDataGridViewTextBoxColumn.DataPropertyName = "idloaisach";
-            this.idloaisachDataGridViewTextBoxColumn.HeaderText = "idloaisach";
-            this.idloaisachDataGridViewTextBoxColumn.Name = "idloaisachDataGridViewTextBoxColumn";
-            this.idloaisachDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // soluongDataGridViewTextBoxColumn1
-            // 
-            this.soluongDataGridViewTextBoxColumn1.DataPropertyName = "soluong";
-            this.soluongDataGridViewTextBoxColumn1.Frozen = true;
-            this.soluongDataGridViewTextBoxColumn1.HeaderText = "Số lượng";
-            this.soluongDataGridViewTextBoxColumn1.Name = "soluongDataGridViewTextBoxColumn1";
-            // 
-            // trangthaiDataGridViewCheckBoxColumn2
-            // 
-            this.trangthaiDataGridViewCheckBoxColumn2.DataPropertyName = "trangthai";
-            this.trangthaiDataGridViewCheckBoxColumn2.Frozen = true;
-            this.trangthaiDataGridViewCheckBoxColumn2.HeaderText = "Trạng thái";
-            this.trangthaiDataGridViewCheckBoxColumn2.Name = "trangthaiDataGridViewCheckBoxColumn2";
-            this.trangthaiDataGridViewCheckBoxColumn2.ReadOnly = true;
-            this.trangthaiDataGridViewCheckBoxColumn2.ThreeState = true;
-            // 
-            // tenloaisachDataGridViewTextBoxColumn1
-            // 
-            this.tenloaisachDataGridViewTextBoxColumn1.DataPropertyName = "tenloaisach";
-            this.tenloaisachDataGridViewTextBoxColumn1.Frozen = true;
-            this.tenloaisachDataGridViewTextBoxColumn1.HeaderText = "Loại sách";
-            this.tenloaisachDataGridViewTextBoxColumn1.Name = "tenloaisachDataGridViewTextBoxColumn1";
-            // 
-            // getAllSachResultBindingSource1
-            // 
-            this.getAllSachResultBindingSource1.DataSource = typeof(EntityData.GetAll_Sach_Result);
+            this.spTaiKhoanTimKiemThongTinResultBindingSource.DataSource = typeof(EntityData.sp_TaiKhoan_TimKiemThongTin_Result);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -1429,6 +1448,7 @@
             this.idDataGridViewTextBoxColumn.HeaderText = "id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 50;
             // 
             // matkDataGridViewTextBoxColumn
             // 
@@ -1478,6 +1498,7 @@
             this.phuthuDataGridViewTextBoxColumn.HeaderText = "Phụ thu";
             this.phuthuDataGridViewTextBoxColumn.Name = "phuthuDataGridViewTextBoxColumn";
             this.phuthuDataGridViewTextBoxColumn.ReadOnly = true;
+            this.phuthuDataGridViewTextBoxColumn.Width = 70;
             // 
             // trangthaiDataGridViewCheckBoxColumn1
             // 
@@ -1485,22 +1506,15 @@
             this.trangthaiDataGridViewCheckBoxColumn1.HeaderText = "Trang thái ";
             this.trangthaiDataGridViewCheckBoxColumn1.Name = "trangthaiDataGridViewCheckBoxColumn1";
             this.trangthaiDataGridViewCheckBoxColumn1.ReadOnly = true;
+            this.trangthaiDataGridViewCheckBoxColumn1.Width = 40;
             // 
-            // muonSachDanhSachMuonSachAllResultBindingSource
+            // inphieumuon
             // 
-            this.muonSachDanhSachMuonSachAllResultBindingSource.DataSource = typeof(EntityData.MuonSach_DanhSachMuonSachAll_Result);
-            // 
-            // getAllSachResultBindingSource2
-            // 
-            this.getAllSachResultBindingSource2.DataSource = typeof(EntityData.GetAll_Sach_Result);
-            // 
-            // spTaiKhoanTimKiemThongTinResultBindingSource1
-            // 
-            this.spTaiKhoanTimKiemThongTinResultBindingSource1.DataSource = typeof(EntityData.sp_TaiKhoan_TimKiemThongTin_Result);
-            // 
-            // spTaiKhoanTimKiemThongTinResultBindingSource
-            // 
-            this.spTaiKhoanTimKiemThongTinResultBindingSource.DataSource = typeof(EntityData.sp_TaiKhoan_TimKiemThongTin_Result);
+            this.inphieumuon.HeaderText = "Tác vụ";
+            this.inphieumuon.Name = "inphieumuon";
+            this.inphieumuon.Text = "In phiếu mượn sách";
+            this.inphieumuon.UseColumnTextForButtonValue = true;
+            this.inphieumuon.Width = 120;
             // 
             // MainForm
             // 
@@ -1516,6 +1530,7 @@
             this.tabQuanlysach.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataSach_QuanLySach)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getAllSachResultBindingSource)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numQLS_thongtin_soluong)).EndInit();
@@ -1527,10 +1542,12 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataQLTK)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gETALLTAIKHOANResultBindingSource)).EndInit();
             this.tabChucnangnguoidung.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataQLND)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getAllSachResultBindingSource1)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.tabThuvien.ResumeLayout(false);
@@ -1539,12 +1556,9 @@
             this.groupBox8.PerformLayout();
             this.groupBox9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataMuonSach)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.muonSachDanhSachMuonSachAllResultBindingSource)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.getAllSachResultBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gETALLTAIKHOANResultBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.getAllSachResultBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.muonSachDanhSachMuonSachAllResultBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.getAllSachResultBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spTaiKhoanTimKiemThongTinResultBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spTaiKhoanTimKiemThongTinResultBindingSource)).EndInit();
@@ -1660,15 +1674,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tenloaisachDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idloaisach;
         private System.Windows.Forms.BindingSource muonSachDanhSachMuonSachAllResultBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn matkDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tentaikhoanDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn masachDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tieudeDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ngaymuonDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ngaytraDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phuthuDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn trangthaiDataGridViewCheckBoxColumn1;
         private System.Windows.Forms.Button btnMuonSach_huymuonsach;
         private System.Windows.Forms.BindingSource getAllSachResultBindingSource1;
         private System.Windows.Forms.DataGridViewTextBoxColumn masachDataGridViewTextBoxColumn2;
@@ -1695,5 +1700,15 @@
         private System.Windows.Forms.Button btnTV_timkiemthongtinmuonsach;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dateTV_end;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn matkDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tentaikhoanDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn masachDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tieudeDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ngaymuonDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ngaytraDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phuthuDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn trangthaiDataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.DataGridViewButtonColumn inphieumuon;
     }
 }

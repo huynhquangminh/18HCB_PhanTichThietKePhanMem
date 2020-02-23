@@ -1,6 +1,8 @@
 ﻿using DataAccess;
 using DataAccess.parameter;
 using EntityData;
+using PdfSharp.Drawing;
+using PdfSharp.Pdf;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -142,6 +144,25 @@ namespace BusinessLogic
                 return null;
             }
             return null;
+        }
+
+        public void downloadPhieuMuonSach(string matk, string tentaikhoan, string masach, string tensach,string ngaymuon )
+        {
+            PdfDocument pdf = new PdfDocument();
+            pdf.Info.Title = "Created with PDFsharp";
+            PdfPage pdfPage = pdf.AddPage();
+            XGraphics graph = XGraphics.FromPdfPage(pdfPage);
+            XFont font = new XFont("Times New Roman", 12, XFontStyle.Bold);
+            graph.DrawString("Phiếu mượn sách", font, XBrushes.Black,
+            new XRect(0, 0, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopCenter);
+            graph.DrawString("Thư viện :ĐH Khoa Học Tự Nhiên TP.Hồ Chí Minh ", font, XBrushes.Black, 40f, 25f);
+            graph.DrawString("Mã người mượn : " + matk, font, XBrushes.Black,40f, 40f);
+            graph.DrawString("Tên người mượn : " + tentaikhoan, font, XBrushes.Black, 40f, 60f);
+            graph.DrawString("Mã sách : " + masach, font, XBrushes.Black, 40f, 80f);
+            graph.DrawString("Tên sách : " + tensach, font, XBrushes.Black, 40f, 100f);
+            graph.DrawString("Ngày mượn : " + ngaymuon, font, XBrushes.Black, 40f, 120f);
+            string filename = "PhieuMuonSach-"+ matk + "-" + masach + "-" + DateTime.Now.ToString("ddMMyyyyHHmm") + ".pdf";
+            pdf.Save(filename);
         }
     }
 }

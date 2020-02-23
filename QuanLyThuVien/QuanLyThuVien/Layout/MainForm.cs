@@ -65,6 +65,7 @@ namespace QuanLyThuVien.Layout
                 cbbQLS_thongtin_loaisach.ValueMember = "id";
                 cbbQLS_thongtin_loaisach.DisplayMember = "tenloaisach";
                 cbbQLS_thongtin_loaisach.DataSource = cbbQLS_timkiem_loaisach.DataSource;
+                GetDsTaiKhoanTimKiemAll();
             }
         }
 
@@ -551,6 +552,24 @@ namespace QuanLyThuVien.Layout
         {
             var result = muonSachBus.TimKieThongTinMuonSachTheoDate(dateTV_start.Text, dateTV_end.Text);
             dataMuonSach.DataSource = result;
+        }
+
+        private void dataMuonSach_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 9)
+            {
+                var resultListMuonSach = muonSachBus.GetDanhSachMuonSachAll();
+                var matk = resultListMuonSach[e.RowIndex].matk;
+                var tentaikhoan = resultListMuonSach[e.RowIndex].tentaikhoan;
+                var masach = resultListMuonSach[e.RowIndex].masach;
+                var tensach = resultListMuonSach[e.RowIndex].tieude;
+                var ngaymuon = resultListMuonSach[e.RowIndex].ngaymuon;
+                var dialogResult = MessageBox.Show("Bạn có muốn in phiếu mượn sách không!", "Thông báo", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    muonSachBus.downloadPhieuMuonSach(matk, tentaikhoan, masach, tensach, ngaymuon.ToString());
+                }
+            }
         }
     }
 }
