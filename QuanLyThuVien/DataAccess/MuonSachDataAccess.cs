@@ -45,5 +45,15 @@ namespace DataAccess
             return result > 0 ? true : false;
         }
 
+        public List<TimKiemThongTinMuonSach_Result> TimKieThongTinMuonSach(string tensach, string masach, string matk)
+        {
+            return db.TimKiemThongTinMuonSach(tensach, masach, matk).ToList();
+        }
+
+        public List<TimThongTinMuonSachTheoDate_Result> TimKieThongTinMuonSachTheoDate(string dateStart, string dateEnd)
+        {
+            return db.TimThongTinMuonSachTheoDate(dateStart, dateEnd).ToList();
+        }
+
     }
 }

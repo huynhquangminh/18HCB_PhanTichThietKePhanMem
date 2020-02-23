@@ -107,5 +107,41 @@ namespace BusinessLogic
                 return false;
             }
         }
+
+        public List<TimKiemThongTinMuonSach_Result> TimKieThongTinMuonSach(string tensach, string masach, string matk)
+        {
+            var result = new List<TimKiemThongTinMuonSach_Result>();
+            try
+            {
+                result = muonSachDal.TimKieThongTinMuonSach(tensach, masach, matk);
+                if (result != null)
+                {
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            return null;
+        }
+
+        public List<TimThongTinMuonSachTheoDate_Result> TimKieThongTinMuonSachTheoDate(string dateStart, string dateEnd)
+        {
+            var result = new List<TimThongTinMuonSachTheoDate_Result>();
+            try
+            {
+                result = muonSachDal.TimKieThongTinMuonSachTheoDate(dateStart, dateEnd);
+                if (result != null)
+                {
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            return null;
+        }
     }
 }

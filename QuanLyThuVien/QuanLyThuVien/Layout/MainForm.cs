@@ -18,6 +18,7 @@ namespace QuanLyThuVien.Layout
         private readonly SachBusinessLogic sachBus = new SachBusinessLogic();
         private readonly MuonSachBusinessLogic muonSachBus = new MuonSachBusinessLogic();
         private readonly TaiKhoanBusinessLogic taikhoanBus = new TaiKhoanBusinessLogic();
+        public static TaikhoanParameter thongTinTaiKhoanDetail = new TaikhoanParameter();
         public static SachParameter thongTinSachDetail = new SachParameter();
         private int idMuonSach = 0;
         public MainForm()
@@ -50,7 +51,7 @@ namespace QuanLyThuVien.Layout
                 ((Control)this.tabThuvien).Enabled = false;
                 ((Control)this.tabChucnangnguoidung).Enabled = false;
                 tabManager.SelectedTab = tabQuanlytaikhoan;
-                GetDsTaiKhoanTimKiem();
+                GetDsTaiKhoanTimKiemAll();
             }
 
             if (Login.thongtintaikhoan.loaitaikhoan == 3 || Login.thongtintaikhoan.loaitaikhoan == 4)
@@ -76,7 +77,7 @@ namespace QuanLyThuVien.Layout
             }
             if (Login.thongtintaikhoan.loaitaikhoan == 1)
             {
-                GetDsTaiKhoanTimKiem();
+                GetDsTaiKhoanTimKiemAll();
             }
             if (Login.thongtintaikhoan.loaitaikhoan == 3 || Login.thongtintaikhoan.loaitaikhoan == 4)
             {
@@ -276,9 +277,9 @@ namespace QuanLyThuVien.Layout
 
         private void btnMuonSach_trasach_Click(object sender, EventArgs e)
         {
-            if(idMuonSach != 0 && txtMuonSach_masach.Text != "" && txtMuonSach_matk.Text != "")
+            if (idMuonSach != 0 && txtMuonSach_masach.Text != "" && txtMuonSach_matk.Text != "")
             {
-                 var param = new MuonSachParameter()
+                var param = new MuonSachParameter()
                 {
                     id = idMuonSach,
                     ngaytra = DateTime.Now.ToString("yyyy/MM/dd"),
@@ -289,12 +290,13 @@ namespace QuanLyThuVien.Layout
                 {
                     sachBus.CapNhapSoLuongSach(txtMuonSach_masach.Text, true);
                     GetDSMuonSachAll();
-                    MessageBox.Show( "Trả sách thành công .Vui lòng thanh toán nếu có phụ thu!");
+                    MessageBox.Show("Trả sách thành công .Vui lòng thanh toán nếu có phụ thu!");
                     txtMuonSach_masach.Text = "";
                     txtMuonSach_matk.Text = "";
                     idMuonSach = 0;
                 }
-            } else
+            }
+            else
             {
                 MessageBox.Show("Thông tin trả sách thiếu!");
             }
@@ -304,7 +306,7 @@ namespace QuanLyThuVien.Layout
         {
             int i;
             i = dataMuonSach.CurrentRow.Index;
-            idMuonSach =Convert.ToInt32(dataMuonSach.Rows[i].Cells[0].Value);
+            idMuonSach = Convert.ToInt32(dataMuonSach.Rows[i].Cells[0].Value);
             txtMuonSach_masach.Text = dataMuonSach.Rows[i].Cells[3].Value.ToString();
             txtMuonSach_matk.Text = dataMuonSach.Rows[i].Cells[1].Value.ToString();
         }
@@ -329,7 +331,7 @@ namespace QuanLyThuVien.Layout
 
         private void dataQLND_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.ColumnIndex == 7)
+            if (e.ColumnIndex == 7)
             {
                 var resultListSach = sachBus.GetAllSach();
                 var masach = resultListSach[e.RowIndex].masach;
@@ -346,7 +348,7 @@ namespace QuanLyThuVien.Layout
                         trangthai = false
                     };
                     var result = muonSachBus.MuonSach(param);
-                    if(result == true)
+                    if (result == true)
                     {
                         sachBus.CapNhapSoLuongSach(masach, false);
                         MessageBox.Show("Bạn đã mượn thành công!", "Thông báo");
@@ -402,7 +404,7 @@ namespace QuanLyThuVien.Layout
         {
             var formThongTinTaiKhoan = new ThongTinTaiKhoan();
             formThongTinTaiKhoan.ShowDialog();
-            if(ThongTinTaiKhoan.resultUpdateInfo == true)
+            if (ThongTinTaiKhoan.resultUpdateInfo == true)
             {
 
                 Thread thread = new Thread(new ThreadStart(ShowLoginForm)); //Tạo luồng mới
@@ -417,21 +419,138 @@ namespace QuanLyThuVien.Layout
             formLogin.ShowDialog();
         }
 
-        private void GetDsTaiKhoanTimKiem()
+        private void GetDsTaiKhoanTimKiemAll()
         {
-            var param = new TaikhoanParameter()
-            {
-                matk = txtQLTK_timkiem_matk.Text,
-                tentaikhoan = txtQLTK_timkiem_tentaikhoan.Text,
-                ngaysinh = dateQLTK_timkiem_ngaysinh.Text,
-                diachi = txtQLTK_timkiem_diachi.Text
-            };
-            dataQLTK.DataSource = taikhoanBus.GetTaiKhoanTimKiem(param);
+            dataQLTK.DataSource = taikhoanBus.GetDsTaiKhoanAll();
         }
 
         private void btnQLTK_timkiem_Click(object sender, EventArgs e)
         {
-            GetDsTaiKhoanTimKiem();
+            if (txtQLTK_timkiem_matk.Text != "" || txtQLTK_timkiem_tentaikhoan.Text != "" || txtQLTK_timkiem_diachi.Text != "")
+            {
+                var param = new TaikhoanParameter()
+                {
+                    matk = txtQLTK_timkiem_matk.Text == "" ? null : txtQLTK_timkiem_matk.Text,
+                    tentaikhoan = txtQLTK_timkiem_tentaikhoan.Text == "" ? null : txtQLTK_timkiem_tentaikhoan.Text,
+                    diachi = txtQLTK_timkiem_diachi.Text == "" ? null : txtQLTK_timkiem_diachi.Text
+                };
+                dataQLTK.DataSource = taikhoanBus.GetTaiKhoanTimKiem(param);
+            }
+            else
+            {
+                GetDsTaiKhoanTimKiemAll();
+            }
+
+
+        }
+
+        private void dataQLTK_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int i;
+            i = dataQLTK.CurrentRow.Index;
+            txtQLTK_thongtin_matk.Text = dataQLTK.Rows[i].Cells[0].Value.ToString();
+            txtQLTK_thongtin_tentk.Text = dataQLTK.Rows[i].Cells[1].Value.ToString();
+            dateQLTK_ngaysinh.Text = dataQLTK.Rows[i].Cells[2].Value.ToString();
+            txtQLTK_thongtin_diachi.Text = dataQLTK.Rows[i].Cells[3].Value.ToString();
+        }
+
+        private void btnQLTK_clear_Click(object sender, EventArgs e)
+        {
+            txtQLTK_thongtin_matk.Text = "";
+            txtQLTK_thongtin_tentk.Text = "";
+            txtQLTK_thongtin_diachi.Text = "";
+        }
+
+        private void btnQLTK_themtk_Click(object sender, EventArgs e)
+        {
+            if (txtQLTK_thongtin_tentk.Text != "" && txtQLTK_thongtin_diachi.Text != "" || dateQLTK_ngaysinh.Text != "")
+            {
+                DateTime aDate = DateTime.Now;
+                var codeRandom = "TK" + aDate.ToString("MMddHHmmss");
+                var param = new TaikhoanParameter()
+                {
+                    matk = codeRandom,
+                    tendangnhap = codeRandom,
+                    matkhau = codeRandom,
+                    tentaikhoan = txtQLTK_thongtin_tentk.Text,
+                    ngaysinh = dateQLTK_ngaysinh.Text,
+                    diachi = txtQLTK_thongtin_diachi.Text,
+                    loaitaikhoan = 2
+                };
+                var result = taikhoanBus.ThemTaiKhoan(param);
+                if (result == false)
+                {
+                    MessageBox.Show("Thông tin tài khoản hoặc mã tài khoản không hợp lệ!");
+                }
+                else
+                {
+                    GetDsTaiKhoanTimKiemAll();
+                }
+            }
+        }
+
+        private void btnQLTK_xoa_Click(object sender, EventArgs e)
+        {
+            if (txtQLTK_thongtin_matk.Text != "")
+            {
+                var dialogResult = MessageBox.Show("Bạn có muốn xóa tai khoản này không!", "Thông báo", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    var result = taikhoanBus.XoaTaiKhoan(txtQLTK_thongtin_matk.Text, Login.thongtintaikhoan.loaitaikhoan);
+                    GetDsTaiKhoanTimKiemAll();
+                    txtQLTK_thongtin_matk.Text = "";
+                    txtQLTK_thongtin_tentk.Text = "";
+                    txtQLTK_thongtin_diachi.Text = "";
+                }
+            }
+        }
+
+        private void btnQLTK_update_Click(object sender, EventArgs e)
+        {
+            if (txtQLTK_thongtin_matk.Text != "")
+            {
+                var dialogResult = MessageBox.Show("Bạn có muốn cập nhập tài khoản này không!", "Thông báo", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    var result = taikhoanBus.CapNhapThongTinTaiKhoan(txtQLTK_thongtin_matk.Text, txtQLTK_thongtin_tentk.Text, dateQLTK_ngaysinh.Text, txtQLTK_thongtin_diachi.Text);
+                    GetDsTaiKhoanTimKiemAll();
+                    txtQLTK_thongtin_matk.Text = "";
+                    txtQLTK_thongtin_tentk.Text = "";
+                    txtQLTK_thongtin_diachi.Text = "";
+                }
+            }
+        }
+
+        private void btnQLTK_xemchitiet_Click(object sender, EventArgs e)
+        {
+            if(txtQLTK_thongtin_matk.Text != "")
+            {
+                thongTinTaiKhoanDetail = new TaikhoanParameter()
+                {
+                    tentaikhoan = txtQLTK_thongtin_tentk.Text,
+                    matk = txtQLTK_thongtin_matk.Text,
+                    ngaysinh = dateQLTK_ngaysinh.Text,
+                    diachi = txtQLTK_thongtin_diachi.Text
+                };
+                TaiKhoanMuonSach formTKMuonsach = new TaiKhoanMuonSach();
+                formTKMuonsach.ShowDialog();
+            }
+            
+        }
+
+        private void btnTV_timkiemthongtinmuonsach_Click(object sender, EventArgs e)
+        {
+            var tensach = txtTV_timkiem_tensach.Text == "" ? null : txtTV_timkiem_tensach.Text;
+             var masach = txtTV_timkiem_masach.Text == "" ? null : txtTV_timkiem_masach.Text;
+            var mattk = txtTV_timkiem_matk.Text == "" ? null : txtTV_timkiem_matk.Text;
+            var result = muonSachBus.TimKieThongTinMuonSach(tensach, masach, mattk);
+            dataMuonSach.DataSource = result;
+        }
+
+        private void btnTV_timkiemtheodate_Click(object sender, EventArgs e)
+        {
+            var result = muonSachBus.TimKieThongTinMuonSachTheoDate(dateTV_start.Text, dateTV_end.Text);
+            dataMuonSach.DataSource = result;
         }
     }
 }

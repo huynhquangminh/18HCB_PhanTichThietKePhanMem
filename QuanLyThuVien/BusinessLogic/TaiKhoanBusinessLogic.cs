@@ -89,9 +89,9 @@ namespace BusinessLogic
                 return false;
             }
         }
-        public List<sp_TaiKhoan_TimKiemThongTin_Result> GetTaiKhoanTimKiem(TaikhoanParameter param)
+        public List<Taikhoan_TimKiemThongTin_Result> GetTaiKhoanTimKiem(TaikhoanParameter param)
         {
-            var result = new List<sp_TaiKhoan_TimKiemThongTin_Result>();
+            var result = new List<Taikhoan_TimKiemThongTin_Result>();
             try
             {
                 result = TaikhoanDal.GetTaiKhoanTimKiem(param);
@@ -105,6 +105,66 @@ namespace BusinessLogic
                 return null;
             }
             return null;
+        }
+
+        public List<GETALLTAIKHOAN_Result> GetDsTaiKhoanAll()
+        {
+            var result = new List<GETALLTAIKHOAN_Result>();
+            try
+            {
+                result = TaikhoanDal.GetDsTaiKhoanAll();
+                if (result != null)
+                {
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            return null;
+        }
+
+        public bool ThemTaiKhoan(TaikhoanParameter param)
+        {
+            var result = false;
+            try
+            {
+                result = TaikhoanDal.ThemTaiKhoan(param);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public bool XoaTaiKhoan(string matk, int? loaitaikhoan)
+        {
+            var result = false;
+            try
+            {
+                result = TaikhoanDal.XoaTaiKhoan(matk, loaitaikhoan);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public bool CapNhapThongTinTaiKhoan(string matk, string tentaikhoan, string ngaysinh, string diachi)
+        {
+            var result = false;
+            try
+            {
+                result = TaikhoanDal.CapNhapThongTinTaiKhoan(matk, tentaikhoan, ngaysinh, diachi);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
     }
 }

@@ -56,6 +56,9 @@
     <Compile Include="DangNhap_TaiKhoan_Result.cs">
       <DependentUpon>ModelData.tt</DependentUpon>
     </Compile>
+    <Compile Include="GETALLTAIKHOAN_Result.cs">
+      <DependentUpon>ModelData.tt</DependentUpon>
+    </Compile>
     <Compile Include="GetAll_LoaiSach_Result.cs">
       <DependentUpon>ModelData.tt</DependentUpon>
     </Compile>
@@ -129,7 +132,16 @@
     <Compile Include="TaiKhoan.cs">
       <DependentUpon>ModelData.tt</DependentUpon>
     </Compile>
+    <Compile Include="Taikhoan_TimKiemThongTin_Result.cs">
+      <DependentUpon>ModelData.tt</DependentUpon>
+    </Compile>
     <Compile Include="TaiKhoan_TimSachMuon_Result.cs">
+      <DependentUpon>ModelData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TimKiemThongTinMuonSach_Result.cs">
+      <DependentUpon>ModelData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TimThongTinMuonSachTheoDate_Result.cs">
       <DependentUpon>ModelData.tt</DependentUpon>
     </Compile>
   </ItemGroup>

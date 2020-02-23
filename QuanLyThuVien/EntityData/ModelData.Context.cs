@@ -381,5 +381,124 @@ namespace EntityData
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Update_Sach", masachParameter, tieudeParameter, tacgiaParameter, idloaisachParameter, soluongParameter, trangthaiParameter);
         }
+    
+        public virtual ObjectResult<GETALLTAIKHOAN_Result> GETALLTAIKHOAN()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GETALLTAIKHOAN_Result>("GETALLTAIKHOAN");
+        }
+    
+        public virtual ObjectResult<Taikhoan_TimKiemThongTin_Result> Taikhoan_TimKiemThongTin(string matk, string tentaikhoan, string diachi)
+        {
+            var matkParameter = matk != null ?
+                new ObjectParameter("matk", matk) :
+                new ObjectParameter("matk", typeof(string));
+    
+            var tentaikhoanParameter = tentaikhoan != null ?
+                new ObjectParameter("tentaikhoan", tentaikhoan) :
+                new ObjectParameter("tentaikhoan", typeof(string));
+    
+            var diachiParameter = diachi != null ?
+                new ObjectParameter("diachi", diachi) :
+                new ObjectParameter("diachi", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Taikhoan_TimKiemThongTin_Result>("Taikhoan_TimKiemThongTin", matkParameter, tentaikhoanParameter, diachiParameter);
+        }
+    
+        public virtual int TaiKhoan_Them(string matk, string tendangnhap, string matkhau, string tentaikhoan, string ngaysinh, string diachi, Nullable<int> loaitaikhoan)
+        {
+            var matkParameter = matk != null ?
+                new ObjectParameter("matk", matk) :
+                new ObjectParameter("matk", typeof(string));
+    
+            var tendangnhapParameter = tendangnhap != null ?
+                new ObjectParameter("tendangnhap", tendangnhap) :
+                new ObjectParameter("tendangnhap", typeof(string));
+    
+            var matkhauParameter = matkhau != null ?
+                new ObjectParameter("matkhau", matkhau) :
+                new ObjectParameter("matkhau", typeof(string));
+    
+            var tentaikhoanParameter = tentaikhoan != null ?
+                new ObjectParameter("tentaikhoan", tentaikhoan) :
+                new ObjectParameter("tentaikhoan", typeof(string));
+    
+            var ngaysinhParameter = ngaysinh != null ?
+                new ObjectParameter("ngaysinh", ngaysinh) :
+                new ObjectParameter("ngaysinh", typeof(string));
+    
+            var diachiParameter = diachi != null ?
+                new ObjectParameter("diachi", diachi) :
+                new ObjectParameter("diachi", typeof(string));
+    
+            var loaitaikhoanParameter = loaitaikhoan.HasValue ?
+                new ObjectParameter("loaitaikhoan", loaitaikhoan) :
+                new ObjectParameter("loaitaikhoan", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("TaiKhoan_Them", matkParameter, tendangnhapParameter, matkhauParameter, tentaikhoanParameter, ngaysinhParameter, diachiParameter, loaitaikhoanParameter);
+        }
+    
+        public virtual int TaiKhoan_Xoa(string matk, Nullable<int> loaitaikhoan)
+        {
+            var matkParameter = matk != null ?
+                new ObjectParameter("matk", matk) :
+                new ObjectParameter("matk", typeof(string));
+    
+            var loaitaikhoanParameter = loaitaikhoan.HasValue ?
+                new ObjectParameter("loaitaikhoan", loaitaikhoan) :
+                new ObjectParameter("loaitaikhoan", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("TaiKhoan_Xoa", matkParameter, loaitaikhoanParameter);
+        }
+    
+        public virtual int sp_TaiKhoan_CapNhat(string matk, string tentaikhoan, string ngaysinh, string diachi)
+        {
+            var matkParameter = matk != null ?
+                new ObjectParameter("matk", matk) :
+                new ObjectParameter("matk", typeof(string));
+    
+            var tentaikhoanParameter = tentaikhoan != null ?
+                new ObjectParameter("tentaikhoan", tentaikhoan) :
+                new ObjectParameter("tentaikhoan", typeof(string));
+    
+            var ngaysinhParameter = ngaysinh != null ?
+                new ObjectParameter("ngaysinh", ngaysinh) :
+                new ObjectParameter("ngaysinh", typeof(string));
+    
+            var diachiParameter = diachi != null ?
+                new ObjectParameter("diachi", diachi) :
+                new ObjectParameter("diachi", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_TaiKhoan_CapNhat", matkParameter, tentaikhoanParameter, ngaysinhParameter, diachiParameter);
+        }
+    
+        public virtual ObjectResult<TimKiemThongTinMuonSach_Result> TimKiemThongTinMuonSach(string tensach, string masack, string mataikhoan)
+        {
+            var tensachParameter = tensach != null ?
+                new ObjectParameter("tensach", tensach) :
+                new ObjectParameter("tensach", typeof(string));
+    
+            var masackParameter = masack != null ?
+                new ObjectParameter("masack", masack) :
+                new ObjectParameter("masack", typeof(string));
+    
+            var mataikhoanParameter = mataikhoan != null ?
+                new ObjectParameter("mataikhoan", mataikhoan) :
+                new ObjectParameter("mataikhoan", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<TimKiemThongTinMuonSach_Result>("TimKiemThongTinMuonSach", tensachParameter, masackParameter, mataikhoanParameter);
+        }
+    
+        public virtual ObjectResult<TimThongTinMuonSachTheoDate_Result> TimThongTinMuonSachTheoDate(string dateStart, string dateEnd)
+        {
+            var dateStartParameter = dateStart != null ?
+                new ObjectParameter("dateStart", dateStart) :
+                new ObjectParameter("dateStart", typeof(string));
+    
+            var dateEndParameter = dateEnd != null ?
+                new ObjectParameter("dateEnd", dateEnd) :
+                new ObjectParameter("dateEnd", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<TimThongTinMuonSachTheoDate_Result>("TimThongTinMuonSachTheoDate", dateStartParameter, dateEndParameter);
+        }
     }
 }

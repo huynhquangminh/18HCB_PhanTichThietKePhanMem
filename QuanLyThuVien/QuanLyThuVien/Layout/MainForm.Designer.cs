@@ -67,22 +67,22 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tabQuanlytaikhoan = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dateQLTK_timkiem_ngaysinh = new System.Windows.Forms.DateTimePicker();
+            this.txtQLTK_timkiem_diachi = new System.Windows.Forms.RichTextBox();
             this.btnQLTK_timkiem = new System.Windows.Forms.Button();
             this.txtQLTK_timkiem_matk = new System.Windows.Forms.TextBox();
             this.txtQLTK_timkiem_tentaikhoan = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.button20 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtQLTK_thongtin_diachi = new System.Windows.Forms.RichTextBox();
+            this.dateQLTK_ngaysinh = new System.Windows.Forms.DateTimePicker();
+            this.btnQLTK_xemchitiet = new System.Windows.Forms.Button();
+            this.btnQLTK_xoa = new System.Windows.Forms.Button();
+            this.btnQLTK_update = new System.Windows.Forms.Button();
+            this.btnQLTK_themtk = new System.Windows.Forms.Button();
+            this.txtQLTK_thongtin_matk = new System.Windows.Forms.TextBox();
+            this.txtQLTK_thongtin_tentk = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -112,14 +112,11 @@
             this.tabThuvien = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
-            this.button26 = new System.Windows.Forms.Button();
-            this.button27 = new System.Windows.Forms.Button();
-            this.button28 = new System.Windows.Forms.Button();
-            this.button29 = new System.Windows.Forms.Button();
-            this.textBox20 = new System.Windows.Forms.TextBox();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.textBox22 = new System.Windows.Forms.TextBox();
+            this.dateTV_start = new System.Windows.Forms.DateTimePicker();
+            this.btnTV_timkiemtheodate = new System.Windows.Forms.Button();
+            this.txtTV_timkiem_matk = new System.Windows.Forms.TextBox();
+            this.txtTV_timkiem_masach = new System.Windows.Forms.TextBox();
+            this.txtTV_timkiem_tensach = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
@@ -134,8 +131,10 @@
             this.txtMuonSach_masach = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
-            this.txtQLTK_timkiem_diachi = new System.Windows.Forms.RichTextBox();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.btnQLTK_clear = new System.Windows.Forms.Button();
+            this.dateTV_end = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnTV_timkiemthongtinmuonsach = new System.Windows.Forms.Button();
             this.masachDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tieudeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tacgiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -143,6 +142,12 @@
             this.trangthaiDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tenloaisachDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.getAllSachResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.matkDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tentaikhoanDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngaysinhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.diachiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenLoaiTaiKhoanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gETALLTAIKHOANResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.masachDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tieudeDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tacgiaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -161,13 +166,9 @@
             this.phuthuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.trangthaiDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.muonSachDanhSachMuonSachAllResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.spTaiKhoanTimKiemThongTinResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.matkDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tentaikhoanDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ngaysinhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.diachiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.loaiTaiKhoan1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.getAllSachResultBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.spTaiKhoanTimKiemThongTinResultBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.spTaiKhoanTimKiemThongTinResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.tabManager.SuspendLayout();
             this.tabQuanlysach.SuspendLayout();
@@ -191,10 +192,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataMuonSach)).BeginInit();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.getAllSachResultBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gETALLTAIKHOANResultBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getAllSachResultBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.muonSachDanhSachMuonSachAllResultBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spTaiKhoanTimKiemThongTinResultBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getAllSachResultBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spTaiKhoanTimKiemThongTinResultBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spTaiKhoanTimKiemThongTinResultBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -564,12 +567,10 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.txtQLTK_timkiem_diachi);
-            this.groupBox2.Controls.Add(this.dateQLTK_timkiem_ngaysinh);
             this.groupBox2.Controls.Add(this.btnQLTK_timkiem);
             this.groupBox2.Controls.Add(this.txtQLTK_timkiem_matk);
             this.groupBox2.Controls.Add(this.txtQLTK_timkiem_tentaikhoan);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Location = new System.Drawing.Point(10, 8);
@@ -579,16 +580,13 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin tìm kiếm";
             // 
-            // dateQLTK_timkiem_ngaysinh
+            // txtQLTK_timkiem_diachi
             // 
-            this.dateQLTK_timkiem_ngaysinh.CausesValidation = false;
-            this.dateQLTK_timkiem_ngaysinh.CustomFormat = "dd/MM/yyyy";
-            this.dateQLTK_timkiem_ngaysinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateQLTK_timkiem_ngaysinh.Location = new System.Drawing.Point(69, 85);
-            this.dateQLTK_timkiem_ngaysinh.Name = "dateQLTK_timkiem_ngaysinh";
-            this.dateQLTK_timkiem_ngaysinh.Size = new System.Drawing.Size(160, 20);
-            this.dateQLTK_timkiem_ngaysinh.TabIndex = 2;
-            this.dateQLTK_timkiem_ngaysinh.Value = new System.DateTime(2020, 2, 22, 0, 0, 0, 0);
+            this.txtQLTK_timkiem_diachi.Location = new System.Drawing.Point(69, 89);
+            this.txtQLTK_timkiem_diachi.Name = "txtQLTK_timkiem_diachi";
+            this.txtQLTK_timkiem_diachi.Size = new System.Drawing.Size(160, 37);
+            this.txtQLTK_timkiem_diachi.TabIndex = 3;
+            this.txtQLTK_timkiem_diachi.Text = "";
             // 
             // btnQLTK_timkiem
             // 
@@ -617,20 +615,11 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(7, 119);
+            this.label6.Location = new System.Drawing.Point(6, 89);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(49, 13);
             this.label6.TabIndex = 0;
             this.label6.Text = "Địa chỉ : ";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 92);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(60, 13);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Ngày sinh: ";
             // 
             // label9
             // 
@@ -652,14 +641,15 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.richTextBox3);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.button20);
-            this.groupBox1.Controls.Add(this.button5);
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.btnQLTK_clear);
+            this.groupBox1.Controls.Add(this.txtQLTK_thongtin_diachi);
+            this.groupBox1.Controls.Add(this.dateQLTK_ngaysinh);
+            this.groupBox1.Controls.Add(this.btnQLTK_xemchitiet);
+            this.groupBox1.Controls.Add(this.btnQLTK_xoa);
+            this.groupBox1.Controls.Add(this.btnQLTK_update);
+            this.groupBox1.Controls.Add(this.btnQLTK_themtk);
+            this.groupBox1.Controls.Add(this.txtQLTK_thongtin_matk);
+            this.groupBox1.Controls.Add(this.txtQLTK_thongtin_tentk);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label2);
@@ -671,69 +661,83 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin tài khoản";
             // 
-            // dateTimePicker1
+            // txtQLTK_thongtin_diachi
             // 
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(69, 86);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(160, 20);
-            this.dateTimePicker1.TabIndex = 2;
+            this.txtQLTK_thongtin_diachi.Location = new System.Drawing.Point(69, 116);
+            this.txtQLTK_thongtin_diachi.Name = "txtQLTK_thongtin_diachi";
+            this.txtQLTK_thongtin_diachi.Size = new System.Drawing.Size(160, 52);
+            this.txtQLTK_thongtin_diachi.TabIndex = 3;
+            this.txtQLTK_thongtin_diachi.Text = "";
             // 
-            // button20
+            // dateQLTK_ngaysinh
             // 
-            this.button20.Location = new System.Drawing.Point(270, 112);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(75, 44);
-            this.button20.TabIndex = 2;
-            this.button20.Text = "Xem chi tiết mượn sách";
-            this.button20.UseVisualStyleBackColor = true;
+            this.dateQLTK_ngaysinh.CustomFormat = "MM/dd/yyyy";
+            this.dateQLTK_ngaysinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateQLTK_ngaysinh.Location = new System.Drawing.Point(69, 86);
+            this.dateQLTK_ngaysinh.Name = "dateQLTK_ngaysinh";
+            this.dateQLTK_ngaysinh.Size = new System.Drawing.Size(160, 20);
+            this.dateQLTK_ngaysinh.TabIndex = 2;
+            this.dateQLTK_ngaysinh.Value = new System.DateTime(2020, 2, 23, 0, 0, 0, 0);
             // 
-            // button5
+            // btnQLTK_xemchitiet
             // 
-            this.button5.Location = new System.Drawing.Point(270, 83);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "Xóa";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnQLTK_xemchitiet.Location = new System.Drawing.Point(270, 132);
+            this.btnQLTK_xemchitiet.Name = "btnQLTK_xemchitiet";
+            this.btnQLTK_xemchitiet.Size = new System.Drawing.Size(75, 36);
+            this.btnQLTK_xemchitiet.TabIndex = 2;
+            this.btnQLTK_xemchitiet.Text = "Xem chi tiết mượn sách";
+            this.btnQLTK_xemchitiet.UseVisualStyleBackColor = true;
+            this.btnQLTK_xemchitiet.Click += new System.EventHandler(this.btnQLTK_xemchitiet_Click);
             // 
-            // button4
+            // btnQLTK_xoa
             // 
-            this.button4.Location = new System.Drawing.Point(270, 54);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Sửa";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnQLTK_xoa.Location = new System.Drawing.Point(270, 73);
+            this.btnQLTK_xoa.Name = "btnQLTK_xoa";
+            this.btnQLTK_xoa.Size = new System.Drawing.Size(75, 23);
+            this.btnQLTK_xoa.TabIndex = 2;
+            this.btnQLTK_xoa.Text = "Xóa";
+            this.btnQLTK_xoa.UseVisualStyleBackColor = true;
+            this.btnQLTK_xoa.Click += new System.EventHandler(this.btnQLTK_xoa_Click);
             // 
-            // button3
+            // btnQLTK_update
             // 
-            this.button3.Location = new System.Drawing.Point(270, 23);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Thêm";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnQLTK_update.Location = new System.Drawing.Point(270, 44);
+            this.btnQLTK_update.Name = "btnQLTK_update";
+            this.btnQLTK_update.Size = new System.Drawing.Size(75, 23);
+            this.btnQLTK_update.TabIndex = 2;
+            this.btnQLTK_update.Text = "Sửa";
+            this.btnQLTK_update.UseVisualStyleBackColor = true;
+            this.btnQLTK_update.Click += new System.EventHandler(this.btnQLTK_update_Click);
             // 
-            // textBox2
+            // btnQLTK_themtk
             // 
-            this.textBox2.Location = new System.Drawing.Point(69, 54);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(160, 20);
-            this.textBox2.TabIndex = 1;
+            this.btnQLTK_themtk.Location = new System.Drawing.Point(270, 19);
+            this.btnQLTK_themtk.Name = "btnQLTK_themtk";
+            this.btnQLTK_themtk.Size = new System.Drawing.Size(75, 23);
+            this.btnQLTK_themtk.TabIndex = 2;
+            this.btnQLTK_themtk.Text = "Thêm";
+            this.btnQLTK_themtk.UseVisualStyleBackColor = true;
+            this.btnQLTK_themtk.Click += new System.EventHandler(this.btnQLTK_themtk_Click);
             // 
-            // textBox1
+            // txtQLTK_thongtin_matk
             // 
-            this.textBox1.Location = new System.Drawing.Point(69, 25);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(160, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtQLTK_thongtin_matk.Location = new System.Drawing.Point(69, 54);
+            this.txtQLTK_thongtin_matk.Name = "txtQLTK_thongtin_matk";
+            this.txtQLTK_thongtin_matk.ReadOnly = true;
+            this.txtQLTK_thongtin_matk.Size = new System.Drawing.Size(160, 20);
+            this.txtQLTK_thongtin_matk.TabIndex = 1;
+            // 
+            // txtQLTK_thongtin_tentk
+            // 
+            this.txtQLTK_thongtin_tentk.Location = new System.Drawing.Point(69, 25);
+            this.txtQLTK_thongtin_tentk.Name = "txtQLTK_thongtin_tentk";
+            this.txtQLTK_thongtin_tentk.Size = new System.Drawing.Size(160, 20);
+            this.txtQLTK_thongtin_tentk.TabIndex = 1;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 128);
+            this.label5.Location = new System.Drawing.Point(6, 119);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 13);
             this.label5.TabIndex = 0;
@@ -775,12 +779,13 @@
             this.tentaikhoanDataGridViewTextBoxColumn1,
             this.ngaysinhDataGridViewTextBoxColumn,
             this.diachiDataGridViewTextBoxColumn,
-            this.loaiTaiKhoan1DataGridViewTextBoxColumn});
-            this.dataQLTK.DataSource = this.spTaiKhoanTimKiemThongTinResultBindingSource1;
+            this.tenLoaiTaiKhoanDataGridViewTextBoxColumn});
+            this.dataQLTK.DataSource = this.gETALLTAIKHOANResultBindingSource;
             this.dataQLTK.Location = new System.Drawing.Point(6, 186);
             this.dataQLTK.Name = "dataQLTK";
             this.dataQLTK.Size = new System.Drawing.Size(712, 299);
             this.dataQLTK.TabIndex = 0;
+            this.dataQLTK.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataQLTK_CellContentClick);
             // 
             // tabChucnangnguoidung
             // 
@@ -1026,90 +1031,64 @@
             // 
             // groupBox8
             // 
-            this.groupBox8.Controls.Add(this.dateTimePicker4);
-            this.groupBox8.Controls.Add(this.button26);
-            this.groupBox8.Controls.Add(this.button27);
-            this.groupBox8.Controls.Add(this.button28);
-            this.groupBox8.Controls.Add(this.button29);
-            this.groupBox8.Controls.Add(this.textBox20);
-            this.groupBox8.Controls.Add(this.textBox21);
-            this.groupBox8.Controls.Add(this.textBox22);
+            this.groupBox8.Controls.Add(this.btnTV_timkiemthongtinmuonsach);
+            this.groupBox8.Controls.Add(this.label3);
+            this.groupBox8.Controls.Add(this.dateTV_end);
+            this.groupBox8.Controls.Add(this.dateTV_start);
+            this.groupBox8.Controls.Add(this.btnTV_timkiemtheodate);
+            this.groupBox8.Controls.Add(this.txtTV_timkiem_matk);
+            this.groupBox8.Controls.Add(this.txtTV_timkiem_masach);
+            this.groupBox8.Controls.Add(this.txtTV_timkiem_tensach);
             this.groupBox8.Controls.Add(this.label29);
             this.groupBox8.Controls.Add(this.label30);
             this.groupBox8.Controls.Add(this.label31);
             this.groupBox8.Controls.Add(this.label32);
             this.groupBox8.Location = new System.Drawing.Point(392, 3);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(340, 153);
+            this.groupBox8.Size = new System.Drawing.Size(364, 153);
             this.groupBox8.TabIndex = 5;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Thông tin tìm kiếm";
             // 
-            // dateTimePicker4
+            // dateTV_start
             // 
-            this.dateTimePicker4.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker4.Location = new System.Drawing.Point(77, 112);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(173, 20);
-            this.dateTimePicker4.TabIndex = 2;
+            this.dateTV_start.CustomFormat = "MM/dd/yyyy";
+            this.dateTV_start.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTV_start.Location = new System.Drawing.Point(75, 111);
+            this.dateTV_start.Name = "dateTV_start";
+            this.dateTV_start.Size = new System.Drawing.Size(88, 20);
+            this.dateTV_start.TabIndex = 2;
             // 
-            // button26
+            // btnTV_timkiemtheodate
             // 
-            this.button26.Location = new System.Drawing.Point(259, 85);
-            this.button26.Name = "button26";
-            this.button26.Size = new System.Drawing.Size(75, 23);
-            this.button26.TabIndex = 3;
-            this.button26.Text = "Tìm kiếm";
-            this.button26.UseVisualStyleBackColor = true;
+            this.btnTV_timkiemtheodate.Location = new System.Drawing.Point(290, 105);
+            this.btnTV_timkiemtheodate.Name = "btnTV_timkiemtheodate";
+            this.btnTV_timkiemtheodate.Size = new System.Drawing.Size(52, 29);
+            this.btnTV_timkiemtheodate.TabIndex = 3;
+            this.btnTV_timkiemtheodate.Text = "Tìm";
+            this.btnTV_timkiemtheodate.UseVisualStyleBackColor = true;
+            this.btnTV_timkiemtheodate.Click += new System.EventHandler(this.btnTV_timkiemtheodate_Click);
             // 
-            // button27
+            // txtTV_timkiem_matk
             // 
-            this.button27.Location = new System.Drawing.Point(259, 112);
-            this.button27.Name = "button27";
-            this.button27.Size = new System.Drawing.Size(75, 23);
-            this.button27.TabIndex = 3;
-            this.button27.Text = "Tìm kiếm";
-            this.button27.UseVisualStyleBackColor = true;
+            this.txtTV_timkiem_matk.Location = new System.Drawing.Point(75, 85);
+            this.txtTV_timkiem_matk.Name = "txtTV_timkiem_matk";
+            this.txtTV_timkiem_matk.Size = new System.Drawing.Size(175, 20);
+            this.txtTV_timkiem_matk.TabIndex = 1;
             // 
-            // button28
+            // txtTV_timkiem_masach
             // 
-            this.button28.Location = new System.Drawing.Point(259, 57);
-            this.button28.Name = "button28";
-            this.button28.Size = new System.Drawing.Size(75, 23);
-            this.button28.TabIndex = 3;
-            this.button28.Text = "Tìm kiếm";
-            this.button28.UseVisualStyleBackColor = true;
+            this.txtTV_timkiem_masach.Location = new System.Drawing.Point(75, 57);
+            this.txtTV_timkiem_masach.Name = "txtTV_timkiem_masach";
+            this.txtTV_timkiem_masach.Size = new System.Drawing.Size(175, 20);
+            this.txtTV_timkiem_masach.TabIndex = 1;
             // 
-            // button29
+            // txtTV_timkiem_tensach
             // 
-            this.button29.Location = new System.Drawing.Point(257, 28);
-            this.button29.Name = "button29";
-            this.button29.Size = new System.Drawing.Size(75, 23);
-            this.button29.TabIndex = 3;
-            this.button29.Text = "Tìm kiếm";
-            this.button29.UseVisualStyleBackColor = true;
-            // 
-            // textBox20
-            // 
-            this.textBox20.Location = new System.Drawing.Point(75, 85);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(175, 20);
-            this.textBox20.TabIndex = 1;
-            // 
-            // textBox21
-            // 
-            this.textBox21.Location = new System.Drawing.Point(75, 57);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(175, 20);
-            this.textBox21.TabIndex = 1;
-            // 
-            // textBox22
-            // 
-            this.textBox22.Location = new System.Drawing.Point(75, 32);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(175, 20);
-            this.textBox22.TabIndex = 1;
+            this.txtTV_timkiem_tensach.Location = new System.Drawing.Point(75, 32);
+            this.txtTV_timkiem_tensach.Name = "txtTV_timkiem_tensach";
+            this.txtTV_timkiem_tensach.Size = new System.Drawing.Size(175, 20);
+            this.txtTV_timkiem_tensach.TabIndex = 1;
             // 
             // label29
             // 
@@ -1125,9 +1104,9 @@
             this.label30.AutoSize = true;
             this.label30.Location = new System.Drawing.Point(6, 84);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(38, 13);
+            this.label30.Size = new System.Drawing.Size(41, 13);
             this.label30.TabIndex = 0;
-            this.label30.Text = "Mssv :";
+            this.label30.Text = "Mã Tk:";
             // 
             // label31
             // 
@@ -1256,21 +1235,43 @@
             this.label27.TabIndex = 0;
             this.label27.Text = "Mã sách :";
             // 
-            // txtQLTK_timkiem_diachi
+            // btnQLTK_clear
             // 
-            this.txtQLTK_timkiem_diachi.Location = new System.Drawing.Point(69, 119);
-            this.txtQLTK_timkiem_diachi.Name = "txtQLTK_timkiem_diachi";
-            this.txtQLTK_timkiem_diachi.Size = new System.Drawing.Size(160, 37);
-            this.txtQLTK_timkiem_diachi.TabIndex = 3;
-            this.txtQLTK_timkiem_diachi.Text = "";
+            this.btnQLTK_clear.Location = new System.Drawing.Point(270, 103);
+            this.btnQLTK_clear.Name = "btnQLTK_clear";
+            this.btnQLTK_clear.Size = new System.Drawing.Size(75, 23);
+            this.btnQLTK_clear.TabIndex = 4;
+            this.btnQLTK_clear.Text = "Clear";
+            this.btnQLTK_clear.UseVisualStyleBackColor = true;
+            this.btnQLTK_clear.Click += new System.EventHandler(this.btnQLTK_clear_Click);
             // 
-            // richTextBox3
+            // dateTV_end
             // 
-            this.richTextBox3.Location = new System.Drawing.Point(69, 116);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(160, 52);
-            this.richTextBox3.TabIndex = 3;
-            this.richTextBox3.Text = "";
+            this.dateTV_end.CustomFormat = "MM/dd/yyyy";
+            this.dateTV_end.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTV_end.Location = new System.Drawing.Point(191, 111);
+            this.dateTV_end.Name = "dateTV_end";
+            this.dateTV_end.Size = new System.Drawing.Size(93, 20);
+            this.dateTV_end.TabIndex = 4;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(169, 113);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(16, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "to";
+            // 
+            // btnTV_timkiemthongtinmuonsach
+            // 
+            this.btnTV_timkiemthongtinmuonsach.Location = new System.Drawing.Point(271, 43);
+            this.btnTV_timkiemthongtinmuonsach.Name = "btnTV_timkiemthongtinmuonsach";
+            this.btnTV_timkiemthongtinmuonsach.Size = new System.Drawing.Size(75, 46);
+            this.btnTV_timkiemthongtinmuonsach.TabIndex = 6;
+            this.btnTV_timkiemthongtinmuonsach.Text = "Tìm kiếm";
+            this.btnTV_timkiemthongtinmuonsach.UseVisualStyleBackColor = true;
+            this.btnTV_timkiemthongtinmuonsach.Click += new System.EventHandler(this.btnTV_timkiemthongtinmuonsach_Click);
             // 
             // masachDataGridViewTextBoxColumn
             // 
@@ -1321,6 +1322,48 @@
             // getAllSachResultBindingSource
             // 
             this.getAllSachResultBindingSource.DataSource = typeof(EntityData.GetAll_Sach_Result);
+            // 
+            // matkDataGridViewTextBoxColumn1
+            // 
+            this.matkDataGridViewTextBoxColumn1.DataPropertyName = "matk";
+            this.matkDataGridViewTextBoxColumn1.HeaderText = "Mã Tk";
+            this.matkDataGridViewTextBoxColumn1.Name = "matkDataGridViewTextBoxColumn1";
+            this.matkDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // tentaikhoanDataGridViewTextBoxColumn1
+            // 
+            this.tentaikhoanDataGridViewTextBoxColumn1.DataPropertyName = "tentaikhoan";
+            this.tentaikhoanDataGridViewTextBoxColumn1.HeaderText = "Tên tài khoản";
+            this.tentaikhoanDataGridViewTextBoxColumn1.Name = "tentaikhoanDataGridViewTextBoxColumn1";
+            this.tentaikhoanDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.tentaikhoanDataGridViewTextBoxColumn1.Width = 150;
+            // 
+            // ngaysinhDataGridViewTextBoxColumn
+            // 
+            this.ngaysinhDataGridViewTextBoxColumn.DataPropertyName = "ngaysinh";
+            this.ngaysinhDataGridViewTextBoxColumn.HeaderText = "Ngày sinh";
+            this.ngaysinhDataGridViewTextBoxColumn.Name = "ngaysinhDataGridViewTextBoxColumn";
+            this.ngaysinhDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // diachiDataGridViewTextBoxColumn
+            // 
+            this.diachiDataGridViewTextBoxColumn.DataPropertyName = "diachi";
+            this.diachiDataGridViewTextBoxColumn.HeaderText = "Địa chỉ";
+            this.diachiDataGridViewTextBoxColumn.Name = "diachiDataGridViewTextBoxColumn";
+            this.diachiDataGridViewTextBoxColumn.ReadOnly = true;
+            this.diachiDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // tenLoaiTaiKhoanDataGridViewTextBoxColumn
+            // 
+            this.tenLoaiTaiKhoanDataGridViewTextBoxColumn.DataPropertyName = "TenLoaiTaiKhoan";
+            this.tenLoaiTaiKhoanDataGridViewTextBoxColumn.HeaderText = "Loại tài khoản";
+            this.tenLoaiTaiKhoanDataGridViewTextBoxColumn.Name = "tenLoaiTaiKhoanDataGridViewTextBoxColumn";
+            this.tenLoaiTaiKhoanDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tenLoaiTaiKhoanDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // gETALLTAIKHOANResultBindingSource
+            // 
+            this.gETALLTAIKHOANResultBindingSource.DataSource = typeof(EntityData.GETALLTAIKHOAN_Result);
             // 
             // masachDataGridViewTextBoxColumn2
             // 
@@ -1447,53 +1490,17 @@
             // 
             this.muonSachDanhSachMuonSachAllResultBindingSource.DataSource = typeof(EntityData.MuonSach_DanhSachMuonSachAll_Result);
             // 
-            // spTaiKhoanTimKiemThongTinResultBindingSource
+            // getAllSachResultBindingSource2
             // 
-            this.spTaiKhoanTimKiemThongTinResultBindingSource.DataSource = typeof(EntityData.sp_TaiKhoan_TimKiemThongTin_Result);
-            // 
-            // matkDataGridViewTextBoxColumn1
-            // 
-            this.matkDataGridViewTextBoxColumn1.DataPropertyName = "matk";
-            this.matkDataGridViewTextBoxColumn1.HeaderText = "Mã Tk";
-            this.matkDataGridViewTextBoxColumn1.Name = "matkDataGridViewTextBoxColumn1";
-            this.matkDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.matkDataGridViewTextBoxColumn1.Width = 105;
-            // 
-            // tentaikhoanDataGridViewTextBoxColumn1
-            // 
-            this.tentaikhoanDataGridViewTextBoxColumn1.DataPropertyName = "tentaikhoan";
-            this.tentaikhoanDataGridViewTextBoxColumn1.HeaderText = "Tên tài khoản";
-            this.tentaikhoanDataGridViewTextBoxColumn1.Name = "tentaikhoanDataGridViewTextBoxColumn1";
-            this.tentaikhoanDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.tentaikhoanDataGridViewTextBoxColumn1.Width = 150;
-            // 
-            // ngaysinhDataGridViewTextBoxColumn
-            // 
-            this.ngaysinhDataGridViewTextBoxColumn.DataPropertyName = "ngaysinh";
-            this.ngaysinhDataGridViewTextBoxColumn.HeaderText = "Ngày sinh ";
-            this.ngaysinhDataGridViewTextBoxColumn.Name = "ngaysinhDataGridViewTextBoxColumn";
-            this.ngaysinhDataGridViewTextBoxColumn.ReadOnly = true;
-            this.ngaysinhDataGridViewTextBoxColumn.Width = 110;
-            // 
-            // diachiDataGridViewTextBoxColumn
-            // 
-            this.diachiDataGridViewTextBoxColumn.DataPropertyName = "diachi";
-            this.diachiDataGridViewTextBoxColumn.HeaderText = "Địa chỉ ";
-            this.diachiDataGridViewTextBoxColumn.Name = "diachiDataGridViewTextBoxColumn";
-            this.diachiDataGridViewTextBoxColumn.ReadOnly = true;
-            this.diachiDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // loaiTaiKhoan1DataGridViewTextBoxColumn
-            // 
-            this.loaiTaiKhoan1DataGridViewTextBoxColumn.DataPropertyName = "LoaiTaiKhoan1";
-            this.loaiTaiKhoan1DataGridViewTextBoxColumn.HeaderText = "Loại tài khoản";
-            this.loaiTaiKhoan1DataGridViewTextBoxColumn.Name = "loaiTaiKhoan1DataGridViewTextBoxColumn";
-            this.loaiTaiKhoan1DataGridViewTextBoxColumn.ReadOnly = true;
-            this.loaiTaiKhoan1DataGridViewTextBoxColumn.Width = 101;
+            this.getAllSachResultBindingSource2.DataSource = typeof(EntityData.GetAll_Sach_Result);
             // 
             // spTaiKhoanTimKiemThongTinResultBindingSource1
             // 
             this.spTaiKhoanTimKiemThongTinResultBindingSource1.DataSource = typeof(EntityData.sp_TaiKhoan_TimKiemThongTin_Result);
+            // 
+            // spTaiKhoanTimKiemThongTinResultBindingSource
+            // 
+            this.spTaiKhoanTimKiemThongTinResultBindingSource.DataSource = typeof(EntityData.sp_TaiKhoan_TimKiemThongTin_Result);
             // 
             // MainForm
             // 
@@ -1535,10 +1542,12 @@
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.getAllSachResultBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gETALLTAIKHOANResultBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.getAllSachResultBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.muonSachDanhSachMuonSachAllResultBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spTaiKhoanTimKiemThongTinResultBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getAllSachResultBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spTaiKhoanTimKiemThongTinResultBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spTaiKhoanTimKiemThongTinResultBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1557,16 +1566,15 @@
         private System.Windows.Forms.TextBox txtQLTK_timkiem_matk;
         private System.Windows.Forms.TextBox txtQLTK_timkiem_tentaikhoan;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DateTimePicker dateQLTK_ngaysinh;
+        private System.Windows.Forms.Button btnQLTK_xoa;
+        private System.Windows.Forms.Button btnQLTK_update;
+        private System.Windows.Forms.Button btnQLTK_themtk;
+        private System.Windows.Forms.TextBox txtQLTK_thongtin_matk;
+        private System.Windows.Forms.TextBox txtQLTK_thongtin_tentk;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
@@ -1602,7 +1610,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnQLS_thongtinmuonsach;
-        private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.Button btnQLTK_xemchitiet;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView dataQLND;
         private System.Windows.Forms.GroupBox groupBox6;
@@ -1629,19 +1637,16 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.GroupBox groupBox9;
-        private System.Windows.Forms.DateTimePicker dateTimePicker4;
+        private System.Windows.Forms.DateTimePicker dateTV_start;
         private System.Windows.Forms.DataGridView dataMuonSach;
         private System.Windows.Forms.Button btnMuonSach_trasach;
         private System.Windows.Forms.Button btnMuonSach_muonsach;
         private System.Windows.Forms.TextBox txtMuonSach_matk;
         private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.Button button26;
-        private System.Windows.Forms.Button button27;
-        private System.Windows.Forms.Button button28;
-        private System.Windows.Forms.Button button29;
-        private System.Windows.Forms.TextBox textBox20;
-        private System.Windows.Forms.TextBox textBox21;
-        private System.Windows.Forms.TextBox textBox22;
+        private System.Windows.Forms.Button btnTV_timkiemtheodate;
+        private System.Windows.Forms.TextBox txtTV_timkiem_matk;
+        private System.Windows.Forms.TextBox txtTV_timkiem_masach;
+        private System.Windows.Forms.TextBox txtTV_timkiem_tensach;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label31;
@@ -1675,14 +1680,20 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tenloaisachDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewButtonColumn tacvu;
         private System.Windows.Forms.RichTextBox txtQLTK_timkiem_diachi;
-        private System.Windows.Forms.RichTextBox richTextBox3;
-        private System.Windows.Forms.DateTimePicker dateQLTK_timkiem_ngaysinh;
+        private System.Windows.Forms.RichTextBox txtQLTK_thongtin_diachi;
         private System.Windows.Forms.BindingSource spTaiKhoanTimKiemThongTinResultBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn loaiTaiKhoan1DataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource spTaiKhoanTimKiemThongTinResultBindingSource1;
+        private System.Windows.Forms.BindingSource getAllSachResultBindingSource2;
         private System.Windows.Forms.DataGridViewTextBoxColumn matkDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn tentaikhoanDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngaysinhDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn diachiDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn loaiTaiKhoan1DataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource spTaiKhoanTimKiemThongTinResultBindingSource1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenLoaiTaiKhoanDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource gETALLTAIKHOANResultBindingSource;
+        private System.Windows.Forms.Button btnQLTK_clear;
+        private System.Windows.Forms.Button btnTV_timkiemthongtinmuonsach;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker dateTV_end;
     }
 }

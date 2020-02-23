@@ -39,9 +39,32 @@ namespace DataAccess
             return result > 0 ? true : false;
         }
 
-        public List<sp_TaiKhoan_TimKiemThongTin_Result> GetTaiKhoanTimKiem (TaikhoanParameter param)
+        public List<Taikhoan_TimKiemThongTin_Result> GetTaiKhoanTimKiem (TaikhoanParameter param)
         {
-            return db.sp_TaiKhoan_TimKiemThongTin(param.matk, param.tentaikhoan, param.ngaysinh, param.diachi).ToList();
+            return db.Taikhoan_TimKiemThongTin(param.matk, param.tentaikhoan, param.diachi).ToList();
+        }
+
+        public List<GETALLTAIKHOAN_Result> GetDsTaiKhoanAll()
+        {
+            return db.GETALLTAIKHOAN().ToList();
+        }
+
+        public bool ThemTaiKhoan (TaikhoanParameter param)
+        {
+            var result = db.TaiKhoan_Them(param.matk, param.tendangnhap, param.matkhau, param.tentaikhoan, param.ngaysinh, param.diachi, param.loaitaikhoan);
+            return result > 0 ? true : false;
+        }
+
+        public bool XoaTaiKhoan(string matk, int? loaitaikhoan)
+        {
+            var result = db.TaiKhoan_Xoa(matk, loaitaikhoan);
+            return result > 0 ? true : false;
+        }
+
+        public bool CapNhapThongTinTaiKhoan (string matk, string tentaikhoan, string ngaysinh, string diachi)
+        {
+            var result = db.sp_TaiKhoan_CapNhat(matk, tentaikhoan, ngaysinh, diachi);
+            return result > 0 ? true : false;
         }
     }
 }
