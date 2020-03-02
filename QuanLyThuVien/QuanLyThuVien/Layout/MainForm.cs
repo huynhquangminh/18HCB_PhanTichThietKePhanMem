@@ -574,6 +574,7 @@ namespace QuanLyThuVien.Layout
                 if (dialogResult == DialogResult.Yes)
                 {
                     muonSachBus.downloadPhieuMuonSach(matk, tentaikhoan, masach, tensach, ngaymuon.ToString());
+                    MessageBox.Show("Đã in phiếu mượn sách", "Thông báo");
                 }
             }
         }

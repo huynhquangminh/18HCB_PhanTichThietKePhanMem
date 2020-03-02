@@ -66,7 +66,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(824, 522);
+            this.panel1.Size = new System.Drawing.Size(742, 522);
             this.panel1.TabIndex = 0;
             // 
             // groupBox2
@@ -77,7 +77,7 @@
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Location = new System.Drawing.Point(12, 184);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(780, 309);
+            this.groupBox2.Size = new System.Drawing.Size(706, 309);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dách sách mượn ";
@@ -114,7 +114,7 @@
             this.dataTK_dstatcasachmuon.DataSource = this.spTaiKhoanXemTatCaSachMuonResultBindingSource;
             this.dataTK_dstatcasachmuon.Location = new System.Drawing.Point(6, 59);
             this.dataTK_dstatcasachmuon.Name = "dataTK_dstatcasachmuon";
-            this.dataTK_dstatcasachmuon.Size = new System.Drawing.Size(768, 244);
+            this.dataTK_dstatcasachmuon.Size = new System.Drawing.Size(693, 244);
             this.dataTK_dstatcasachmuon.TabIndex = 0;
             // 
             // idDataGridViewTextBoxColumn
@@ -275,7 +275,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(824, 522);
+            this.ClientSize = new System.Drawing.Size(742, 522);
             this.Controls.Add(this.panel1);
             this.Name = "TaiKhoanMuonSach";
             this.Text = "Thông tin sách mượn";
