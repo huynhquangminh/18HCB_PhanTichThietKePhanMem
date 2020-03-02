@@ -30,6 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbTKDK_thongbao2 = new System.Windows.Forms.Label();
             this.lbTKDK_thongbao = new System.Windows.Forms.Label();
             this.btnTKDK_clear = new System.Windows.Forms.Button();
             this.btnTKDK_dangky = new System.Windows.Forms.Button();
@@ -45,18 +46,19 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lbTKDK_thongbao2 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(441, 384);
+            this.panel1.Size = new System.Drawing.Size(441, 464);
             this.panel1.TabIndex = 0;
             // 
             // groupBox1
@@ -77,12 +79,23 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(3, 78);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(417, 360);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin đăng ký";
+            // 
+            // lbTKDK_thongbao2
+            // 
+            this.lbTKDK_thongbao2.AutoSize = true;
+            this.lbTKDK_thongbao2.ForeColor = System.Drawing.Color.Red;
+            this.lbTKDK_thongbao2.Location = new System.Drawing.Point(152, 307);
+            this.lbTKDK_thongbao2.Name = "lbTKDK_thongbao2";
+            this.lbTKDK_thongbao2.Size = new System.Drawing.Size(122, 13);
+            this.lbTKDK_thongbao2.TabIndex = 5;
+            this.lbTKDK_thongbao2.Text = "(*) Mật khẩu khác nhau!";
+            this.lbTKDK_thongbao2.Visible = false;
             // 
             // lbTKDK_thongbao
             // 
@@ -216,26 +229,26 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên đăng nhập";
             // 
-            // lbTKDK_thongbao2
+            // label7
             // 
-            this.lbTKDK_thongbao2.AutoSize = true;
-            this.lbTKDK_thongbao2.ForeColor = System.Drawing.Color.Red;
-            this.lbTKDK_thongbao2.Location = new System.Drawing.Point(152, 307);
-            this.lbTKDK_thongbao2.Name = "lbTKDK_thongbao2";
-            this.lbTKDK_thongbao2.Size = new System.Drawing.Size(122, 13);
-            this.lbTKDK_thongbao2.TabIndex = 5;
-            this.lbTKDK_thongbao2.Text = "(*) Mật khẩu khác nhau!";
-            this.lbTKDK_thongbao2.Visible = false;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(127, 36);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(202, 25);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Đăng ký tài khoản";
             // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(441, 384);
+            this.ClientSize = new System.Drawing.Size(441, 464);
             this.Controls.Add(this.panel1);
             this.Name = "Register";
             this.Text = "Register";
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -262,5 +275,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbTKDK_thongbao2;
+        private System.Windows.Forms.Label label7;
     }
 }

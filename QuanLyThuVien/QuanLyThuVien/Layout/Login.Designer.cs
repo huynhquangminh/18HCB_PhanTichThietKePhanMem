@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbTK_thongbaodulieusai = new System.Windows.Forms.Label();
             this.lbTK_thongbaodangnhap = new System.Windows.Forms.Label();
             this.linkTK_dangkytaikhoan = new System.Windows.Forms.LinkLabel();
             this.btnTK_clear = new System.Windows.Forms.Button();
@@ -38,19 +40,29 @@
             this.txtTK_matkhau = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lbTK_thongbaodulieusai = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(359, 299);
+            this.panel1.Size = new System.Drawing.Size(359, 334);
             this.panel1.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(96, 22);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(162, 24);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Quản lý thư viện";
             // 
             // groupBox1
             // 
@@ -63,11 +75,22 @@
             this.groupBox1.Controls.Add(this.txtTK_matkhau);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 49);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(335, 268);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // lbTK_thongbaodulieusai
+            // 
+            this.lbTK_thongbaodulieusai.AutoSize = true;
+            this.lbTK_thongbaodulieusai.ForeColor = System.Drawing.Color.Red;
+            this.lbTK_thongbaodulieusai.Location = new System.Drawing.Point(85, 146);
+            this.lbTK_thongbaodulieusai.Name = "lbTK_thongbaodulieusai";
+            this.lbTK_thongbaodulieusai.Size = new System.Drawing.Size(240, 13);
+            this.lbTK_thongbaodulieusai.TabIndex = 4;
+            this.lbTK_thongbaodulieusai.Text = "(*) Bạn chưa nhập tên đăng nhập hoặc mật khẩu";
+            this.lbTK_thongbaodulieusai.Visible = false;
             // 
             // lbTK_thongbaodangnhap
             // 
@@ -144,26 +167,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên đăng nhập :";
             // 
-            // lbTK_thongbaodulieusai
-            // 
-            this.lbTK_thongbaodulieusai.AutoSize = true;
-            this.lbTK_thongbaodulieusai.ForeColor = System.Drawing.Color.Red;
-            this.lbTK_thongbaodulieusai.Location = new System.Drawing.Point(85, 146);
-            this.lbTK_thongbaodulieusai.Name = "lbTK_thongbaodulieusai";
-            this.lbTK_thongbaodulieusai.Size = new System.Drawing.Size(240, 13);
-            this.lbTK_thongbaodulieusai.TabIndex = 4;
-            this.lbTK_thongbaodulieusai.Text = "(*) Bạn chưa nhập tên đăng nhập hoặc mật khẩu";
-            this.lbTK_thongbaodulieusai.Visible = false;
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(359, 299);
+            this.ClientSize = new System.Drawing.Size(359, 334);
             this.Controls.Add(this.panel1);
             this.Name = "Login";
             this.Text = "Login";
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -183,5 +196,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbTK_thongbaodulieusai;
+        private System.Windows.Forms.Label label3;
     }
 }
