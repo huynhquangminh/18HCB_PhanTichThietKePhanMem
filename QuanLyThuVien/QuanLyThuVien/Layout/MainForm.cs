@@ -270,6 +270,9 @@ namespace QuanLyThuVien.Layout
                     textMessage = "Mượn sách thành công!";
                     txtMuonSach_masach.Text = "";
                     txtMuonSach_matk.Text = "";
+                } else
+                {
+                    textMessage = "Mượn sách thất bại vui lòng kiểm tra lại thông tin sách đã mượn";
                 }
                 MessageBox.Show(textMessage);
             }
@@ -353,6 +356,9 @@ namespace QuanLyThuVien.Layout
                     {
                         sachBus.CapNhapSoLuongSach(masach, false);
                         MessageBox.Show("Bạn đã mượn thành công!", "Thông báo");
+                    } else
+                    {
+                        MessageBox.Show("Mượn sách thất bại!", "Thông báo");
                     }
                 }
             }
