@@ -18,6 +18,14 @@ namespace QuanLyThuVien.Layout
         private readonly SachBusinessLogic sachBus = new SachBusinessLogic();
         private readonly MuonSachBusinessLogic muonSachBus = new MuonSachBusinessLogic();
         private readonly TaiKhoanBusinessLogic taikhoanBus = new TaiKhoanBusinessLogic();
+        private string _taiKhoanDangNhap;
+
+        public string TaiKhoanDangNhap
+        {
+            get { return _taiKhoanDangNhap; }
+            set { _taiKhoanDangNhap = value; }
+        }
+
         public static TaikhoanParameter thongTinTaiKhoanDetail = new TaikhoanParameter();
         public static SachParameter thongTinSachDetail = new SachParameter();
         private int idMuonSach = 0;
@@ -31,6 +39,7 @@ namespace QuanLyThuVien.Layout
             var thongtin = Login.thongtintaikhoan;
             checkTypeLogin();
             //((Control)this.tabThuvien).Enabled = false;
+            labelTaiKhoan.Text = $"Tài khoản: {_taiKhoanDangNhap}";
         }
 
         private void checkTypeLogin()
@@ -451,16 +460,6 @@ namespace QuanLyThuVien.Layout
 
         }
 
-        private void dataQLTK_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int i;
-            i = dataQLTK.CurrentRow.Index;
-            txtQLTK_thongtin_matk.Text = dataQLTK.Rows[i].Cells[0].Value.ToString();
-            txtQLTK_thongtin_tentk.Text = dataQLTK.Rows[i].Cells[1].Value.ToString();
-            dateQLTK_ngaysinh.Text = dataQLTK.Rows[i].Cells[2].Value.ToString();
-            txtQLTK_thongtin_diachi.Text = dataQLTK.Rows[i].Cells[3].Value.ToString();
-        }
-
         private void btnQLTK_clear_Click(object sender, EventArgs e)
         {
             txtQLTK_thongtin_matk.Text = "";
@@ -491,6 +490,7 @@ namespace QuanLyThuVien.Layout
                 }
                 else
                 {
+                    MessageBox.Show("Thêm tài khoản thành công");
                     GetDsTaiKhoanTimKiemAll();
                 }
             }
@@ -516,10 +516,13 @@ namespace QuanLyThuVien.Layout
         {
             if (txtQLTK_thongtin_matk.Text != "")
             {
-                var dialogResult = MessageBox.Show("Bạn có muốn cập nhập tài khoản này không!", "Thông báo", MessageBoxButtons.YesNo);
+                var message = "Bạn có muốn cập nhập tài khoản này không!";
+                var dialogResult = MessageBox.Show(message, "Thông báo", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     var result = taikhoanBus.CapNhapThongTinTaiKhoan(txtQLTK_thongtin_matk.Text, txtQLTK_thongtin_tentk.Text, dateQLTK_ngaysinh.Text, txtQLTK_thongtin_diachi.Text);
+                    message = "Cập nhật thông tin tài khoản thành công";
+                    MessageBox.Show(message);
                     GetDsTaiKhoanTimKiemAll();
                     txtQLTK_thongtin_matk.Text = "";
                     txtQLTK_thongtin_tentk.Text = "";
@@ -577,6 +580,24 @@ namespace QuanLyThuVien.Layout
                     MessageBox.Show("Đã in phiếu mượn sách", "Thông báo");
                 }
             }
+        }
+
+        private void dataQLTK_SelectionChanged(object sender, EventArgs e)
+        {
+            int i;
+            i = dataQLTK.CurrentCell.RowIndex;
+            txtQLTK_thongtin_matk.Text = dataQLTK.Rows[i].Cells[0].Value.ToString();
+            txtQLTK_thongtin_tentk.Text = dataQLTK.Rows[i].Cells[1].Value.ToString();
+            dateQLTK_ngaysinh.Text = dataQLTK.Rows[i].Cells[2].Value.ToString();
+            txtQLTK_thongtin_diachi.Text = dataQLTK.Rows[i].Cells[3].Value.ToString();
+        }
+
+        private void buttonThoat_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login login = new Login();
+            login.Closed += (s, args) => this.Close();
+            login.Show();
         }
     }
 }

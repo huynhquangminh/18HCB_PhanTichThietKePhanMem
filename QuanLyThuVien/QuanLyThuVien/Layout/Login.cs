@@ -38,6 +38,7 @@ namespace QuanLyThuVien.Layout
             var param = new DangNhapParameter();
             if (txtTK_tendangnhap.Text != "" && txtTK_matkhau.Text != "")
             {
+                lbTK_thongbaodulieusai.Visible = false;
                 param.tendangnhap = txtTK_tendangnhap.Text;
                 param.matkhau = txtTK_matkhau.Text;
                 var result = taikhoanBus.DangNhapTaiKhoan(param);
@@ -46,6 +47,7 @@ namespace QuanLyThuVien.Layout
                     thongtintaikhoan = result;
                     this.Hide();
                     MainForm mainForm = new MainForm();
+                    mainForm.TaiKhoanDangNhap = txtTK_tendangnhap.Text;
                     mainForm.Closed += (s, args) => this.Close();
                     mainForm.ShowDialog();
 
