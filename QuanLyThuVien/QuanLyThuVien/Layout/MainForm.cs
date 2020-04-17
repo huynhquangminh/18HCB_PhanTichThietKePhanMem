@@ -138,17 +138,17 @@ namespace QuanLyThuVien.Layout
 
         }
 
-        private void dataSach_QuanLySach_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            txtQLS_thongtin_masach.Enabled = false;
-            int i;
-            i = dataSach_QuanLySach.CurrentRow.Index;
-            txtQLS_thongtin_masach.Text = dataSach_QuanLySach.Rows[i].Cells[0].Value.ToString();
-            txtQLS_thongtin_tieude.Text = dataSach_QuanLySach.Rows[i].Cells[1].Value.ToString();
-            txtQLS_thongtin_tacgia.Text = dataSach_QuanLySach.Rows[i].Cells[2].Value.ToString();
-            numQLS_thongtin_soluong.Value = Convert.ToInt32(dataSach_QuanLySach.Rows[i].Cells[3].Value.ToString());
-            cbbQLS_thongtin_loaisach.SelectedValue = Convert.ToInt32(dataSach_QuanLySach.Rows[i].Cells[6].Value.ToString());
-        }
+        //private void dataSach_QuanLySach_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    txtQLS_thongtin_masach.Enabled = false;
+        //    int i;
+        //    i = dataSach_QuanLySach.CurrentRow.Index;
+        //    txtQLS_thongtin_masach.Text = dataSach_QuanLySach.Rows[i].Cells[0].Value.ToString();
+        //    txtQLS_thongtin_tieude.Text = dataSach_QuanLySach.Rows[i].Cells[1].Value.ToString();
+        //    txtQLS_thongtin_tacgia.Text = dataSach_QuanLySach.Rows[i].Cells[2].Value.ToString();
+        //    numQLS_thongtin_soluong.Value = Convert.ToInt32(dataSach_QuanLySach.Rows[i].Cells[3].Value.ToString());
+        //    cbbQLS_thongtin_loaisach.SelectedValue = Convert.ToInt32(dataSach_QuanLySach.Rows[i].Cells[6].Value.ToString());
+        //}
 
         private void btnQLS_themmoi_Click(object sender, EventArgs e)
         {
@@ -314,16 +314,6 @@ namespace QuanLyThuVien.Layout
                 MessageBox.Show("Thông tin trả sách thiếu!");
             }
         }
-
-        private void dataMuonSach_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int i;
-            i = dataMuonSach.CurrentRow.Index;
-            idMuonSach = Convert.ToInt32(dataMuonSach.Rows[i].Cells[0].Value);
-            txtMuonSach_masach.Text = dataMuonSach.Rows[i].Cells[3].Value.ToString();
-            txtMuonSach_matk.Text = dataMuonSach.Rows[i].Cells[1].Value.ToString();
-        }
-
         private void btnMuonSach_huymuonsach_Click(object sender, EventArgs e)
         {
             if (idMuonSach != 0 && txtMuonSach_masach.Text != "" && txtMuonSach_matk.Text != "")
@@ -346,6 +336,7 @@ namespace QuanLyThuVien.Layout
         {
             if (e.ColumnIndex == 7)
             {
+                var message = "";
                 var resultListSach = sachBus.GetAllSach();
                 var masach = resultListSach[e.RowIndex].masach;
                 var dialogResult = MessageBox.Show("Bạn có muốn mượn cuốn sách này không!", "Thông báo", MessageBoxButtons.YesNo);
@@ -364,10 +355,12 @@ namespace QuanLyThuVien.Layout
                     if (result == true)
                     {
                         sachBus.CapNhapSoLuongSach(masach, false);
-                        MessageBox.Show("Bạn đã mượn thành công!", "Thông báo");
+                        message = "Bạn đã mượn thành công!";
+                        MessageBox.Show(message, "Thông báo");
                     } else
                     {
-                        MessageBox.Show("Mượn sách thất bại!", "Thông báo");
+                        message = "Mượn sách thất bại!";
+                        MessageBox.Show(message, "Thông báo");
                     }
                 }
             }
@@ -469,6 +462,7 @@ namespace QuanLyThuVien.Layout
 
         private void btnQLTK_themtk_Click(object sender, EventArgs e)
         {
+            var message = "";
             if (txtQLTK_thongtin_tentk.Text != "" && txtQLTK_thongtin_diachi.Text != "" || dateQLTK_ngaysinh.Text != "")
             {
                 DateTime aDate = DateTime.Now;
@@ -486,11 +480,13 @@ namespace QuanLyThuVien.Layout
                 var result = taikhoanBus.ThemTaiKhoan(param);
                 if (result == false)
                 {
-                    MessageBox.Show("Thông tin tài khoản hoặc mã tài khoản không hợp lệ!");
+                    message = "Thông tin tài khoản hoặc mã tài khoản không hợp lệ!";
+                    MessageBox.Show(message);
                 }
                 else
                 {
-                    MessageBox.Show("Thêm tài khoản thành công");
+                    message = "Thêm tài khoản thành công";
+                    MessageBox.Show(message);
                     GetDsTaiKhoanTimKiemAll();
                 }
             }
@@ -500,7 +496,7 @@ namespace QuanLyThuVien.Layout
         {
             if (txtQLTK_thongtin_matk.Text != "")
             {
-                var dialogResult = MessageBox.Show("Bạn có muốn xóa tai khoản này không!", "Thông báo", MessageBoxButtons.YesNo);
+                var dialogResult = MessageBox.Show("Bạn có muốn xóa tài khoản này không!", "Thông báo", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     var result = taikhoanBus.XoaTaiKhoan(txtQLTK_thongtin_matk.Text, Login.thongtintaikhoan.loaitaikhoan);
@@ -565,6 +561,9 @@ namespace QuanLyThuVien.Layout
 
         private void dataMuonSach_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            var dialogMessage = "Bạn có muốn in phiếu mượn sách không!";
+            var message = "Đã in phiếu mượn sách";
+
             if (e.ColumnIndex == 9)
             {
                 var resultListMuonSach = muonSachBus.GetDanhSachMuonSachAll();
@@ -573,11 +572,11 @@ namespace QuanLyThuVien.Layout
                 var masach = resultListMuonSach[e.RowIndex].masach;
                 var tensach = resultListMuonSach[e.RowIndex].tieude;
                 var ngaymuon = resultListMuonSach[e.RowIndex].ngaymuon;
-                var dialogResult = MessageBox.Show("Bạn có muốn in phiếu mượn sách không!", "Thông báo", MessageBoxButtons.YesNo);
+                var dialogResult = MessageBox.Show(dialogMessage, "Thông báo", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     muonSachBus.downloadPhieuMuonSach(matk, tentaikhoan, masach, tensach, ngaymuon.ToString());
-                    MessageBox.Show("Đã in phiếu mượn sách", "Thông báo");
+                    MessageBox.Show(message, "Thông báo");
                 }
             }
         }
@@ -591,7 +590,25 @@ namespace QuanLyThuVien.Layout
             dateQLTK_ngaysinh.Text = dataQLTK.Rows[i].Cells[2].Value.ToString();
             txtQLTK_thongtin_diachi.Text = dataQLTK.Rows[i].Cells[3].Value.ToString();
         }
-
+        private void dataSach_QuanLySach_SelectionChanged(object sender, EventArgs e)
+        {
+            txtQLS_thongtin_masach.Enabled = false;
+            int i;
+            i = dataSach_QuanLySach.CurrentCell.RowIndex;
+            txtQLS_thongtin_masach.Text = dataSach_QuanLySach.Rows[i].Cells[0].Value.ToString();
+            txtQLS_thongtin_tieude.Text = dataSach_QuanLySach.Rows[i].Cells[1].Value.ToString();
+            txtQLS_thongtin_tacgia.Text = dataSach_QuanLySach.Rows[i].Cells[2].Value.ToString();
+            numQLS_thongtin_soluong.Value = Convert.ToInt32(dataSach_QuanLySach.Rows[i].Cells[3].Value.ToString());
+            cbbQLS_thongtin_loaisach.SelectedValue = Convert.ToInt32(dataSach_QuanLySach.Rows[i].Cells[6].Value.ToString());
+        }
+        private void dataMuonSach_SelectionChanged(object sender, EventArgs e)
+        {
+            int i;
+            i = dataMuonSach.CurrentRow.Index;
+            idMuonSach = Convert.ToInt32(dataMuonSach.Rows[i].Cells[0].Value);
+            txtMuonSach_masach.Text = dataMuonSach.Rows[i].Cells[3].Value.ToString();
+            txtMuonSach_matk.Text = dataMuonSach.Rows[i].Cells[1].Value.ToString();
+        }
         private void buttonThoat_Click(object sender, EventArgs e)
         {
             this.Hide();

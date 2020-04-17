@@ -222,6 +222,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(450, 406);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ThongTinTaiKhoan";
             this.Text = "Thông tin tài khoản ";
             this.Load += new System.EventHandler(this.ThongTinTaiKhoan_Load);

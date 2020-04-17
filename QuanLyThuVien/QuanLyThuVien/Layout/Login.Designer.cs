@@ -116,7 +116,7 @@
             // 
             // btnTK_clear
             // 
-            this.btnTK_clear.Location = new System.Drawing.Point(140, 193);
+            this.btnTK_clear.Location = new System.Drawing.Point(229, 198);
             this.btnTK_clear.Name = "btnTK_clear";
             this.btnTK_clear.Size = new System.Drawing.Size(75, 23);
             this.btnTK_clear.TabIndex = 2;
@@ -126,7 +126,7 @@
             // 
             // btnTK_dangnhap
             // 
-            this.btnTK_dangnhap.Location = new System.Drawing.Point(239, 193);
+            this.btnTK_dangnhap.Location = new System.Drawing.Point(130, 198);
             this.btnTK_dangnhap.Name = "btnTK_dangnhap";
             this.btnTK_dangnhap.Size = new System.Drawing.Size(75, 23);
             this.btnTK_dangnhap.TabIndex = 2;

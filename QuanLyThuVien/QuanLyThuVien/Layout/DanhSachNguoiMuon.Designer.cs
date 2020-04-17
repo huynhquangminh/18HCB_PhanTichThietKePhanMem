@@ -33,6 +33,14 @@
             this.btn_DSTKMS_timkiem = new System.Windows.Forms.Button();
             this.txtDSTKMS_timkiem_matk = new System.Windows.Forms.TextBox();
             this.dataDSTKMS = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.matkDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tentaikhoanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngaymuonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngaytraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phuthuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.trangthaiDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.muonSachDsTaiKhoanMuonSachResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.txtDSTKMS_tacgia = new System.Windows.Forms.TextBox();
@@ -41,18 +49,10 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.muonSachDsTaiKhoanMuonSachResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.matkDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tentaikhoanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ngaymuonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ngaytraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phuthuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.trangthaiDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataDSTKMS)).BeginInit();
-            this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.muonSachDsTaiKhoanMuonSachResultBindingSource)).BeginInit();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -102,6 +102,55 @@
             this.dataDSTKMS.Name = "dataDSTKMS";
             this.dataDSTKMS.Size = new System.Drawing.Size(638, 189);
             this.dataDSTKMS.TabIndex = 0;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // matkDataGridViewTextBoxColumn
+            // 
+            this.matkDataGridViewTextBoxColumn.DataPropertyName = "matk";
+            this.matkDataGridViewTextBoxColumn.HeaderText = "Mã tài khoản";
+            this.matkDataGridViewTextBoxColumn.Name = "matkDataGridViewTextBoxColumn";
+            // 
+            // tentaikhoanDataGridViewTextBoxColumn
+            // 
+            this.tentaikhoanDataGridViewTextBoxColumn.DataPropertyName = "tentaikhoan";
+            this.tentaikhoanDataGridViewTextBoxColumn.HeaderText = "Tên tài khoản";
+            this.tentaikhoanDataGridViewTextBoxColumn.Name = "tentaikhoanDataGridViewTextBoxColumn";
+            // 
+            // ngaymuonDataGridViewTextBoxColumn
+            // 
+            this.ngaymuonDataGridViewTextBoxColumn.DataPropertyName = "ngaymuon";
+            this.ngaymuonDataGridViewTextBoxColumn.HeaderText = "Ngày mượn";
+            this.ngaymuonDataGridViewTextBoxColumn.Name = "ngaymuonDataGridViewTextBoxColumn";
+            // 
+            // ngaytraDataGridViewTextBoxColumn
+            // 
+            this.ngaytraDataGridViewTextBoxColumn.DataPropertyName = "ngaytra";
+            this.ngaytraDataGridViewTextBoxColumn.HeaderText = "Ngày trả";
+            this.ngaytraDataGridViewTextBoxColumn.Name = "ngaytraDataGridViewTextBoxColumn";
+            // 
+            // phuthuDataGridViewTextBoxColumn
+            // 
+            this.phuthuDataGridViewTextBoxColumn.DataPropertyName = "phuthu";
+            this.phuthuDataGridViewTextBoxColumn.HeaderText = "Phụ thu";
+            this.phuthuDataGridViewTextBoxColumn.Name = "phuthuDataGridViewTextBoxColumn";
+            // 
+            // trangthaiDataGridViewCheckBoxColumn
+            // 
+            this.trangthaiDataGridViewCheckBoxColumn.DataPropertyName = "trangthai";
+            this.trangthaiDataGridViewCheckBoxColumn.HeaderText = "Trạng thái";
+            this.trangthaiDataGridViewCheckBoxColumn.Name = "trangthaiDataGridViewCheckBoxColumn";
+            this.trangthaiDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // muonSachDsTaiKhoanMuonSachResultBindingSource
+            // 
+            this.muonSachDsTaiKhoanMuonSachResultBindingSource.DataSource = typeof(EntityData.MuonSach_DsTaiKhoanMuonSach_Result);
             // 
             // label5
             // 
@@ -176,55 +225,6 @@
             this.label11.TabIndex = 0;
             this.label11.Text = "Tiêu đề :";
             // 
-            // muonSachDsTaiKhoanMuonSachResultBindingSource
-            // 
-            this.muonSachDsTaiKhoanMuonSachResultBindingSource.DataSource = typeof(EntityData.MuonSach_DsTaiKhoanMuonSach_Result);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // matkDataGridViewTextBoxColumn
-            // 
-            this.matkDataGridViewTextBoxColumn.DataPropertyName = "matk";
-            this.matkDataGridViewTextBoxColumn.HeaderText = "Mã tài khoản";
-            this.matkDataGridViewTextBoxColumn.Name = "matkDataGridViewTextBoxColumn";
-            // 
-            // tentaikhoanDataGridViewTextBoxColumn
-            // 
-            this.tentaikhoanDataGridViewTextBoxColumn.DataPropertyName = "tentaikhoan";
-            this.tentaikhoanDataGridViewTextBoxColumn.HeaderText = "Tên tài khoản";
-            this.tentaikhoanDataGridViewTextBoxColumn.Name = "tentaikhoanDataGridViewTextBoxColumn";
-            // 
-            // ngaymuonDataGridViewTextBoxColumn
-            // 
-            this.ngaymuonDataGridViewTextBoxColumn.DataPropertyName = "ngaymuon";
-            this.ngaymuonDataGridViewTextBoxColumn.HeaderText = "Ngày mượn";
-            this.ngaymuonDataGridViewTextBoxColumn.Name = "ngaymuonDataGridViewTextBoxColumn";
-            // 
-            // ngaytraDataGridViewTextBoxColumn
-            // 
-            this.ngaytraDataGridViewTextBoxColumn.DataPropertyName = "ngaytra";
-            this.ngaytraDataGridViewTextBoxColumn.HeaderText = "Ngày trả";
-            this.ngaytraDataGridViewTextBoxColumn.Name = "ngaytraDataGridViewTextBoxColumn";
-            // 
-            // phuthuDataGridViewTextBoxColumn
-            // 
-            this.phuthuDataGridViewTextBoxColumn.DataPropertyName = "phuthu";
-            this.phuthuDataGridViewTextBoxColumn.HeaderText = "Phụ thu";
-            this.phuthuDataGridViewTextBoxColumn.Name = "phuthuDataGridViewTextBoxColumn";
-            // 
-            // trangthaiDataGridViewCheckBoxColumn
-            // 
-            this.trangthaiDataGridViewCheckBoxColumn.DataPropertyName = "trangthai";
-            this.trangthaiDataGridViewCheckBoxColumn.HeaderText = "Trạng thái";
-            this.trangthaiDataGridViewCheckBoxColumn.Name = "trangthaiDataGridViewCheckBoxColumn";
-            this.trangthaiDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
             // DanhSachNguoiMuon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -232,15 +232,16 @@
             this.ClientSize = new System.Drawing.Size(662, 450);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "DanhSachNguoiMuon";
             this.Text = "Danh sách người mượn sách ";
             this.Load += new System.EventHandler(this.DanhSachNguoiMuon_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataDSTKMS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.muonSachDsTaiKhoanMuonSachResultBindingSource)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.muonSachDsTaiKhoanMuonSachResultBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

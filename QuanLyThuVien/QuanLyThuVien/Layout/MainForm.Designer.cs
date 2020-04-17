@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonThoat = new System.Windows.Forms.Button();
+            this.labelTaiKhoan = new System.Windows.Forms.Label();
             this.tabManager = new System.Windows.Forms.TabControl();
             this.tabQuanlysach = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -170,8 +172,6 @@
             this.getAllSachResultBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.spTaiKhoanTimKiemThongTinResultBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.spTaiKhoanTimKiemThongTinResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.labelTaiKhoan = new System.Windows.Forms.Label();
-            this.buttonThoat = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabManager.SuspendLayout();
             this.tabQuanlysach.SuspendLayout();
@@ -213,6 +213,25 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(877, 570);
             this.panel1.TabIndex = 0;
+            // 
+            // buttonThoat
+            // 
+            this.buttonThoat.Location = new System.Drawing.Point(756, 20);
+            this.buttonThoat.Name = "buttonThoat";
+            this.buttonThoat.Size = new System.Drawing.Size(108, 23);
+            this.buttonThoat.TabIndex = 2;
+            this.buttonThoat.Text = "Thoát";
+            this.buttonThoat.UseVisualStyleBackColor = true;
+            this.buttonThoat.Click += new System.EventHandler(this.buttonThoat_Click);
+            // 
+            // labelTaiKhoan
+            // 
+            this.labelTaiKhoan.AutoSize = true;
+            this.labelTaiKhoan.Location = new System.Drawing.Point(581, 25);
+            this.labelTaiKhoan.Name = "labelTaiKhoan";
+            this.labelTaiKhoan.Size = new System.Drawing.Size(35, 13);
+            this.labelTaiKhoan.TabIndex = 1;
+            this.labelTaiKhoan.Text = "label7";
             // 
             // tabManager
             // 
@@ -267,7 +286,7 @@
             this.dataSach_QuanLySach.Name = "dataSach_QuanLySach";
             this.dataSach_QuanLySach.Size = new System.Drawing.Size(724, 295);
             this.dataSach_QuanLySach.TabIndex = 1;
-            this.dataSach_QuanLySach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataSach_QuanLySach_CellContentClick);
+            this.dataSach_QuanLySach.SelectionChanged += new System.EventHandler(this.dataSach_QuanLySach_SelectionChanged);
             // 
             // masachDataGridViewTextBoxColumn
             // 
@@ -1350,7 +1369,7 @@
             this.dataMuonSach.Size = new System.Drawing.Size(816, 300);
             this.dataMuonSach.TabIndex = 0;
             this.dataMuonSach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataMuonSach_CellClick);
-            this.dataMuonSach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataMuonSach_CellContentClick);
+            this.dataMuonSach.SelectionChanged += new System.EventHandler(this.dataMuonSach_SelectionChanged);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -1520,31 +1539,13 @@
             // 
             this.spTaiKhoanTimKiemThongTinResultBindingSource.DataSource = typeof(EntityData.sp_TaiKhoan_TimKiemThongTin_Result);
             // 
-            // labelTaiKhoan
-            // 
-            this.labelTaiKhoan.AutoSize = true;
-            this.labelTaiKhoan.Location = new System.Drawing.Point(581, 25);
-            this.labelTaiKhoan.Name = "labelTaiKhoan";
-            this.labelTaiKhoan.Size = new System.Drawing.Size(35, 13);
-            this.labelTaiKhoan.TabIndex = 1;
-            this.labelTaiKhoan.Text = "label7";
-            // 
-            // buttonThoat
-            // 
-            this.buttonThoat.Location = new System.Drawing.Point(756, 20);
-            this.buttonThoat.Name = "buttonThoat";
-            this.buttonThoat.Size = new System.Drawing.Size(108, 23);
-            this.buttonThoat.TabIndex = 2;
-            this.buttonThoat.Text = "Thoát";
-            this.buttonThoat.UseVisualStyleBackColor = true;
-            this.buttonThoat.Click += new System.EventHandler(this.buttonThoat_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(877, 570);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainForm";
             this.Text = "Main ";
             this.Load += new System.EventHandler(this.MainForm_Load);

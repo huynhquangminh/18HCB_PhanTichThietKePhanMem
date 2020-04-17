@@ -277,6 +277,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(742, 522);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "TaiKhoanMuonSach";
             this.Text = "Thông tin sách mượn";
             this.Load += new System.EventHandler(this.TaiKhoanMuonSach_Load);

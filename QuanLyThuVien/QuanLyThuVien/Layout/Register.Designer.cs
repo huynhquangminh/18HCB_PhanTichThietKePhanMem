@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbTKDK_thongbao2 = new System.Windows.Forms.Label();
             this.lbTKDK_thongbao = new System.Windows.Forms.Label();
@@ -46,7 +47,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -60,6 +60,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(441, 464);
             this.panel1.TabIndex = 0;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(127, 36);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(202, 25);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Đăng ký tài khoản";
             // 
             // groupBox1
             // 
@@ -110,7 +120,7 @@
             // 
             // btnTKDK_clear
             // 
-            this.btnTKDK_clear.Location = new System.Drawing.Point(213, 331);
+            this.btnTKDK_clear.Location = new System.Drawing.Point(312, 331);
             this.btnTKDK_clear.Name = "btnTKDK_clear";
             this.btnTKDK_clear.Size = new System.Drawing.Size(75, 23);
             this.btnTKDK_clear.TabIndex = 4;
@@ -120,7 +130,7 @@
             // 
             // btnTKDK_dangky
             // 
-            this.btnTKDK_dangky.Location = new System.Drawing.Point(312, 331);
+            this.btnTKDK_dangky.Location = new System.Drawing.Point(225, 331);
             this.btnTKDK_dangky.Name = "btnTKDK_dangky";
             this.btnTKDK_dangky.Size = new System.Drawing.Size(75, 23);
             this.btnTKDK_dangky.TabIndex = 4;
@@ -229,22 +239,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên đăng nhập";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(127, 36);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(202, 25);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Đăng ký tài khoản";
-            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(441, 464);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Register";
             this.Text = "Register";
             this.panel1.ResumeLayout(false);
