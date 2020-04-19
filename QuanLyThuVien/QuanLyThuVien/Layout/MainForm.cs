@@ -430,6 +430,12 @@ namespace QuanLyThuVien.Layout
 
         private void GetDsTaiKhoanTimKiemAll()
         {
+            if (Login.thongtintaikhoan.loaitaikhoan == 3 || Login.thongtintaikhoan.loaitaikhoan == 4)
+            {
+                var listData = taikhoanBus.GetDsTaiKhoanAll().Where(pr => pr.id != 1).ToList();
+                dataQLTK.DataSource = listData;
+                return;
+            }
             dataQLTK.DataSource = taikhoanBus.GetDsTaiKhoanAll();
         }
 
