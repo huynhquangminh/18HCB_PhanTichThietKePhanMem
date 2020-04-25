@@ -39,7 +39,9 @@ namespace QuanLyThuVien.Layout
             var thongtin = Login.thongtintaikhoan;
             checkTypeLogin();
             //((Control)this.tabThuvien).Enabled = false;
-            labelTaiKhoan.Text = $"Tài khoản: {_taiKhoanDangNhap}";
+            //labelTaiKhoan.Text = $"Tài khoản: {_taiKhoanDangNhap}";
+            labelTaiKhoan.Text = $"Tài khoản: {thongtin.tentaikhoan}";
+
         }
 
         private void checkTypeLogin()
@@ -107,6 +109,9 @@ namespace QuanLyThuVien.Layout
                 var param = new TimkiemSachParameter();
                 param.TieuDe = txtQLS_timkiem_tieude.Text;
                 dataSach_QuanLySach.DataSource = sachBus.TimKiemTieuDe_Sach(param);
+            } else
+            {
+                dataSach_QuanLySach.DataSource = sachBus.GetAllSach();
             }
         }
 
@@ -117,6 +122,9 @@ namespace QuanLyThuVien.Layout
                 var param = new TimkiemSachParameter();
                 param.MaSach = txtQLS_timkiem_masach.Text;
                 dataSach_QuanLySach.DataSource = sachBus.TimKiemMaSach_Sach(param);
+            } else
+            {
+                dataSach_QuanLySach.DataSource = sachBus.GetAllSach();
             }
         }
 
@@ -127,6 +135,9 @@ namespace QuanLyThuVien.Layout
                 var param = new TimkiemSachParameter();
                 param.TacGia = txtQLS_timkiem_tacgia.Text;
                 dataSach_QuanLySach.DataSource = sachBus.TimKiemTacGia_Sach(param);
+            } else
+            {
+                dataSach_QuanLySach.DataSource = sachBus.GetAllSach();
             }
         }
 
@@ -379,6 +390,9 @@ namespace QuanLyThuVien.Layout
                 var param = new TimkiemSachParameter();
                 param.TieuDe = txtCNND_tieude.Text;
                 dataQLND.DataSource = sachBus.TimKiemTieuDe_Sach(param);
+            } else
+            {
+                dataQLND.DataSource = sachBus.GetAllSach();
             }
         }
 
@@ -390,6 +404,10 @@ namespace QuanLyThuVien.Layout
                 param.MaSach = txtCNND_masach.Text;
                 dataQLND.DataSource = sachBus.TimKiemMaSach_Sach(param);
             }
+            else
+            {
+                dataQLND.DataSource = sachBus.GetAllSach();
+            }
         }
 
         private void btnCNND_timkiemtacgia_Click(object sender, EventArgs e)
@@ -399,6 +417,10 @@ namespace QuanLyThuVien.Layout
                 var param = new TimkiemSachParameter();
                 param.TacGia = txtCNND_tacgia.Text;
                 dataQLND.DataSource = sachBus.TimKiemTacGia_Sach(param);
+            }
+            else
+            {
+                dataQLND.DataSource = sachBus.GetAllSach();
             }
         }
 
@@ -552,11 +574,17 @@ namespace QuanLyThuVien.Layout
 
         private void btnTV_timkiemthongtinmuonsach_Click(object sender, EventArgs e)
         {
+            if(txtTV_timkiem_tensach.Text == "" && txtTV_timkiem_masach.Text == "" && txtTV_timkiem_matk.Text == "")
+            {
+                GetDSMuonSachAll();
+                return;
+                
+            } 
             var tensach = txtTV_timkiem_tensach.Text == "" ? null : txtTV_timkiem_tensach.Text;
-             var masach = txtTV_timkiem_masach.Text == "" ? null : txtTV_timkiem_masach.Text;
+            var masach = txtTV_timkiem_masach.Text == "" ? null : txtTV_timkiem_masach.Text;
             var mattk = txtTV_timkiem_matk.Text == "" ? null : txtTV_timkiem_matk.Text;
             var result = muonSachBus.TimKieThongTinMuonSach(tensach, masach, mattk);
-            dataMuonSach.DataSource = result;
+            dataMuonSach.DataSource = result;  
         }
 
         private void btnTV_timkiemtheodate_Click(object sender, EventArgs e)

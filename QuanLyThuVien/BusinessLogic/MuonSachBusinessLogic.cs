@@ -162,7 +162,12 @@ namespace BusinessLogic
             graph.DrawString("Tên sách : " + tensach, font, XBrushes.Black, 40f, 100f);
             graph.DrawString("Ngày mượn : " + ngaymuon, font, XBrushes.Black, 40f, 120f);
             string filename = "PhieuMuonSach-"+ matk + "-" + masach + "-" + DateTime.Now.ToString("ddMMyyyyHHmm") + ".pdf";
-            pdf.Save(filename);
+            string currentPath = System.IO.Directory.GetCurrentDirectory();
+            if (!System.IO.Directory.Exists(currentPath + "/Phieu_muon_sach"))
+            {
+                System.IO.Directory.CreateDirectory(currentPath + "/Phieu_muon_sach");
+            }
+            pdf.Save(currentPath + "/Phieu_muon_sach/" + filename);
         }
     }
 }
